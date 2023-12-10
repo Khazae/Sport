@@ -90,7 +90,6 @@ import { Navigation, Pagination } from "swiper";
 
 import { SwiperCore, Swiper, SwiperSlide } from "swiper-vue2";
 
-// Import Swiper styles
 import "swiper/swiper-bundle.css";
 
 SwiperCore.use([Navigation, Pagination]);

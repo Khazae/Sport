@@ -6,21 +6,24 @@
 
         <div class="mainSection__social">
           <div class="mainSection__social__border"></div>
-          <img
-            src="../assets/header/inst.svg"
-            alt=""
-            class="mainSection__social__img"
-          />
-          <img
-            src="../assets/header/fb.svg"
-            alt=""
-            class="mainSection__social__img"
-          />
-          <img
-            src="../assets/header/youtube.svg"
-            alt=""
-            class="mainSection__social__img"
-          />
+          <a href="#"
+            ><img
+              src="../assets/header/inst.svg"
+              alt=""
+              class="mainSection__social__img"
+          /></a>
+          <a href="#"
+            ><img
+              src="../assets/header/fb.svg"
+              alt=""
+              class="mainSection__social__img"
+          /></a>
+          <a href="#"
+            ><img
+              src="../assets/header/youtube.svg"
+              alt=""
+              class="mainSection__social__img"
+          /></a>
           <div class="mainSection__social__border"></div>
         </div>
       </div>
@@ -100,39 +103,47 @@
 
             <div class="competitionsContent__row">
               <div class="competitionsContent__row__item">
-                <div class="competitionsContent__row__item__data">
-                  5.11.2023
-                </div>
-                <div class="competitionsContent__row__item__text">
-                  IV Азиатские пара пара игры Ханчжоу
-                </div>
+                <a href="#" class="competitionsContent__row__item_link">
+                  <div class="competitionsContent__row__item__data">
+                    5.11.2023
+                  </div>
+                  <div class="competitionsContent__row__item__text">
+                    IV Азиатские пара пара игры Ханчжоу
+                  </div>
+                </a>
               </div>
 
               <div class="competitionsContent__row__item">
-                <div class="competitionsContent__row__item__data">
-                  5.11.2023
-                </div>
-                <div class="competitionsContent__row__item__text">
-                  Открытый турнир по пара настольному теннису
-                </div>
+                <a href="#" class="competitionsContent__row__item_link">
+                  <div class="competitionsContent__row__item__data">
+                    5.11.2023
+                  </div>
+                  <div class="competitionsContent__row__item__text">
+                    Открытый турнир по пара настольному теннису
+                  </div>
+                </a>
               </div>
 
               <div class="competitionsContent__row__item">
-                <div class="competitionsContent__row__item__data">
-                  5.11.2023
-                </div>
-                <div class="competitionsContent__row__item__text">
-                  Чемпионат мира по пара дзюдо
-                </div>
+                <a href="#" class="competitionsContent__row__item_link">
+                  <div class="competitionsContent__row__item__data">
+                    5.11.2023
+                  </div>
+                  <div class="competitionsContent__row__item__text">
+                    Чемпионат мира по пара дзюдо
+                  </div>
+                </a>
               </div>
 
               <div class="competitionsContent__row__item">
-                <div class="competitionsContent__row__item__data">
-                  5.11.2023
-                </div>
-                <div class="competitionsContent__row__item__text">
-                  Чемпионат мира по пара хоккею
-                </div>
+                <a href="#" class="competitionsContent__row__item_link">
+                  <div class="competitionsContent__row__item__data">
+                    5.11.2023
+                  </div>
+                  <div class="competitionsContent__row__item__text">
+                    Чемпионат мира по пара хоккею
+                  </div>
+                </a>
               </div>
             </div>
 
@@ -163,88 +174,100 @@
 
           <div class="eventsSection__row">
             <div class="eventsSection__item">
-              <img
-                src="../assets/events/1.png"
-                alt=""
-                class="eventsSection__item__img"
-              />
-              <div class="eventsSection__item__bottom">
-                <div class="eventsSection__item__bottom__data">
-                  2-7 января 2024 г.
+              <a href="#" class="eventsSection__item_link">
+                <img
+                  src="../assets/events/1.png"
+                  alt=""
+                  class="eventsSection__item__img"
+                />
+                <div class="eventsSection__item__bottom">
+                  <div class="eventsSection__item__bottom__data">
+                    2-7 января 2024 г.
+                  </div>
+                  <div class="eventsSection__item__bottom__text">
+                    Чемпионат мира 2023 по пара таеквондо
+                  </div>
                 </div>
-                <div class="eventsSection__item__bottom__text">
-                  Чемпионат мира 2023 по пара таеквондо
-                </div>
-              </div>
+              </a>
             </div>
 
             <div class="eventsSection__item">
-              <img
-                src="../assets/events/2.png"
-                alt=""
-                class="eventsSection__item__img"
-              />
-              <div class="eventsSection__item__bottom">
-                <div class="eventsSection__item__bottom__data">
-                  2-7 января 2024 г.
+              <a href="#" class="eventsSection__item_link">
+                <img
+                  src="../assets/events/2.png"
+                  alt=""
+                  class="eventsSection__item__img"
+                />
+                <div class="eventsSection__item__bottom">
+                  <div class="eventsSection__item__bottom__data">
+                    2-7 января 2024 г.
+                  </div>
+                  <div class="eventsSection__item__bottom__text">
+                    Чемпионат мира 2023 по пара таеквондо
+                  </div>
                 </div>
-                <div class="eventsSection__item__bottom__text">
-                  Чемпионат мира 2023 по пара таеквондо
-                </div>
-              </div>
+              </a>
             </div>
 
             <div class="eventsSection__item">
-              <img
-                src="../assets/events/3.png"
-                alt=""
-                class="eventsSection__item__img"
-              />
-              <div class="eventsSection__item__bottom">
-                <div class="eventsSection__item__bottom__data">
-                  2-7 января 2024 г.
+              <a href="#" class="eventsSection__item_link">
+                <img
+                  src="../assets/events/3.png"
+                  alt=""
+                  class="eventsSection__item__img"
+                />
+                <div class="eventsSection__item__bottom">
+                  <div class="eventsSection__item__bottom__data">
+                    2-7 января 2024 г.
+                  </div>
+                  <div class="eventsSection__item__bottom__text">
+                    Чемпионат мира 2023 по пара таеквондо
+                  </div>
                 </div>
-                <div class="eventsSection__item__bottom__text">
-                  Чемпионат мира 2023 по пара таеквондо
-                </div>
-              </div>
+              </a>
             </div>
 
             <div class="eventsSection__item">
               <div class="eventsSection__item__block">
-                <img src="../assets/events/4.png" alt="" />
-                <div class="eventsSection__item__block__content">
-                  <div class="eventsSection__item__block__prequotes">
-                    #Pollar. 87 - 12 July 2023
+                <a href="#" class="eventsSection__item__block_link">
+                  <img src="../assets/events/4.png" alt="" />
+                  <div class="eventsSection__item__block__content">
+                    <div class="eventsSection__item__block__prequotes">
+                      #Pollar. 87 - 12 July 2023
+                    </div>
+                    <div class="eventsSection__item__block__title">
+                      Baku 2023 Taekwondo Championships
+                    </div>
                   </div>
-                  <div class="eventsSection__item__block__title">
-                    Baku 2023 Taekwondo Championships
-                  </div>
-                </div>
+                </a>
               </div>
 
               <div class="eventsSection__item__block">
-                <img src="../assets/events/5.png" alt="" />
-                <div class="eventsSection__item__block__content">
-                  <div class="eventsSection__item__block__prequotes">
-                    #Pollar. 87 - 12 July 2023
+                <a href="#" class="eventsSection__item__block_link">
+                  <img src="../assets/events/5.png" alt="" />
+                  <div class="eventsSection__item__block__content">
+                    <div class="eventsSection__item__block__prequotes">
+                      #Pollar. 87 - 12 July 2023
+                    </div>
+                    <div class="eventsSection__item__block__title">
+                      Open Championship Royal Liverpool Golf
+                    </div>
                   </div>
-                  <div class="eventsSection__item__block__title">
-                    Open Championship Royal Liverpool Golf
-                  </div>
-                </div>
+                </a>
               </div>
 
               <div class="eventsSection__item__block">
-                <img src="../assets/events/6.png" alt="" />
-                <div class="eventsSection__item__block__content">
-                  <div class="eventsSection__item__block__prequotes">
-                    #Pollar. 87 - 12 July 2023
+                <a href="#" class="eventsSection__item__block_link">
+                  <img src="../assets/events/6.png" alt="" />
+                  <div class="eventsSection__item__block__content">
+                    <div class="eventsSection__item__block__prequotes">
+                      #Pollar. 87 - 12 July 2023
+                    </div>
+                    <div class="eventsSection__item__block__title">
+                      Ireland Tour of England Test 2023
+                    </div>
                   </div>
-                  <div class="eventsSection__item__block__title">
-                    Ireland Tour of England Test 2023
-                  </div>
-                </div>
+                </a>
               </div>
 
               <div class="eventsSection__item__link">
@@ -277,81 +300,84 @@
             <div class="videosSection__item">
               <div class="videosSection__item__title">Топ видео</div>
               <div class="videosSection__item__block">
-                <a
-                  href="https://www.youtube.com/"
-                  class="videosSection__item__block__img"
-                >
-                  <img src="../assets/video/1.png" alt="" />
-                  <img
-                    src="../assets/video/play.svg"
-                    alt=""
-                    class="videosSection__item__block__img__icon"
-                  />
-                </a>
+                <a href="videosSection__item__block_link">
+                  <div class="videosSection__item__block__img">
+                    <img src="../assets/video/1.png" alt="" />
+                    <img
+                      src="../assets/video/play.svg"
+                      alt=""
+                      class="videosSection__item__block__img__icon"
+                    />
+                  </div>
 
-                <div class="videosSection__item__block__content">
-                  <div class="videosSection__item__block__content__date">
-                    9 ноября 2023
+                  <div class="videosSection__item__block__content">
+                    <div class="videosSection__item__block__content__date">
+                      9 ноября 2023
+                    </div>
+                    <div class="videosSection__item__block__content__title">
+                      Название видео
+                    </div>
+                    <div
+                      class="videosSection__item__block__content__description"
+                    >
+                      Краткое описание к видео
+                    </div>
                   </div>
-                  <div class="videosSection__item__block__content__title">
-                    Название видео
-                  </div>
-                  <div class="videosSection__item__block__content__description">
-                    Краткое описание к видео
-                  </div>
-                </div>
+                </a>
               </div>
 
               <div class="videosSection__item__block">
-                <a
-                  href="https://www.youtube.com/"
-                  class="videosSection__item__block__img"
-                >
-                  <img src="../assets/video/2.png" alt="" />
-                  <img
-                    src="../assets/video/play.svg"
-                    alt=""
-                    class="videosSection__item__block__img__icon"
-                  />
-                </a>
+                <a href="videosSection__item__block_link">
+                  <div class="videosSection__item__block__img">
+                    <img src="../assets/video/2.png" alt="" />
+                    <img
+                      src="../assets/video/play.svg"
+                      alt=""
+                      class="videosSection__item__block__img__icon"
+                    />
+                  </div>
 
-                <div class="videosSection__item__block__content">
-                  <div class="videosSection__item__block__content__date">
-                    9 ноября 2023
+                  <div class="videosSection__item__block__content">
+                    <div class="videosSection__item__block__content__date">
+                      9 ноября 2023
+                    </div>
+                    <div class="videosSection__item__block__content__title">
+                      Название видео
+                    </div>
+                    <div
+                      class="videosSection__item__block__content__description"
+                    >
+                      Краткое описание к видео
+                    </div>
                   </div>
-                  <div class="videosSection__item__block__content__title">
-                    Название видео
-                  </div>
-                  <div class="videosSection__item__block__content__description">
-                    Краткое описание к видео
-                  </div>
-                </div>
+                </a>
               </div>
 
               <div class="videosSection__item__block">
-                <a
-                  href="https://www.youtube.com/"
-                  class="videosSection__item__block__img"
-                >
-                  <img src="../assets/video/3.png" alt="" />
-                  <img
-                    src="../assets/video/play.svg"
-                    alt=""
-                    class="videosSection__item__block__img__icon"
-                  />
-                </a>
+                <a href="videosSection__item__block_link">
+                  <div class="videosSection__item__block__img">
+                    <img src="../assets/video/3.png" alt="" />
+                    <img
+                      src="../assets/video/play.svg"
+                      alt=""
+                      class="videosSection__item__block__img__icon"
+                    />
+                  </div>
 
-                <div class="videosSection__item__block__content">
-                  <div class="videosSection__item__block__content__date">
-                    9 ноября 2023
+                  <div class="videosSection__item__block__content">
+                    <div class="videosSection__item__block__content__date">
+                      9 ноября 2023
+                    </div>
+                    <div class="videosSection__item__block__content__title">
+                      Название видео
+                    </div>
+                    <div
+                      class="videosSection__item__block__content__description"
+                    >
+                      Краткое описание к видео
+                    </div>
                   </div>
-                  <div class="videosSection__item__block__content__title">
-                    Название видео
-                  </div>
-                  <div class="videosSection__item__block__content__description">
-                    Краткое описание к видео
-                  </div>
-                </div>
+                </a>
               </div>
             </div>
             <div class="videosSection__item">
@@ -376,28 +402,41 @@
           в социальных сетях
         </div>
         <div class="promoSection__social">
-          <img src="../assets/social/instagram.svg" alt="" />
-          <img src="../assets/social/facebook.svg" alt="" />
-          <img src="../assets/social/youtube.svg" alt="" />
+          <a href="#"><img src="../assets/social/instagram.svg" alt="" /></a>
+          <a href="#"><img src="../assets/social/facebook.svg" alt="" /></a>
+          <a href="#"><img src="../assets/social/youtube.svg" alt="" /></a>
         </div>
       </div>
     </section>
+
+    <SliderComponent />
 
     <section class="promoPartners">
       <div class="container">
         <div class="promoPartners__title">Наши партнеры</div>
 
         <div class="promoPartners__row">
-          <img src="../assets/partners/1.png" alt="" />
-          <img src="../assets/partners/2.png" alt="" />
-          <img src="../assets/partners/3.png" alt="" />
-          <img src="../assets/partners/4.png" alt="" />
-          <img src="../assets/partners/5.png" alt="" />
-          <img src="../assets/partners/6.png" alt="" />
+          <a href="#" target="_blank"
+            ><img src="../assets/partners/1.png" alt=""
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="../assets/partners/2.png" alt=""
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="../assets/partners/3.png" alt=""
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="../assets/partners/4.png" alt=""
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="../assets/partners/5.png" alt=""
+          /></a>
+          <a href="#" target="_blank"
+            ><img src="../assets/partners/6.png" alt=""
+          /></a>
         </div>
       </div>
     </section>
-    <SliderComponent />
   </main>
 </template>
 

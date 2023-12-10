@@ -113,17 +113,6 @@ export default {
   color: var(--color-secondary);
 }
 
-.listLink::after {
-  content: "";
-  width: 0;
-  height: 3px;
-  background-color: var(--color-secondary);
-  position: absolute;
-  bottom: -15px;
-  left: 0;
-  transition: 0.3s;
-}
-
 .listLink:hover::after {
   content: "";
   width: 100%;
@@ -132,6 +121,19 @@ export default {
   position: absolute;
   bottom: -15px;
   left: 0;
+}
+
+.listLink:hover::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 3.665px solid transparent;
+  border-right: 3.665px solid transparent;
+  border-bottom: 6.33px solid var(--color-secondary);
+  position: absolute;
+  bottom: -81%;
+  left: 50%;
+  transform: translate(-50%, 0) rotate(303deg);
 }
 
 .rightContent {

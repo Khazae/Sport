@@ -179,6 +179,34 @@ a {
 .wrapper {
   padding-top: 80px;
   background: #ebeef3;
+  position: relative;
+  z-index: 10;
+}
+
+.wrapper::after {
+  content: "";
+  width: 1296px;
+  height: 418px;
+  background-image: url("../oiBg0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 11%;
+  right: 0;
+  z-index: -1;
+}
+
+.wrapper::before {
+  content: "";
+  width: 1296px;
+  height: 418px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 30.5%;
+  left: 0;
+  z-index: -1;
 }
 
 .competitionsContent__row {
@@ -191,7 +219,16 @@ a {
   border-radius: 4px;
   background: #ffffff;
   margin-bottom: 30px;
+  border: 2px solid transparent;
 }
+
+.competitionsContent__row__item:hover {
+  background: linear-gradient(#ffffff, #ffffff) padding-box,
+    linear-gradient(90deg, #e50d41 0%, #f9b90e 100%) border-box,
+    linear-gradient(0deg, #ee743d, #ee743d) border-box,
+    linear-gradient(0deg, #ffffff, #ffffff) border-box;
+}
+
 .competitionsContent__row__item__data {
   color: rgba(38, 38, 38, 0.6);
   font-size: 14px;
@@ -268,9 +305,12 @@ a {
 }
 
 .eventsSection__item__block {
+  margin-bottom: 20px;
+}
+
+.eventsSection__item__block a {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
 }
 
 .eventsSection__item__block img {
@@ -363,9 +403,13 @@ a {
   margin-bottom: 20px;
 }
 .videosSection__item__block {
-  display: flex;
   margin-bottom: 20px;
 }
+
+.videosSection__item__block a {
+  display: flex;
+}
+
 .videosSection__item__block__img {
   position: relative;
   margin-right: 20px;
