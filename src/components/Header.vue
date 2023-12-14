@@ -54,10 +54,13 @@ export default {
 .header {
   width: 100%;
   padding-top: 24px;
-  padding-bottom: 43px;
-  position: absolute;
+  padding-bottom: 24px;
+  background: linear-gradient(1deg, #1d458b 6.15%, #2385c3 700.3%),
+    linear-gradient(195deg, #ffffff, #ffffff);
+
+  /* position: absolute;
   top: 0;
-  z-index: 100;
+  z-index: 100; */
 }
 
 .headerContent {

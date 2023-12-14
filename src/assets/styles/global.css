@@ -18,7 +18,7 @@ a {
 
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1240px;
   padding: 0 15px;
   margin: 0 auto;
 }
@@ -185,7 +185,8 @@ a {
 
 .wrapper::after {
   content: "";
-  width: 1296px;
+  width: 100%;
+  max-width: 1296px;
   height: 418px;
   background-image: url("../oiBg0.png");
   background-size: cover;
@@ -198,7 +199,8 @@ a {
 
 .wrapper::before {
   content: "";
-  width: 1296px;
+  width: 100%;
+  max-width: 1296px;
   height: 418px;
   background-image: url("../oiBg2.png");
   background-size: cover;
@@ -714,7 +716,7 @@ a {
   height: 40px;
 }
 .mainSection {
-  padding-top: 100px;
+  padding-top: 0px;
 }
 
 .mainSection__row {
