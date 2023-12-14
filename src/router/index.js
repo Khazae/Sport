@@ -69,6 +69,46 @@ const routes = [
         name: "InformationAbout",
         component: () => import("../views/InformationAboutView.vue"),
       },
+      {
+        path: "/statistical-indicators",
+        name: "statisticalIndicators",
+        component: () => import("../views/StatisticalIndicatorsView.vue"),
+      },
+      {
+        path: "/analytical-reports",
+        name: "analyticalReports",
+        component: () => import("../views/AnalyticalReportsView.vue"),
+      },
+      {
+        path: "/survey",
+        name: "survey",
+        component: () => import("../views/SurveyView.vue"),
+      },
+      {
+        path: "/schedule-personal",
+        name: "schedulePersonal",
+        component: () => import("../views/SchedulePersonalView.vue"),
+      },
+      {
+        path: "/contacts",
+        name: "contacts",
+        component: () => import("../views/ContactsView.vue"),
+      },
+      {
+        path: "/state-symbols",
+        name: "stateSymbols",
+        component: () => import("../views/StateSymbolsView.vue"),
+      },
+      {
+        path: "/anti-corruption",
+        name: "antiCorruption",
+        component: () => import("../views/AntiCorruptionView.vue"),
+      },
+      {
+        path: "/international-relationship",
+        name: "internationalRelationship",
+        component: () => import("../views/InternationalRelationshipsView.vue"),
+      },
     ],
   },
 ];
