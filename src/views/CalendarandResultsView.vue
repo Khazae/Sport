@@ -123,6 +123,7 @@
 
 <script>
 import HeaderTitle from "../components/HeaderTitle.vue";
+
 export default { components: { HeaderTitle } };
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div class="vacancies_wrapper">
+    <HeaderTitle title="Вакансии" />
     <div class="container">
       <div class="vacancies_content">
         <div class="vacancies_items">
@@ -109,7 +110,10 @@
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+export default {
+  components: { HeaderTitle },
+};
 </script>
 
 <style scoped>

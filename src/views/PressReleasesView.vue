@@ -1,5 +1,6 @@
 <template>
   <div class="press_releases_wrapper">
+    <HeaderTitle title="Пресс-релизы" />
     <div class="container">
       <div class="press_releases_content">
         <div class="press_releases_news_content">
@@ -191,7 +192,8 @@
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>

@@ -1,5 +1,6 @@
 <template>
   <div class="faq_wrapper">
+    <HeaderTitle title="Частые вопросы" />
     <div class="container">
       <div class="faq_content">
         <div class="faq_items">
@@ -123,10 +124,11 @@
 </template>
 
 <script>
+import HeaderTitle from "../components/HeaderTitle.vue";
 import Accordion from "../components/Accordion.vue";
 import AccordionItem from "../components/AccordionItem.vue";
 export default {
-  components: { Accordion, AccordionItem },
+  components: { Accordion, AccordionItem, HeaderTitle },
 };
 </script>
 

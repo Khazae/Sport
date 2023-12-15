@@ -1,5 +1,6 @@
 <template>
   <div class="international_wrapper">
+    <HeaderTitle title="Международные отношения" />
     <div class="container">
       <div class="international_content">
         <div class="international_content_first">
@@ -175,7 +176,8 @@
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>

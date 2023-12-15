@@ -2,13 +2,13 @@
   <header class="header">
     <div class="headerContent">
       <div class="logoContent">
-        <a href="#" class="logoLink">
+        <router-link to="/" class="logoLink">
           <img src="../assets/logo.svg" class="logo" alt="Logo" />
           <h3 class="logoText">
             Центр спортивной подготовки для лиц с ограниченными физическими
             возможностями
           </h3>
-        </a>
+        </router-link>
       </div>
       <div class="rightContent">
         <nav class="nav">
@@ -64,22 +64,22 @@
           <div class="headerDropdownMenuItem">
             <ul class="headerDropdownMenuList">
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/about" class="headerDropdownMenuLink"
                   >Наша история</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/structure" class="headerDropdownMenuLink"
                   >Организационная структура</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/survey" class="headerDropdownMenuLink"
                   >Опросы</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/about-manual" class="headerDropdownMenuLink"
                   >Сведения о руководстве</router-link
                 >
               </li>
@@ -89,22 +89,26 @@
           <div class="headerDropdownMenuItem">
             <ul class="headerDropdownMenuList">
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/development-plan"
+                  class="headerDropdownMenuLink"
                   >План развития</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/vacancies" class="headerDropdownMenuLink"
                   >Вакансии</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/press-releases" class="headerDropdownMenuLink"
                   >Пресс-релизы</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/financial-statements"
+                  class="headerDropdownMenuLink"
                   >Финансовая</router-link
                 >
               </li>
@@ -114,24 +118,30 @@
           <div class="headerDropdownMenuItem">
             <ul class="headerDropdownMenuList">
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/regulatory" class="headerDropdownMenuLink"
                   >Нормативные документы регламентирующие
                   деятельность</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/information-about"
+                  class="headerDropdownMenuLink"
                   >Информация о закупках товаров</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/statistical-indicators"
+                  class="headerDropdownMenuLink"
                   >Статистические показатели и результаты
                   деятельности</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/analytical-reports"
+                  class="headerDropdownMenuLink"
                   >Аналитические отчеты и доклады о проделанной
                   работе</router-link
                 >
@@ -142,22 +152,28 @@
           <div class="headerDropdownMenuItem">
             <ul class="headerDropdownMenuList">
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/schedule-personal"
+                  class="headerDropdownMenuLink"
                   >График личного приема граждан</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link to="/state-symbols" class="headerDropdownMenuLink"
                   >Государственные символы Республики Казахстан</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/anti-corruption"
+                  class="headerDropdownMenuLink"
                   >Противодействие коррупции</router-link
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link to="" class="headerDropdownMenuLink"
+                <router-link
+                  to="/international-relationship"
+                  class="headerDropdownMenuLink"
                   >Международные отношения</router-link
                 >
               </li>
@@ -347,7 +363,7 @@ export default {
   padding-top: 24px;
   z-index: 1000000;
   width: 100%;
-  height: 320px;
+  min-height: 320px;
 }
 
 .headerDropdownMenuContent {

@@ -1,5 +1,6 @@
 <template>
   <div class="state_symbols_wrapper">
+    <HeaderTitle title="Государственные символы Рк" />
     <div class="container">
       <div class="state_symbols_content">
         <div class="state_symbols_items">
@@ -130,7 +131,10 @@
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+export default {
+  components: { HeaderTitle },
+};
 </script>
 
 <style scoped>

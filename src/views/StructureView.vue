@@ -1,5 +1,6 @@
 <template>
   <div class="structure_wrapper">
+    <HeaderTitle title="Организационная структура 2023" />
     <div class="container">
       <div class="structure_content">
         <img
@@ -13,7 +14,10 @@
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+export default {
+  components: { HeaderTitle },
+};
 </script>
 
 <style scoped>

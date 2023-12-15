@@ -1,5 +1,9 @@
 <template>
   <div class="budget_wrapper">
+    <HeaderTitle
+      title="Аналитические отчеты и доклады 
+о проделанной работе"
+    />
     <div class="container">
       <div class="budget_content">
         <div class="budget_items">
@@ -56,8 +60,9 @@
 
 <script>
 import BudgetFile from "@/components/BudgetFile.vue";
+import HeaderTitle from "../components/HeaderTitle.vue";
 
-export default { components: { BudgetFile } };
+export default { components: { BudgetFile, HeaderTitle } };
 </script>
 
 <style scoped>

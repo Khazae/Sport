@@ -1,5 +1,6 @@
 <template>
   <div class="development_plan_wrapper">
+    <HeaderTitle title="План развития" />
     <div class="container">
       <div class="development_plan_content">
         <div class="development_plan_items">
@@ -16,9 +17,11 @@
 </template>
 
 <script>
+import HeaderTitle from "../components/HeaderTitle.vue";
+
 import BudgetFile from "@/components/BudgetFile.vue";
 
-export default { components: { BudgetFile } };
+export default { components: { BudgetFile, HeaderTitle } };
 </script>
 
 <style scoped>

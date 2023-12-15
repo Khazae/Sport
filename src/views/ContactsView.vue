@@ -1,5 +1,6 @@
 <template>
   <div class="schedule_personal_wrapper">
+    <HeaderTitle title="Контакты" />
     <div class="container">
       <div class="schedule_personal_content">
         <div class="schedule_personal_content_contact">
@@ -38,7 +39,9 @@
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+
+export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>

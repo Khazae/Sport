@@ -1,11 +1,12 @@
 <template>
   <div class="about_manual_wrapper">
+    <HeaderTitle title="Сведения о руководстве" />
     <div class="container">
       <div class="about_manual_content">
         <div class="about_manual_items">
           <div class="about_manual_item">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6utcf608_fa3aHeU4rCkVDu2CUsI0rR2mfg&usqp=CAU"
+              src="../assets/aboutManual.png"
               class="about_manual_item_image"
               alt=""
             />
@@ -69,7 +70,8 @@
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>

@@ -1,5 +1,6 @@
 <template>
   <div class="survey_wrapper">
+    <HeaderTitle title="Опросы" />
     <div class="container">
       <div class="survey_content">
         <h3 class="survey_title">Ответьте на несколько вопросов</h3>
@@ -160,8 +161,9 @@
 
 <script>
 import Button from "@/components/Button.vue";
+import HeaderTitle from "../components/HeaderTitle.vue";
 export default {
-  components: { Button },
+  components: { Button, HeaderTitle },
 };
 </script>
 
