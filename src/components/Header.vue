@@ -14,18 +14,30 @@
         <nav class="nav">
           <ul class="list" @mouseover="showDropdown" @mouseleave="hideDropdown">
             <li class="listItem">
-              <a class="listLink" href="#">О нас</a>
+              <router-link to="/about" class="listLink">О нас</router-link>
             </li>
             <li class="listItem">
-              <a class="listLink" href="#">Виды спорта</a>
+              <router-link to="" class="listLink">Виды спорта</router-link>
             </li>
-            <li class="listItem"><a class="listLink" href="#">Календарь</a></li>
             <li class="listItem">
-              <a class="listLink" href="#">Результаты</a>
+              <router-link to="/calendar" class="listLink"
+                >Календарь</router-link
+              >
             </li>
-            <li class="listItem"><a class="listLink" href="#">Бюджет</a></li>
-            <li class="listItem"><a class="listLink" href="#">FAQ</a></li>
-            <li class="listItem"><a class="listLink" href="#">Контакты</a></li>
+            <li class="listItem">
+              <router-link to="" class="listLink">Результаты</router-link>
+            </li>
+            <li class="listItem">
+              <router-link to="/budget" class="listLink">Бюджет</router-link>
+            </li>
+            <li class="listItem">
+              <router-link to="/faq" class="listLink">FAQ</router-link>
+            </li>
+            <li class="listItem">
+              <router-link to="/contacts" class="listLink"
+                >Контакты</router-link
+              >
+            </li>
           </ul>
         </nav>
         <div class="loginContent">
@@ -52,33 +64,24 @@
           <div class="headerDropdownMenuItem">
             <ul class="headerDropdownMenuList">
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Наша история</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Организационная структура</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Опросы</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="headerDropdownMenuItem">
-            <ul class="headerDropdownMenuList">
-              <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
-              </li>
-              <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
-              </li>
-              <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
-              </li>
-              <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Сведения о руководстве</router-link
+                >
               </li>
             </ul>
           </div>
@@ -86,16 +89,24 @@
           <div class="headerDropdownMenuItem">
             <ul class="headerDropdownMenuList">
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >План развития</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Вакансии</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Пресс-релизы</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Финансовая</router-link
+                >
               </li>
             </ul>
           </div>
@@ -103,16 +114,52 @@
           <div class="headerDropdownMenuItem">
             <ul class="headerDropdownMenuList">
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Нормативные документы регламентирующие
+                  деятельность</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Информация о закупках товаров</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Статистические показатели и результаты
+                  деятельности</router-link
+                >
               </li>
               <li class="headerDropdownMenuLi">
-                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Аналитические отчеты и доклады о проделанной
+                  работе</router-link
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="headerDropdownMenuItem">
+            <ul class="headerDropdownMenuList">
+              <li class="headerDropdownMenuLi">
+                <router-link to="" class="headerDropdownMenuLink"
+                  >График личного приема граждан</router-link
+                >
+              </li>
+              <li class="headerDropdownMenuLi">
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Государственные символы Республики Казахстан</router-link
+                >
+              </li>
+              <li class="headerDropdownMenuLi">
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Противодействие коррупции</router-link
+                >
+              </li>
+              <li class="headerDropdownMenuLi">
+                <router-link to="" class="headerDropdownMenuLink"
+                  >Международные отношения</router-link
+                >
               </li>
             </ul>
           </div>
@@ -327,6 +374,7 @@ export default {
   text-transform: uppercase;
   color: var(--link-color);
   transition: color 0.3s;
+  line-height: 24px;
   position: relative;
 }
 
