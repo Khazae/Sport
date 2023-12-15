@@ -1,157 +1,159 @@
 <template>
   <div class="survey_wrapper">
-    <div class="survey_content">
-      <h3 class="survey_title">Ответьте на несколько вопросов</h3>
+    <div class="container">
+      <div class="survey_content">
+        <h3 class="survey_title">Ответьте на несколько вопросов</h3>
 
-      <form>
-        <div class="survey_items">
-          <div class="survey_item">
-            <h3 class="survey_item_title">
-              1. Вопрос, где можно выбирать один вариант ответа
-            </h3>
+        <form>
+          <div class="survey_items">
+            <div class="survey_item">
+              <h3 class="survey_item_title">
+                1. Вопрос, где можно выбирать один вариант ответа
+              </h3>
 
-            <div class="survey_variant">
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
+              <div class="survey_variant">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
+
+              <div class="survey_variant">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Выбранный вариант ответа</label>
+              </div>
+              <div class="survey_variant">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
+              <div class="survey_variant">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
             </div>
 
-            <div class="survey_variant">
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Выбранный вариант ответа</label>
+            <div class="survey_item">
+              <h3 class="survey_item_title">
+                2. Вопрос, где можно выбирать несколько ответов
+              </h3>
+
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
+
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Выбранный вариант ответа</label>
+              </div>
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
             </div>
-            <div class="survey_variant">
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
-            </div>
-            <div class="survey_variant">
-              <input
-                type="radio"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
+
+            <div class="survey_item">
+              <h3 class="survey_item_title">
+                3. Вопрос, где можно выбирать несколько ответов
+              </h3>
+
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
+
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Выбранный вариант ответа</label>
+              </div>
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="xz"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="xz">Вариант ответа</label>
+              </div>
+              <div class="survey_variant">
+                <input
+                  type="checkbox"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Вариант ответа</label>
+              </div>
             </div>
           </div>
 
-          <div class="survey_item">
-            <h3 class="survey_item_title">
-              2. Вопрос, где можно выбирать несколько ответов
-            </h3>
-
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
-            </div>
-
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Выбранный вариант ответа</label>
-            </div>
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
-            </div>
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
-            </div>
-          </div>
-
-          <div class="survey_item">
-            <h3 class="survey_item_title">
-              3. Вопрос, где можно выбирать несколько ответов
-            </h3>
-
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
-            </div>
-
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Выбранный вариант ответа</label>
-            </div>
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="xz"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="xz">Вариант ответа</label>
-            </div>
-            <div class="survey_variant">
-              <input
-                type="checkbox"
-                id="male"
-                name="gender"
-                value="male"
-                required
-              />
-              <label for="male">Вариант ответа</label>
-            </div>
-          </div>
-        </div>
-
-        <Button>Отправить ответы</Button>
-      </form>
+          <Button>Отправить ответы</Button>
+        </form>
+      </div>
     </div>
   </div>
 </template>

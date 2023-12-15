@@ -10,6 +10,11 @@ const routes = [
     component: () => import("../views/HomeView.vue"),
   },
   {
+    path: "/personal-area",
+    name: "personalArea",
+    component: () => import("../views/PersonalAreaView.vue"),
+  },
+  {
     path: "/",
     name: "navigationLayout",
     component: () => import("../layouts/NavigationLayout.vue"),
@@ -108,6 +113,11 @@ const routes = [
         path: "/international-relationship",
         name: "internationalRelationship",
         component: () => import("../views/InternationalRelationshipsView.vue"),
+      },
+      {
+        path: "/faq",
+        name: "faq",
+        component: () => import("../views/FaqView.vue"),
       },
     ],
   },

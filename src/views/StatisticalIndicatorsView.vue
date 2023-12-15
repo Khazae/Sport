@@ -1,51 +1,53 @@
 <template>
   <div class="budget_wrapper">
-    <div class="budget_content">
-      <div class="budget_items">
-        <h3 class="budget_title">2023 год</h3>
-        <div class="budget_item">
-          <BudgetFile />
+    <div class="container">
+      <div class="budget_content">
+        <div class="budget_items">
+          <h3 class="budget_title">2023 год</h3>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
         </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-      </div>
 
-      <div class="budget_items">
-        <h3 class="budget_title">2022 год</h3>
-        <div class="budget_item">
-          <BudgetFile />
+        <div class="budget_items">
+          <h3 class="budget_title">2022 год</h3>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
         </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-      </div>
 
-      <div class="budget_items">
-        <h3 class="budget_title">2021 год</h3>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-        <div class="budget_item">
-          <BudgetFile />
-        </div>
-        <div class="budget_item">
-          <BudgetFile />
+        <div class="budget_items">
+          <h3 class="budget_title">2021 год</h3>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
+          <div class="budget_item">
+            <BudgetFile />
+          </div>
         </div>
       </div>
     </div>

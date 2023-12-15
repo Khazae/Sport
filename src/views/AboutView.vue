@@ -1,16 +1,56 @@
 <template>
   <div class="about_wrapper">
-    <div class="about_content">
-      <div class="about_left_content">
-        <img
-          src="../assets/about.png"
-          class="about_left_content_img"
-          alt="About"
-        />
+    <HeaderTitle title="О нас" />
+    <div class="container">
+      <div class="about_content">
+        <div class="about_left_content">
+          <img
+            src="../assets/about.png"
+            class="about_left_content_img"
+            alt="About"
+          />
+        </div>
+        <div class="about_right_content">
+          <h3 class="about_title">Добро пожаловать</h3>
+          <p class="about_desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            ligula nibh, interdum non enim sit amet, iaculis aliquet nunc. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Aliquam sit amet ipsum ac velit egestas
+            ultrices. Vestibulum et neque id ex semper varius a sit amet metus.
+            Vivamus congue dolor eget aliquam hendrerit. Etiam iaculis finibus
+            egestas. Nam viverra urna quis odio efficitur malesuada. Maecenas
+            rhoncus enim eu scelerisque rutrum. Pellentesque et mollis enim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            sed commodo leo. Suspendisse potenti. Maecenas gravida ipsum
+            placerat ligula posuere, ut rhoncus velit eleifend.
+          </p>
+        </div>
       </div>
-      <div class="about_right_content">
-        <h3 class="about_title">Добро пожаловать</h3>
-        <p class="about_desc">
+
+      <div class="about_history">
+        <h3 class="about_title">Наша история</h3>
+        <p class="about_history_desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula
+          nibh, interdum non enim sit amet, iaculis aliquet nunc. Class aptent
+          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+          himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices.
+          Vestibulum et neque id ex semper varius a sit amet metus. Vivamus
+          congue dolor eget aliquam hendrerit. Etiam iaculis finibus egestas.
+          Nam viverra urna quis odio efficitur malesuada. Maecenas rhoncus enim
+          eu scelerisque rutrum. Pellentesque et mollis enim. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit. Curabitur sed commodo leo.
+          Suspendisse potenti. Maecenas gravida ipsum placerat ligula posuere,
+          ut rhoncus velit eleifend.
+        </p>
+        <img
+          src="../assets/aboutHistory.png"
+          class="about_history_img"
+          alt="History"
+        />
+
+        <h3 class="about_title">Заголовок</h3>
+        <p class="about_history_desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula
           nibh, interdum non enim sit amet, iaculis aliquet nunc. Class aptent
           taciti sociosqu ad litora torquent per conubia nostra, per inceptos
@@ -25,48 +65,12 @@
         </p>
       </div>
     </div>
-
-    <div class="about_history">
-      <h3 class="about_title">Наша история</h3>
-      <p class="about_history_desc">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula
-        nibh, interdum non enim sit amet, iaculis aliquet nunc. Class aptent
-        taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-        himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices. Vestibulum
-        et neque id ex semper varius a sit amet metus. Vivamus congue dolor eget
-        aliquam hendrerit. Etiam iaculis finibus egestas. Nam viverra urna quis
-        odio efficitur malesuada. Maecenas rhoncus enim eu scelerisque rutrum.
-        Pellentesque et mollis enim. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Curabitur sed commodo leo. Suspendisse potenti.
-        Maecenas gravida ipsum placerat ligula posuere, ut rhoncus velit
-        eleifend.
-      </p>
-      <img
-        src="../assets/aboutHistory.png"
-        class="about_history_img"
-        alt="History"
-      />
-
-      <h3 class="about_title">Заголовок</h3>
-      <p class="about_history_desc">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula
-        nibh, interdum non enim sit amet, iaculis aliquet nunc. Class aptent
-        taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-        himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices. Vestibulum
-        et neque id ex semper varius a sit amet metus. Vivamus congue dolor eget
-        aliquam hendrerit. Etiam iaculis finibus egestas. Nam viverra urna quis
-        odio efficitur malesuada. Maecenas rhoncus enim eu scelerisque rutrum.
-        Pellentesque et mollis enim. Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Curabitur sed commodo leo. Suspendisse potenti.
-        Maecenas gravida ipsum placerat ligula posuere, ut rhoncus velit
-        eleifend.
-      </p>
-    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import HeaderTitle from "../components/HeaderTitle.vue";
+export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>

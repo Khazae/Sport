@@ -1,184 +1,186 @@
 <template>
   <div class="press_releases_wrapper">
-    <div class="press_releases_content">
-      <div class="press_releases_news_content">
-        <div class="press_releases_title">Заголовок новости</div>
-        <div class="press_releases_catalog">
-          <div class="press_releases_catalog_author">Автор</div>
-          <div class="press_releases_catalog_category">Категория</div>
-          <div class="press_releases_catalog_date">2 часа назад</div>
-        </div>
-        <img src="../assets/pressRea.png" class="press_releases_img" alt="" />
-
-        <p class="press_releases_p">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula
-          nibh, interdum non enim sit amet, iaculis aliquet nunc. Class aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-          himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices.
-          Vestibulum et neque id ex semper varius a sit amet metus. Vivamus
-          congue dolor eget aliquam hendrerit. Etiam iaculis finibus egestas.
-          Nam viverra urna quis odio efficitur malesuada. Maecenas rhoncus enim
-          eu scelerisque rutrum. Pellentesque et mollis enim. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Curabitur sed commodo leo.
-          Suspendisse potenti. Maecenas gravida ipsum placerat ligula posuere,
-          ut rhoncus velit eleifend.
-        </p>
-
-        <p class="press_releases_p">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula
-          nibh, interdum non enim sit amet, iaculis aliquet nunc. Class aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-          himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices.
-          Vestibulum et neque id ex semper varius a sit amet metus. Vivamus
-          congue dolor eget aliquam hendrerit. Etiam iaculis finibus egestas.
-          Nam viverra urna quis odio efficitur malesuada. Maecenas rhoncus enim
-          eu scelerisque rutrum. Pellentesque et mollis enim. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Curabitur sed commodo leo.
-          Suspendisse potenti. Maecenas gravida ipsum placerat ligula posuere,
-          ut rhoncus velit eleifend.
-        </p>
-
-        <p class="press_releases_p">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula
-          nibh, interdum non enim sit amet, iaculis aliquet nunc. Class aptent
-          taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-          himenaeos. Aliquam sit amet ipsum ac velit egestas ultrices.
-          Vestibulum et neque id ex semper varius a sit amet metus. Vivamus
-          congue dolor eget aliquam hendrerit. Etiam iaculis finibus egestas.
-          Nam viverra urna quis odio efficitur malesuada. Maecenas rhoncus enim
-          eu scelerisque rutrum. Pellentesque et mollis enim. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit. Curabitur sed commodo leo.
-          Suspendisse potenti. Maecenas gravida ipsum placerat ligula posuere,
-          ut rhoncus velit eleifend.
-        </p>
-      </div>
-      <div class="press_releases_other_news_content">
-        <div class="press_releases_other_news_title">Другие новости</div>
-        <div class="press_releases_other_news_items">
-          <div class="press_releases_other_news_item">
-            <a href="#">
-              <img
-                src="../assets/pressReaItem.png"
-                class="press_releases_other_news_item_img"
-                alt=""
-              />
-              <div class="press_releases_other_news_item_title">
-                Заголовок новости
-              </div>
-            </a>
+    <div class="container">
+      <div class="press_releases_content">
+        <div class="press_releases_news_content">
+          <div class="press_releases_title">Заголовок новости</div>
+          <div class="press_releases_catalog">
+            <div class="press_releases_catalog_author">Автор</div>
+            <div class="press_releases_catalog_category">Категория</div>
+            <div class="press_releases_catalog_date">2 часа назад</div>
           </div>
-          <div class="press_releases_other_news_item">
-            <a href="#">
-              <img
-                src="../assets/pressReaItem.png"
-                class="press_releases_other_news_item_img"
-                alt=""
-              />
-              <div class="press_releases_other_news_item_title">
-                Заголовок новости
-              </div>
-            </a>
-          </div>
-          <div class="press_releases_other_news_item">
-            <a href="#">
-              <img
-                src="../assets/pressReaItem.png"
-                class="press_releases_other_news_item_img"
-                alt=""
-              />
-              <div class="press_releases_other_news_item_title">
-                Заголовок новости
-              </div></a
-            >
-          </div>
+          <img src="../assets/pressRea.png" class="press_releases_img" alt="" />
+
+          <p class="press_releases_p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            ligula nibh, interdum non enim sit amet, iaculis aliquet nunc. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Aliquam sit amet ipsum ac velit egestas
+            ultrices. Vestibulum et neque id ex semper varius a sit amet metus.
+            Vivamus congue dolor eget aliquam hendrerit. Etiam iaculis finibus
+            egestas. Nam viverra urna quis odio efficitur malesuada. Maecenas
+            rhoncus enim eu scelerisque rutrum. Pellentesque et mollis enim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            sed commodo leo. Suspendisse potenti. Maecenas gravida ipsum
+            placerat ligula posuere, ut rhoncus velit eleifend.
+          </p>
+
+          <p class="press_releases_p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            ligula nibh, interdum non enim sit amet, iaculis aliquet nunc. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Aliquam sit amet ipsum ac velit egestas
+            ultrices. Vestibulum et neque id ex semper varius a sit amet metus.
+            Vivamus congue dolor eget aliquam hendrerit. Etiam iaculis finibus
+            egestas. Nam viverra urna quis odio efficitur malesuada. Maecenas
+            rhoncus enim eu scelerisque rutrum. Pellentesque et mollis enim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            sed commodo leo. Suspendisse potenti. Maecenas gravida ipsum
+            placerat ligula posuere, ut rhoncus velit eleifend.
+          </p>
+
+          <p class="press_releases_p">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+            ligula nibh, interdum non enim sit amet, iaculis aliquet nunc. Class
+            aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos. Aliquam sit amet ipsum ac velit egestas
+            ultrices. Vestibulum et neque id ex semper varius a sit amet metus.
+            Vivamus congue dolor eget aliquam hendrerit. Etiam iaculis finibus
+            egestas. Nam viverra urna quis odio efficitur malesuada. Maecenas
+            rhoncus enim eu scelerisque rutrum. Pellentesque et mollis enim.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
+            sed commodo leo. Suspendisse potenti. Maecenas gravida ipsum
+            placerat ligula posuere, ut rhoncus velit eleifend.
+          </p>
         </div>
-      </div>
-
-      <div class="press_releases_comment_content">
-        <div class="press_releases_comment_title">Комментарии</div>
-
-        <div class="press_releases_comment_form">
-          <input
-            type="text"
-            class="press_releases_comment_form_name"
-            placeholder="Ваше имя"
-          />
-          <input
-            type="text"
-            class="press_releases_comment_form_comment"
-            placeholder="Ваш комментарий ..."
-          />
-          <button class="press_releases_comment_form_button" type="submit">
-            Comment
-          </button>
-        </div>
-
-        <div class="press_releases_comment_items">
-          <div class="press_releases_comment_content_item">
-            <div class="press_releases_comment_content_item_user">
-              <img
-                src="../assets/commentAva.svg"
-                class="press_releases_comment_content_item_user_img"
-                alt="User"
-              />
-              <span class="press_releases_comment_content_item_user_title"
-                >user</span
+        <div class="press_releases_other_news_content">
+          <div class="press_releases_other_news_title">Другие новости</div>
+          <div class="press_releases_other_news_items">
+            <div class="press_releases_other_news_item">
+              <a href="#">
+                <img
+                  src="../assets/pressReaItem.png"
+                  class="press_releases_other_news_item_img"
+                  alt=""
+                />
+                <div class="press_releases_other_news_item_title">
+                  Заголовок новости
+                </div>
+              </a>
+            </div>
+            <div class="press_releases_other_news_item">
+              <a href="#">
+                <img
+                  src="../assets/pressReaItem.png"
+                  class="press_releases_other_news_item_img"
+                  alt=""
+                />
+                <div class="press_releases_other_news_item_title">
+                  Заголовок новости
+                </div>
+              </a>
+            </div>
+            <div class="press_releases_other_news_item">
+              <a href="#">
+                <img
+                  src="../assets/pressReaItem.png"
+                  class="press_releases_other_news_item_img"
+                  alt=""
+                />
+                <div class="press_releases_other_news_item_title">
+                  Заголовок новости
+                </div></a
               >
             </div>
-            <div class="press_releases_comment_content_item_content">
-              <div class="press_releases_comment_content_item_content_text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
-              </div>
+          </div>
+        </div>
 
-              <div class="press_releases_comment_content_item_content_date">
-                20.11.2023
-              </div>
-            </div>
+        <div class="press_releases_comment_content">
+          <div class="press_releases_comment_title">Комментарии</div>
+
+          <div class="press_releases_comment_form">
+            <input
+              type="text"
+              class="press_releases_comment_form_name"
+              placeholder="Ваше имя"
+            />
+            <input
+              type="text"
+              class="press_releases_comment_form_comment"
+              placeholder="Ваш комментарий ..."
+            />
+            <button class="press_releases_comment_form_button" type="submit">
+              Comment
+            </button>
           </div>
 
-          <div class="press_releases_comment_content_item">
-            <div class="press_releases_comment_content_item_user">
-              <img
-                src="../assets/commentAva.svg"
-                class="press_releases_comment_content_item_user_img"
-                alt="User"
-              />
-              <span class="press_releases_comment_content_item_user_title"
-                >user</span
-              >
-            </div>
-            <div class="press_releases_comment_content_item_content">
-              <div class="press_releases_comment_content_item_content_text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
+          <div class="press_releases_comment_items">
+            <div class="press_releases_comment_content_item">
+              <div class="press_releases_comment_content_item_user">
+                <img
+                  src="../assets/commentAva.svg"
+                  class="press_releases_comment_content_item_user_img"
+                  alt="User"
+                />
+                <span class="press_releases_comment_content_item_user_title"
+                  >user</span
+                >
               </div>
+              <div class="press_releases_comment_content_item_content">
+                <div class="press_releases_comment_content_item_content_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
+                </div>
 
-              <div class="press_releases_comment_content_item_content_date">
-                20.11.2023
+                <div class="press_releases_comment_content_item_content_date">
+                  20.11.2023
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="press_releases_comment_content_item">
-            <div class="press_releases_comment_content_item_user">
-              <img
-                src="../assets/commentAva.svg"
-                class="press_releases_comment_content_item_user_img"
-                alt="User"
-              />
-              <span class="press_releases_comment_content_item_user_title"
-                >user</span
-              >
-            </div>
-            <div class="press_releases_comment_content_item_content">
-              <div class="press_releases_comment_content_item_content_text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
+            <div class="press_releases_comment_content_item">
+              <div class="press_releases_comment_content_item_user">
+                <img
+                  src="../assets/commentAva.svg"
+                  class="press_releases_comment_content_item_user_img"
+                  alt="User"
+                />
+                <span class="press_releases_comment_content_item_user_title"
+                  >user</span
+                >
               </div>
+              <div class="press_releases_comment_content_item_content">
+                <div class="press_releases_comment_content_item_content_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
+                </div>
 
-              <div class="press_releases_comment_content_item_content_date">
-                20.11.2023
+                <div class="press_releases_comment_content_item_content_date">
+                  20.11.2023
+                </div>
+              </div>
+            </div>
+
+            <div class="press_releases_comment_content_item">
+              <div class="press_releases_comment_content_item_user">
+                <img
+                  src="../assets/commentAva.svg"
+                  class="press_releases_comment_content_item_user_img"
+                  alt="User"
+                />
+                <span class="press_releases_comment_content_item_user_title"
+                  >user</span
+                >
+              </div>
+              <div class="press_releases_comment_content_item_content">
+                <div class="press_releases_comment_content_item_content_text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+                  ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
+                </div>
+
+                <div class="press_releases_comment_content_item_content_date">
+                  20.11.2023
+                </div>
               </div>
             </div>
           </div>

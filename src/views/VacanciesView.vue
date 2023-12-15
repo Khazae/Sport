@@ -1,100 +1,106 @@
 <template>
   <div class="vacancies_wrapper">
-    <div class="vacancies_content">
-      <div class="vacancies_items">
-        <div class="vacancies_item">
-          <div class="vacancies_item_text_content">
-            <div class="vacancies_item_text">
-              <h3 class="vacancies_item_text_title">Должность</h3>
-              <span class="vacancies_item_text_employment"
-                >Полная занятость</span
-              >
+    <div class="container">
+      <div class="vacancies_content">
+        <div class="vacancies_items">
+          <div class="vacancies_item">
+            <div class="vacancies_item_text_content">
+              <div class="vacancies_item_text">
+                <h3 class="vacancies_item_text_title">Должность</h3>
+                <span class="vacancies_item_text_employment"
+                  >Полная занятость</span
+                >
+              </div>
+              <div class="vacancies_item_price">
+                675 000 - 800 000 ₸ на руки
+              </div>
+              <p class="vacancies_item_desc">
+                Руководит производственной, административно-хозяйственной и
+                финансово-экономической деятельностью организации, обеспечивает
+                исполнение принимаемых решений, сохранность и эффективное
+                использование имущества организации, содержащегося на его
+                балансе, а также финансово-хозяйственные результаты ее
+                деятельности, определяет политику
+              </p>
+              <div class="vacanciesButton">
+                <a href="#" class="link"
+                  ><div class="link__text">
+                    Подробнее
+                    <svg
+                      width="32"
+                      height="8"
+                      viewBox="0 0 32 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM31.3536 4.35355C31.5488 4.15829 31.5488 3.84171 31.3536 3.64644L28.1716 0.464464C27.9763 0.269202 27.6597 0.269202 27.4645 0.464464C27.2692 0.659726 27.2692 0.976308 27.4645 1.17157L30.2929 4L27.4645 6.82842C27.2692 7.02369 27.2692 7.34027 27.4645 7.53553C27.6597 7.73079 27.9763 7.73079 28.1716 7.53553L31.3536 4.35355ZM1 4.5L31 4.5L31 3.5L1 3.5L1 4.5Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </div>
             </div>
-            <div class="vacancies_item_price">675 000 - 800 000 ₸ на руки</div>
-            <p class="vacancies_item_desc">
-              Руководит производственной, административно-хозяйственной и
-              финансово-экономической деятельностью организации, обеспечивает
-              исполнение принимаемых решений, сохранность и эффективное
-              использование имущества организации, содержащегося на его балансе,
-              а также финансово-хозяйственные результаты ее деятельности,
-              определяет политику
-            </p>
-            <div class="vacanciesButton">
-              <a href="#" class="link"
-                ><div class="link__text">
-                  Подробнее
-                  <svg
-                    width="32"
-                    height="8"
-                    viewBox="0 0 32 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM31.3536 4.35355C31.5488 4.15829 31.5488 3.84171 31.3536 3.64644L28.1716 0.464464C27.9763 0.269202 27.6597 0.269202 27.4645 0.464464C27.2692 0.659726 27.2692 0.976308 27.4645 1.17157L30.2929 4L27.4645 6.82842C27.2692 7.02369 27.2692 7.34027 27.4645 7.53553C27.6597 7.73079 27.9763 7.73079 28.1716 7.53553L31.3536 4.35355ZM1 4.5L31 4.5L31 3.5L1 3.5L1 4.5Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-              </a>
+          </div>
+
+          <div class="vacancies_item">
+            <div class="vacancies_item_text_content">
+              <div class="vacancies_item_text">
+                <h3 class="vacancies_item_text_title">Должность</h3>
+                <span class="vacancies_item_text_employment"
+                  >Частичная занятость</span
+                >
+              </div>
+              <div class="vacancies_item_price">
+                675 000 - 800 000 ₸ на руки
+              </div>
+              <p class="vacancies_item_desc">
+                Руководит производственной, административно-хозяйственной и
+                финансово-экономической деятельностью организации, обеспечивает
+                исполнение принимаемых решений, сохранность и эффективное
+                использование имущества организации, содержащегося на его
+                балансе, а также финансово-хозяйственные результаты ее
+                деятельности, определяет политику
+              </p>
+              <div class="vacanciesButton">
+                <a href="#" class="link"
+                  ><div class="link__text">
+                    Подробнее
+                    <svg
+                      width="32"
+                      height="8"
+                      viewBox="0 0 32 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM31.3536 4.35355C31.5488 4.15829 31.5488 3.84171 31.3536 3.64644L28.1716 0.464464C27.9763 0.269202 27.6597 0.269202 27.4645 0.464464C27.2692 0.659726 27.2692 0.976308 27.4645 1.17157L30.2929 4L27.4645 6.82842C27.2692 7.02369 27.2692 7.34027 27.4645 7.53553C27.6597 7.73079 27.9763 7.73079 28.1716 7.53553L31.3536 4.35355ZM1 4.5L31 4.5L31 3.5L1 3.5L1 4.5Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="vacancies_item">
-          <div class="vacancies_item_text_content">
-            <div class="vacancies_item_text">
-              <h3 class="vacancies_item_text_title">Должность</h3>
-              <span class="vacancies_item_text_employment"
-                >Частичная занятость</span
-              >
+        <div class="vacancies_about">
+          <div class="vacancies_about_title">
+            Для получения подробной информации о вакантных должностях:
+          </div>
+          <div class="vacancies_about_desc">
+            <div class="vacancies_about_desc_name">
+              Ермагамбетова Айна Бакитовна
             </div>
-            <div class="vacancies_item_price">675 000 - 800 000 ₸ на руки</div>
-            <p class="vacancies_item_desc">
-              Руководит производственной, административно-хозяйственной и
-              финансово-экономической деятельностью организации, обеспечивает
-              исполнение принимаемых решений, сохранность и эффективное
-              использование имущества организации, содержащегося на его балансе,
-              а также финансово-хозяйственные результаты ее деятельности,
-              определяет политику
-            </p>
-            <div class="vacanciesButton">
-              <a href="#" class="link"
-                ><div class="link__text">
-                  Подробнее
-                  <svg
-                    width="32"
-                    height="8"
-                    viewBox="0 0 32 8"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M1 3.5C0.723858 3.5 0.5 3.72386 0.5 4C0.5 4.27614 0.723858 4.5 1 4.5L1 3.5ZM31.3536 4.35355C31.5488 4.15829 31.5488 3.84171 31.3536 3.64644L28.1716 0.464464C27.9763 0.269202 27.6597 0.269202 27.4645 0.464464C27.2692 0.659726 27.2692 0.976308 27.4645 1.17157L30.2929 4L27.4645 6.82842C27.2692 7.02369 27.2692 7.34027 27.4645 7.53553C27.6597 7.73079 27.9763 7.73079 28.1716 7.53553L31.3536 4.35355ZM1 4.5L31 4.5L31 3.5L1 3.5L1 4.5Z"
-                      fill="white"
-                    />
-                  </svg>
-                </div>
-              </a>
+            <div class="vacancies_about_desc_status">
+              руководитель отдела кадровой работы и документации
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="vacancies_about">
-        <div class="vacancies_about_title">
-          Для получения подробной информации о вакантных должностях:
-        </div>
-        <div class="vacancies_about_desc">
-          <div class="vacancies_about_desc_name">
-            Ермагамбетова Айна Бакитовна
-          </div>
-          <div class="vacancies_about_desc_status">
-            руководитель отдела кадровой работы и документации
-          </div>
-          <div class="vacancies_about_desc_contacts">
-            <p>e-mail: <a href="#">sabrinas_09@mail.ru</a></p>
-            <p>Телефон: <a href="#">8702 350 18 27</a></p>
+            <div class="vacancies_about_desc_contacts">
+              <p>e-mail: <a href="#">sabrinas_09@mail.ru</a></p>
+              <p>Телефон: <a href="#">8702 350 18 27</a></p>
+            </div>
           </div>
         </div>
       </div>

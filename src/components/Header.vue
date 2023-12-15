@@ -12,8 +12,10 @@
       </div>
       <div class="rightContent">
         <nav class="nav">
-          <ul class="list">
-            <li class="listItem"><a class="listLink" href="#">О нас</a></li>
+          <ul class="list" @mouseover="showDropdown" @mouseleave="hideDropdown">
+            <li class="listItem">
+              <a class="listLink" href="#">О нас</a>
+            </li>
             <li class="listItem">
               <a class="listLink" href="#">Виды спорта</a>
             </li>
@@ -38,6 +40,85 @@
         </div>
       </div>
     </div>
+
+    <div
+      class="headerDropdownMenu"
+      v-show="isDropdownVisible"
+      @mouseover="showDropdown"
+      @mouseleave="hideDropdown"
+    >
+      <div class="headerDropdownMenuContent">
+        <div class="headerDropdownMenuItems">
+          <div class="headerDropdownMenuItem">
+            <ul class="headerDropdownMenuList">
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="headerDropdownMenuItem">
+            <ul class="headerDropdownMenuList">
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="headerDropdownMenuItem">
+            <ul class="headerDropdownMenuList">
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="headerDropdownMenuItem">
+            <ul class="headerDropdownMenuList">
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+              <li class="headerDropdownMenuLi">
+                <a href="#" class="headerDropdownMenuLink">Наша история</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 </template>
 
@@ -45,7 +126,18 @@
 export default {
   name: "HeaderComponent",
   data() {
-    return {};
+    return {
+      isDropdownVisible: false,
+    };
+  },
+  methods: {
+    showDropdown() {
+      this.isDropdownVisible = true;
+      console.log("show");
+    },
+    hideDropdown() {
+      this.isDropdownVisible = false;
+    },
   },
 };
 </script>
@@ -61,6 +153,7 @@ export default {
   /* position: absolute;
   top: 0;
   z-index: 100; */
+  position: relative;
 }
 
 .headerContent {
@@ -84,6 +177,7 @@ export default {
 .logo {
   width: 53px;
   height: 53px;
+  border-radius: 50%;
 }
 
 .logoText {
@@ -139,6 +233,15 @@ export default {
   transform: translate(-50%, 0) rotate(303deg);
 }
 
+.listItem {
+  display: inline-block;
+  position: relative;
+}
+
+.listItem:hover .headerDropdownMenu {
+  display: block;
+}
+
 .rightContent {
   display: flex;
   align-items: center;
@@ -190,5 +293,54 @@ export default {
   position: absolute;
   top: 9px;
   margin-left: 8px;
+}
+
+.headerDropdownMenu {
+  position: absolute;
+  padding-top: 24px;
+  z-index: 1000000;
+  width: 100%;
+  height: 320px;
+}
+
+.headerDropdownMenuContent {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    linear-gradient(172.01deg, #1d458b 6.15%, #2385c3 700.3%),
+    linear-gradient(0deg, #ffffff, #ffffff);
+
+  padding: 40px 42px;
+}
+
+.headerDropdownMenuLi {
+  margin-bottom: 24px;
+}
+
+.headerDropdownMenuList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.headerDropdownMenuLink {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  color: var(--link-color);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.headerDropdownMenuLink:hover {
+  color: var(--color-secondary);
+}
+
+.headerDropdownMenuItems {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerDropdownMenuItem {
+  width: 100%;
+  max-width: 270px;
 }
 </style>

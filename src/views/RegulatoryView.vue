@@ -1,18 +1,20 @@
 <template>
   <div class="development_plan_wrapper">
-    <div class="development_plan_content">
-      <div class="development_plan_items">
-        <div class="development_plan_item">
-          <BudgetFile />
-        </div>
-        <div class="development_plan_item">
-          <BudgetFile />
-        </div>
-        <div class="development_plan_item">
-          <BudgetFile />
-        </div>
-        <div class="development_plan_item">
-          <BudgetFile />
+    <div class="container">
+      <div class="development_plan_content">
+        <div class="development_plan_items">
+          <div class="development_plan_item">
+            <BudgetFile />
+          </div>
+          <div class="development_plan_item">
+            <BudgetFile />
+          </div>
+          <div class="development_plan_item">
+            <BudgetFile />
+          </div>
+          <div class="development_plan_item">
+            <BudgetFile />
+          </div>
         </div>
       </div>
     </div>

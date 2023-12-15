@@ -19,4 +19,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+#app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-view {
+  flex: 1;
+}
+
+Footer {
+  margin-top: auto;
+}
+</style>

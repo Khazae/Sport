@@ -1,64 +1,66 @@
 <template>
   <div class="about_manual_wrapper">
-    <div class="about_manual_content">
-      <div class="about_manual_items">
-        <div class="about_manual_item">
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6utcf608_fa3aHeU4rCkVDu2CUsI0rR2mfg&usqp=CAU"
-            class="about_manual_item_image"
-            alt=""
-          />
-          <div class="about_manual_text">
-            <div class="about_manual_text_title">Фамилия И.О.</div>
-            <div class="about_manual_text_desc">Титул</div>
+    <div class="container">
+      <div class="about_manual_content">
+        <div class="about_manual_items">
+          <div class="about_manual_item">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6utcf608_fa3aHeU4rCkVDu2CUsI0rR2mfg&usqp=CAU"
+              class="about_manual_item_image"
+              alt=""
+            />
+            <div class="about_manual_text">
+              <div class="about_manual_text_title">Фамилия И.О.</div>
+              <div class="about_manual_text_desc">Титул</div>
+            </div>
           </div>
-        </div>
 
-        <div class="about_manual_item">
-          <img
-            src="../assets/aboutManual.png"
-            class="about_manual_item_image"
-            alt=""
-          />
-          <div class="about_manual_text">
-            <div class="about_manual_text_title">Фамилия И.О.</div>
-            <div class="about_manual_text_desc">Титул</div>
+          <div class="about_manual_item">
+            <img
+              src="../assets/aboutManual.png"
+              class="about_manual_item_image"
+              alt=""
+            />
+            <div class="about_manual_text">
+              <div class="about_manual_text_title">Фамилия И.О.</div>
+              <div class="about_manual_text_desc">Титул</div>
+            </div>
           </div>
-        </div>
 
-        <div class="about_manual_item">
-          <img
-            src="../assets/aboutManual.png"
-            class="about_manual_item_image"
-            alt=""
-          />
-          <div class="about_manual_text">
-            <div class="about_manual_text_title">Фамилия И.О.</div>
-            <div class="about_manual_text_desc">Титул</div>
+          <div class="about_manual_item">
+            <img
+              src="../assets/aboutManual.png"
+              class="about_manual_item_image"
+              alt=""
+            />
+            <div class="about_manual_text">
+              <div class="about_manual_text_title">Фамилия И.О.</div>
+              <div class="about_manual_text_desc">Титул</div>
+            </div>
           </div>
-        </div>
 
-        <div class="about_manual_item">
-          <img
-            src="../assets/aboutManual.png"
-            class="about_manual_item_image"
-            alt=""
-          />
-          <div class="about_manual_text">
-            <div class="about_manual_text_title">Фамилия И.О.</div>
-            <div class="about_manual_text_desc">Титул</div>
+          <div class="about_manual_item">
+            <img
+              src="../assets/aboutManual.png"
+              class="about_manual_item_image"
+              alt=""
+            />
+            <div class="about_manual_text">
+              <div class="about_manual_text_title">Фамилия И.О.</div>
+              <div class="about_manual_text_desc">Титул</div>
+            </div>
           </div>
-        </div>
 
-        <div class="about_manual_item">
-          <img
-            src="../assets/aboutManual.png"
-            class="about_manual_item_image"
-            alt=""
-          />
-          <div class="about_manual_text">
-            <div class="about_manual_text_title">Фамилия И.О.</div>
-            <div class="about_manual_text_desc">Титул</div>
+          <div class="about_manual_item">
+            <img
+              src="../assets/aboutManual.png"
+              class="about_manual_item_image"
+              alt=""
+            />
+            <div class="about_manual_text">
+              <div class="about_manual_text_title">Фамилия И.О.</div>
+              <div class="about_manual_text_desc">Титул</div>
+            </div>
           </div>
         </div>
       </div>
