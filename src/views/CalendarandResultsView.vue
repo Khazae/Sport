@@ -362,7 +362,4 @@ export default { components: { HeaderTitle } };
   max-width: 47px;
   max-height: 32px;
 }
-
-.tableDate {
-}
 </style>

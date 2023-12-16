@@ -17,7 +17,7 @@
                 Ханчжоу
               </div>
               <div class="mainSection__action">
-                <a href="">Смотреть результаты</a>
+                <router-link to="/calendar">Смотреть результаты</router-link>
               </div>
             </div>
           </div>
@@ -32,7 +32,7 @@
               Ханчжоу
             </div>
             <div class="mainSection__action">
-              <a href="">Смотреть результаты</a>
+              <router-link to="/calendar">Смотреть результаты</router-link>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@
               Ханчжоу
             </div>
             <div class="mainSection__action">
-              <a href="">Смотреть результаты</a>
+              <router-link to="/calendar">Смотреть результаты</router-link>
             </div>
           </div>
         </div>
