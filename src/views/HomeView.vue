@@ -37,7 +37,7 @@
 
             <div class="newsItems">
               <div class="newsItem">
-                <a href="#" class="newsLink">
+                <router-link to="/press-releases" class="newsLink">
                   <img src="../assets/news1.svg" class="newsImage" alt="News" />
                   <div class="newsTextContent">
                     <h3 class="newsText">
@@ -46,11 +46,11 @@
                     </h3>
                     <span class="newsDate">1 час назад</span>
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="newsItem">
-                <a href="#" class="newsLink">
+                <router-link to="/press-releases" class="newsLink">
                   <img src="../assets/news1.svg" class="newsImage" alt="News" />
                   <div class="newsTextContent">
                     <h3 class="newsText">
@@ -59,11 +59,11 @@
                     </h3>
                     <span class="newsDate">1 час назад</span>
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="newsItem">
-                <a href="#" class="newsLink">
+                <router-link to="/press-releases" class="newsLink">
                   <img src="../assets/news1.svg" class="newsImage" alt="News" />
                   <div class="newsTextContent">
                     <h3 class="newsText">
@@ -72,7 +72,7 @@
                     </h3>
                     <span class="newsDate">1 час назад</span>
                   </div>
-                </a>
+                </router-link>
               </div>
             </div>
             <a href="#" class="link"
@@ -103,51 +103,63 @@
 
             <div class="competitionsContent__row">
               <div class="competitionsContent__row__item">
-                <a href="#" class="competitionsContent__row__item_link">
+                <router-link
+                  to="/calendar"
+                  class="competitionsContent__row__item_link"
+                >
                   <div class="competitionsContent__row__item__data">
                     5.11.2023
                   </div>
                   <div class="competitionsContent__row__item__text">
                     IV Азиатские пара пара игры Ханчжоу
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="competitionsContent__row__item">
-                <a href="#" class="competitionsContent__row__item_link">
+                <router-link
+                  to="/calendar"
+                  class="competitionsContent__row__item_link"
+                >
                   <div class="competitionsContent__row__item__data">
                     5.11.2023
                   </div>
                   <div class="competitionsContent__row__item__text">
                     Открытый турнир по пара настольному теннису
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="competitionsContent__row__item">
-                <a href="#" class="competitionsContent__row__item_link">
+                <router-link
+                  to="/calendar"
+                  class="competitionsContent__row__item_link"
+                >
                   <div class="competitionsContent__row__item__data">
                     5.11.2023
                   </div>
                   <div class="competitionsContent__row__item__text">
                     Чемпионат мира по пара дзюдо
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="competitionsContent__row__item">
-                <a href="#" class="competitionsContent__row__item_link">
+                <router-link
+                  to="/calendar"
+                  class="competitionsContent__row__item_link"
+                >
                   <div class="competitionsContent__row__item__data">
                     5.11.2023
                   </div>
                   <div class="competitionsContent__row__item__text">
                     Чемпионат мира по пара хоккею
                   </div>
-                </a>
+                </router-link>
               </div>
             </div>
 
-            <a href="#" class="link"
+            <router-link to="/calendar" class="link"
               ><div class="link__text">
                 Смотреть все
                 <svg
@@ -163,7 +175,7 @@
                   />
                 </svg>
               </div>
-            </a>
+            </router-link>
           </div>
         </div>
       </section>

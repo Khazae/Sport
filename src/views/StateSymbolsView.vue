@@ -1,5 +1,5 @@
 <template>
-  <div class="state_symbols_wrapper">
+  <div class="state_symbols_wrapper littleStateSymbolsWrapper">
     <HeaderTitle title="Государственные символы Рк" />
     <div class="container">
       <div class="state_symbols_content">

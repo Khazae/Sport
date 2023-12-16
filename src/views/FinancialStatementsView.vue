@@ -24,6 +24,10 @@ export default { components: { BudgetFile, HeaderTitle } };
 </script>
 
 <style scoped>
+.development_plan_wrapper {
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
 .development_plan_content {
   width: 100%;
   max-width: 970px;

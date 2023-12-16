@@ -1,11 +1,21 @@
 <template>
-  <div class="navigationContainer">
+  <div id="navigation">
+    <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
+import Header from "../components/Header.vue";
+import Footer from "../components/Footer.vue";
+
 export default {
+  name: "App",
+  components: {
+    Header,
+    Footer,
+  },
   mounted() {
     document.body.style.backgroundColor = "#ebeef3";
   },
@@ -16,9 +26,17 @@ export default {
 </script>
 
 <style scoped>
-.navigationContainer {
-  padding-top: 97px;
-  padding-bottom: 200px;
-  background-color: #ebeef3;
+#navigation {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+router-view {
+  flex: 1;
+}
+
+Footer {
+  margin-top: auto;
 }
 </style>

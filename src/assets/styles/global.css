@@ -806,19 +806,35 @@ a {
   position: relative;
   z-index: 100;
   overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
 }
 
 .littleWrapper::after {
   content: "";
   width: 100%;
-  max-width: 1296px;
+  max-width: 1372px;
   height: 500px;
   background-image: url("../oiBg2.png");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 20px;
+  top: 550px;
   left: 0;
+  z-index: -1;
+}
+
+.littleWrapper::before {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../oiBg0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -180px;
+  right: 0;
   z-index: -1;
 }
 
@@ -826,6 +842,8 @@ a {
   position: relative;
   z-index: 100;
   overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
 }
 
 .bottomWrapper::after {
@@ -837,7 +855,319 @@ a {
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;
-  bottom: 0;
+  bottom: 80px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleBudgetWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleBudgetWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 530px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleBudgetWrapper::before {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../oiBg0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -400px;
+  right: 0;
+  z-index: -1;
+}
+
+.littleManualWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleManualWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../newBgLeft.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 580px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleDevelopmentWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleDevelopmentWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../newBgLeft.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -130px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleVacanciesWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleVacanciesWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 418px;
+  background-image: url("../newBgLeft.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  z-index: -1;
+}
+
+.littlePressRealeasesWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littlePressRealeasesWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 530px;
+  left: 0;
+  z-index: -1;
+}
+
+.littlePressRealeasesWrapper::before {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../oiBg0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 350px;
+  right: 0;
+  z-index: -1;
+}
+
+.littleInformationAboutWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleInformationAboutWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 380px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleInformationAboutWrapper::before {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 500px;
+  background-image: url("../oiBg0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -380px;
+  right: 0;
+  z-index: -1;
+}
+
+.littleSurveyWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleSurveyWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 460px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleSurveyWrapper::before {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../oiBg0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -13%;
+  right: -60px;
+  z-index: -1;
+}
+
+.littleFaqWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleFaqWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleScheduleWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleScheduleWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -250px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleStateSymbolsWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleStateSymbolsWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 550px;
+  left: 0;
+  z-index: -1;
+}
+
+.littleStateSymbolsWrapper::before {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../oiBg0.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 1200px;
+  right: -60px;
+  z-index: -1;
+}
+
+.littleCorruptionWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+  padding-bottom: 120px;
+  margin-top: 97px;
+}
+
+.littleCorruptionWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: -100px;
   left: 0;
   z-index: -1;
 }

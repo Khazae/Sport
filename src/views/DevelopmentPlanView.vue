@@ -1,5 +1,5 @@
 <template>
-  <div class="development_plan_wrapper">
+  <div class="development_plan_wrapper littleDevelopmentWrapper">
     <HeaderTitle title="План развития" />
     <div class="container">
       <div class="development_plan_content">
@@ -25,6 +25,9 @@ export default { components: { BudgetFile, HeaderTitle } };
 </script>
 
 <style scoped>
+.development_plan_wrapper {
+  padding-bottom: 258px !important;
+}
 .development_plan_content {
   width: 100%;
   max-width: 970px;

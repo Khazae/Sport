@@ -1,5 +1,5 @@
 <template>
-  <div class="budget_wrapper">
+  <div class="budget_wrapper littleBudgetWrapper">
     <HeaderTitle title="Бюджет" />
     <div class="container">
       <div class="budget_content">

@@ -1,5 +1,5 @@
 <template>
-  <div class="budget_wrapper littleWrapper">
+  <div class="budget_wrapper littleCorruptionWrapper">
     <HeaderTitle title="Противодействие коррупции" />
     <div class="container">
       <div class="budget_content">

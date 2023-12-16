@@ -1,5 +1,5 @@
 <template>
-  <div class="press_releases_wrapper">
+  <div class="press_releases_wrapper littlePressRealeasesWrapper">
     <HeaderTitle title="Пресс-релизы" />
     <div class="container">
       <div class="press_releases_content">
@@ -116,52 +116,6 @@
           </div>
 
           <div class="press_releases_comment_items">
-            <div class="press_releases_comment_content_item">
-              <div class="press_releases_comment_content_item_user">
-                <img
-                  src="../assets/commentAva.svg"
-                  class="press_releases_comment_content_item_user_img"
-                  alt="User"
-                />
-                <span class="press_releases_comment_content_item_user_title"
-                  >user</span
-                >
-              </div>
-              <div class="press_releases_comment_content_item_content">
-                <div class="press_releases_comment_content_item_content_text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
-                </div>
-
-                <div class="press_releases_comment_content_item_content_date">
-                  20.11.2023
-                </div>
-              </div>
-            </div>
-
-            <div class="press_releases_comment_content_item">
-              <div class="press_releases_comment_content_item_user">
-                <img
-                  src="../assets/commentAva.svg"
-                  class="press_releases_comment_content_item_user_img"
-                  alt="User"
-                />
-                <span class="press_releases_comment_content_item_user_title"
-                  >user</span
-                >
-              </div>
-              <div class="press_releases_comment_content_item_content">
-                <div class="press_releases_comment_content_item_content_text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                  ligula nibh, interdum non enim sit amet, iaculis aliquet nunc.
-                </div>
-
-                <div class="press_releases_comment_content_item_content_date">
-                  20.11.2023
-                </div>
-              </div>
-            </div>
-
             <div class="press_releases_comment_content_item">
               <div class="press_releases_comment_content_item_user">
                 <img

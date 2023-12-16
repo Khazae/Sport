@@ -1,5 +1,5 @@
 <template>
-  <div class="schedule_personal_wrapper">
+  <div class="schedule_personal_wrapper littleScheduleWrapper">
     <HeaderTitle title="Контакты" />
     <div class="container">
       <div class="schedule_personal_content">
@@ -45,6 +45,9 @@ export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>
+.schedule_personal_wrapper {
+  padding-bottom: 202px !important;
+}
 .schedule_personal_content_contact_title {
   width: 100%;
   max-width: 602px;

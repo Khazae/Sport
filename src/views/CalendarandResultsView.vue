@@ -128,6 +128,10 @@ export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>
+.wrapperCalendar {
+  margin-top: 97px;
+  margin-bottom: 120px;
+}
 .tableRow {
   min-height: 54px;
   display: grid;

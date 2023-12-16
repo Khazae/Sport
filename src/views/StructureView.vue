@@ -1,5 +1,5 @@
 <template>
-  <div class="structure_wrapper">
+  <div class="structure_wrapper bottomWrapper">
     <HeaderTitle title="Организационная структура 2023" />
     <div class="container">
       <div class="structure_content">

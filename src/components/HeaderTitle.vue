@@ -13,20 +13,23 @@ export default { props: ["title"] };
 <style scoped>
 .layoutTitleContent {
   width: 100%;
-  max-width: 1440px;
   min-height: 100px;
   background-image: url("../assets/layoutBg.png");
   background-repeat: no-repeat;
+  background-size: 100% 100%;
   margin-bottom: 80px;
   padding: 26px 0;
   overflow: hidden;
+  height: auto;
 }
 
 .title {
+  max-width: 913px;
   font-size: 40px;
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
+  line-height: 48.76px;
   color: #ffffff;
 }
 </style>

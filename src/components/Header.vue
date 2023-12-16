@@ -41,10 +41,10 @@
           </ul>
         </nav>
         <div class="loginContent">
-          <a href="#" class="loginLink">
+          <router-link to="/personal-area" class="loginLink">
             <img src="../assets/user.svg" class="loginImage" alt="User" />
             <span class="loginText">Войти</span>
-          </a>
+          </router-link>
         </div>
 
         <div class="langContent">

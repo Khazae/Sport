@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapperPersonal littleWrapper">
+  <div class="wrapperPersonal littleAreaWrapper">
     <div class="personalContent">
       <div class="personal_left_block">
         <div class="personal_aside">
@@ -160,6 +160,26 @@ export default {};
   padding-top: 109px;
   padding-bottom: 120px;
   background-color: #ebeef3;
+}
+
+.littleAreaWrapper {
+  position: relative;
+  z-index: 100;
+  overflow: hidden;
+}
+
+.littleAreaWrapper::after {
+  content: "";
+  width: 100%;
+  max-width: 1372px;
+  height: 480px;
+  background-image: url("../assets/oiBg2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  z-index: -1;
 }
 
 .table_wrapper {
