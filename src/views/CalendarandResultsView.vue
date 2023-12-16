@@ -29,12 +29,19 @@
           </div>
           <div class="calendar_right_block">
             <div class="table">
-              <div class="tableRow tableHeader row">
-                <span class="tableCell">По дате</span>
+              <div
+                class="tableRow tableHeader row"
+                style="column-gap: 24px; padding-left: 0"
+              >
+                <span class="tableCell tableDate"
+                  ><img src="../assets/dateIcon.svg" alt="" /> По дате</span
+                >
                 <span class="tableCell">Соревнования</span>
                 <span class="tableCell">Положения</span>
                 <span class="tableCell">Протоколы</span>
-                <span class="tableCell">Статус</span>
+                <span class="tableCell"
+                  >Статус <img src="../assets/arrowDown2.svg" alt=""
+                /></span>
                 <span class="tableCell">Трансляция</span>
               </div>
 
@@ -354,5 +361,8 @@ export default { components: { HeaderTitle } };
 .tablePaginationPageSpace {
   max-width: 47px;
   max-height: 32px;
+}
+
+.tableDate {
 }
 </style>
