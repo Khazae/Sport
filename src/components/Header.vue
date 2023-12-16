@@ -41,7 +41,7 @@
           </ul>
         </nav>
         <div class="loginContent">
-          <router-link to="/personal-area" class="loginLink">
+          <router-link to="/login" class="loginLink">
             <img src="../assets/user.svg" class="loginImage" alt="User" />
             <span class="loginText">Войти</span>
           </router-link>

@@ -24,8 +24,13 @@
               <input type="text" class="form_input" placeholder="Почта" />
             </div>
 
-            <div class="form_group">
+            <div class="form_group password_group">
               <input type="password" class="form_input" placeholder="Пароль" />
+              <img
+                src="../../assets/password.svg"
+                class="password_img"
+                alt=""
+              />
             </div>
 
             <div class="form_group">
@@ -37,11 +42,17 @@
             </div>
 
             <div class="form_group">
-              <input
+              <!-- <input
                 type="text"
                 class="form_input"
                 placeholder="Выберите вашу должность"
-              />
+              /> -->
+
+              <v-select
+                :options="options"
+                class="form_input"
+                placeholder="Выберите вашу должность"
+              ></v-select>
             </div>
             <button type="submit" class="link local_link button">
               <div class="link__text button_text">Создать аккаунт</div>
@@ -59,7 +70,16 @@
 </template>
 
 <script>
-export default {};
+import vSelect from "vue-select";
+import "vue-select/dist/vue-select.css";
+export default {
+  components: { vSelect },
+  data() {
+    return {
+      options: ["Тренер", "Начальник"],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -75,6 +95,7 @@ export default {};
   width: 29%;
   padding: 24px 40px;
   position: relative;
+  z-index: 100;
 }
 
 .login_left_content::after {
@@ -86,6 +107,7 @@ export default {};
   position: absolute;
   left: 0;
   top: 30%;
+  z-index: -1;
 }
 
 .login_right_content {
@@ -98,6 +120,7 @@ export default {};
   background-color: #fff;
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
+  z-index: 100;
 }
 
 .form_content {
@@ -122,6 +145,10 @@ export default {};
   border: none;
   border-bottom: 1px solid rgba(201, 201, 201, 1);
   outline: none;
+}
+
+.form_input::placeholder {
+  color: #9d9d9d;
 }
 
 .form_group {
@@ -184,5 +211,21 @@ export default {};
   text-transform: uppercase;
   margin-left: 13px;
   color: var(--color-white);
+}
+
+.password_group {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(201, 201, 201, 1);
+}
+
+.password_group input {
+  border: none;
+}
+
+.password_img {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
 }
 </style>

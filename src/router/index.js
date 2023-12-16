@@ -11,14 +11,21 @@ const routes = [
   },
   {
     path: "/",
-    name: "navigationLayout",
-    component: () => import("../layouts/NavigationLayout.vue"),
+    name: "homeNavigationLayout",
+    component: () => import("../layouts/HomveNavigationLayout.vue"),
     children: [
       {
         path: "/",
         name: "home",
         component: () => import("../views/HomeView.vue"),
       },
+    ],
+  },
+  {
+    path: "/",
+    name: "navigationLayout",
+    component: () => import("../layouts/NavigationLayout.vue"),
+    children: [
       {
         path: "/personal-area",
         name: "personalArea",

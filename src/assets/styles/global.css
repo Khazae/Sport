@@ -1171,3 +1171,24 @@ a {
   left: 0;
   z-index: -1;
 }
+
+#vs1__combobox {
+  border: none !important;
+}
+
+.vs__selected-options input {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 0 !important;
+  color: #9d9d9d !important;
+}
+
+.vs__dropdown-option--highlight {
+  background: #edf1f7 !important;
+  color: var(--color-black) !important;
+}
+
+.vs__dropdown-option {
+  padding: 16px !important;
+}
