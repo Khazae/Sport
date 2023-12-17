@@ -8,7 +8,11 @@
             <div class="calendar_aside">
               <div class="calendar_aside_input_content">
                 <img src="../assets/search.svg" alt="Search" />
-                <input type="text" class="calendar_aside_input" />
+                <input
+                  type="text"
+                  class="calendar_aside_input"
+                  placeholder="Введите ID или ФИО"
+                />
               </div>
               <ul class="calendar_aside_list">
                 <li><a href="#">Вид спорта</a></li>
@@ -271,6 +275,10 @@ export default { components: { HeaderTitle } };
   border: none;
   padding-left: 30px;
   padding-right: 8px;
+}
+
+.calendar_aside_input::placeholder {
+  font-family: "Inter", sans-serif;
 }
 
 .chips_button_content {

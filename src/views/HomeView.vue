@@ -186,7 +186,7 @@
 
           <div class="eventsSection__row">
             <div class="eventsSection__item">
-              <a href="#" class="eventsSection__item_link">
+              <router-link to="/calendar" class="eventsSection__item_link">
                 <img
                   src="../assets/events/1.png"
                   alt=""
@@ -200,11 +200,11 @@
                     Чемпионат мира 2023 по пара таеквондо
                   </div>
                 </div>
-              </a>
+              </router-link>
             </div>
 
             <div class="eventsSection__item">
-              <a href="#" class="eventsSection__item_link">
+              <router-link to="/calendar" class="eventsSection__item_link">
                 <img
                   src="../assets/events/2.png"
                   alt=""
@@ -218,11 +218,11 @@
                     Чемпионат мира 2023 по пара таеквондо
                   </div>
                 </div>
-              </a>
+              </router-link>
             </div>
 
             <div class="eventsSection__item">
-              <a href="#" class="eventsSection__item_link">
+              <router-link to="/calendar" class="eventsSection__item_link">
                 <img
                   src="../assets/events/3.png"
                   alt=""
@@ -236,12 +236,15 @@
                     Чемпионат мира 2023 по пара таеквондо
                   </div>
                 </div>
-              </a>
+              </router-link>
             </div>
 
             <div class="eventsSection__item">
               <div class="eventsSection__item__block">
-                <a href="#" class="eventsSection__item__block_link">
+                <router-link
+                  to="/calendar"
+                  class="eventsSection__item__block_link"
+                >
                   <img src="../assets/events/4.png" alt="" />
                   <div class="eventsSection__item__block__content">
                     <div class="eventsSection__item__block__prequotes">
@@ -251,11 +254,14 @@
                       Baku 2023 Taekwondo Championships
                     </div>
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="eventsSection__item__block">
-                <a href="#" class="eventsSection__item__block_link">
+                <router-link
+                  to="/calendar"
+                  class="eventsSection__item__block_link"
+                >
                   <img src="../assets/events/5.png" alt="" />
                   <div class="eventsSection__item__block__content">
                     <div class="eventsSection__item__block__prequotes">
@@ -265,11 +271,14 @@
                       Open Championship Royal Liverpool Golf
                     </div>
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="eventsSection__item__block">
-                <a href="#" class="eventsSection__item__block_link">
+                <router-link
+                  to="/calendar"
+                  class="eventsSection__item__block_link"
+                >
                   <img src="../assets/events/6.png" alt="" />
                   <div class="eventsSection__item__block__content">
                     <div class="eventsSection__item__block__prequotes">
@@ -279,11 +288,11 @@
                       Ireland Tour of England Test 2023
                     </div>
                   </div>
-                </a>
+                </router-link>
               </div>
 
               <div class="eventsSection__item__link">
-                <a href="#" class="">
+                <router-link to="/calendar" class="">
                   <div class="eventsSection__item__link__text">
                     Смотреть все
                     <svg
@@ -299,7 +308,7 @@
                       />
                     </svg>
                   </div>
-                </a>
+                </router-link>
               </div>
             </div>
           </div>

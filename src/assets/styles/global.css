@@ -607,6 +607,8 @@ a {
   margin-bottom: 5px;
 }
 .sectionFooter__item__block {
+  display: flex;
+  flex-direction: column;
   margin-right: 40px;
 }
 .sectionFooter__item__block__link {

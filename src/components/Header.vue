@@ -188,18 +188,32 @@
 <script>
 export default {
   name: "HeaderComponent",
+  props: ["isVisible"],
   data() {
     return {
       isDropdownVisible: false,
+      delayTimeout: null,
     };
+  },
+  mounted() {},
+  watch: {
+    isVisible(newVal) {
+      console.log(newVal);
+      this.isDropdownVisible = false;
+    },
   },
   methods: {
     showDropdown() {
+      clearTimeout(this.delayTimeout);
       this.isDropdownVisible = true;
-      console.log("show");
     },
     hideDropdown() {
-      this.isDropdownVisible = false;
+      this.delayTimeout = setTimeout(() => {
+        this.isDropdownVisible = false;
+      }, 300);
+    },
+    cancelHideDropdown() {
+      clearTimeout(this.delayTimeout);
     },
   },
 };
