@@ -271,6 +271,7 @@ a {
   padding: 25px;
 }
 .eventsSection__item__img {
+  max-height: 333px;
 }
 .eventsSection__item__bottom {
   width: calc(100% + 1px);
@@ -415,6 +416,13 @@ a {
 .videosSection__item__block__img {
   position: relative;
   margin-right: 20px;
+}
+
+.videosSection__item__block__img_image {
+  width: 100%;
+  height: 100%;
+  max-width: 234px;
+  max-height: 150px;
 }
 
 .videosSection__item__block__img__icon {
