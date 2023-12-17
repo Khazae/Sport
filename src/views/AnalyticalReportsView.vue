@@ -1,5 +1,5 @@
 <template>
-  <div class="budget_wrapper">
+  <div class="budget_wrapper littleInformationAboutWrapper">
     <HeaderTitle
       title="Аналитические отчеты и доклады 
 о проделанной работе"

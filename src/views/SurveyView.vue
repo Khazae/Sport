@@ -1,5 +1,5 @@
 <template>
-  <div class="survey_wrapper">
+  <div class="survey_wrapper littleSurveyWrapper">
     <HeaderTitle title="Опросы" />
     <div class="container">
       <div class="survey_content">

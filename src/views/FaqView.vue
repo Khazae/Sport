@@ -1,5 +1,5 @@
 <template>
-  <div class="faq_wrapper">
+  <div class="faq_wrapper littleFaqWrapper">
     <HeaderTitle title="Частые вопросы" />
     <div class="container">
       <div class="faq_content">

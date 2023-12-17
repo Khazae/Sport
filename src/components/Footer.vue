@@ -16,18 +16,37 @@
 
         <div class="sectionFooter__item" style="display: flex">
           <div class="sectionFooter__item__block">
-            <div class="sectionFooter__item__block__link">Главная</div>
-            <div class="sectionFooter__item__block__link">О нас</div>
-            <div class="sectionFooter__item__block__link">Виды спорта</div>
-            <div class="sectionFooter__item__block__link">Вакансии</div>
+            <router-link to="/" class="sectionFooter__item__block__link"
+              >Главная</router-link
+            >
+            <router-link to="/about" class="sectionFooter__item__block__link"
+              >О нас</router-link
+            >
+            <router-link to="/calendar" class="sectionFooter__item__block__link"
+              >Виды спорта</router-link
+            >
+            <router-link
+              to="/vacancies"
+              class="sectionFooter__item__block__link"
+              >Вакансии</router-link
+            >
           </div>
 
           <div class="sectionFooter__item__block">
-            <div class="sectionFooter__item__block__link">
+            <router-link
+              to="/calendar"
+              class="sectionFooter__item__block__link"
+            >
               Результаты соревнований
-            </div>
-            <div class="sectionFooter__item__block__link">Прес-центр</div>
-            <div class="sectionFooter__item__block__link">Частые вопросы</div>
+            </router-link>
+            <router-link
+              to="/press-releases"
+              class="sectionFooter__item__block__link"
+              >Прес-центр</router-link
+            >
+            <router-link to="/faq" class="sectionFooter__item__block__link"
+              >Частые вопросы</router-link
+            >
           </div>
         </div>
 

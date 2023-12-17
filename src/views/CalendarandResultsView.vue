@@ -8,7 +8,11 @@
                         <div class="calendar_aside">
                             <div class="calendar_aside_input_content">
                                 <img src="../assets/search.svg" alt="Search"/>
-                                <input type="text" class="calendar_aside_input"/>
+                                <input
+                  type="text"
+                  class="calendar_aside_input"
+                  placeholder="Введите ID или ФИО"
+                />
                             </div>
                             <ul class="calendar_aside_list">
                                 <li><a href="#">Вид спорта</a></li>
@@ -33,12 +37,16 @@
                     </div>
                     <div class="calendar_right_block">
                         <div class="table">
-                            <div class="tableRow tableHeader row">
-                                <span class="tableCell">По дате</span>
+                            <div class="tableRow tableHeader row" style="column-gap: 24px; padding-left: 0">
+                                <span class="tableCell tableDate"
+                  ><img src="../assets/dateIcon.svg" alt="" /> По дате</span
+                >
                                 <span class="tableCell">Соревнования</span>
                                 <span class="tableCell">Положения</span>
                                 <span class="tableCell">Протоколы</span>
-                                <span class="tableCell">Статус</span>
+                                <span class="tableCell"
+                  >Статус <img src="../assets/arrowDown2.svg" alt=""
+                /></span>
                                 <span class="tableCell">Трансляция</span>
                             </div>
 
@@ -158,230 +166,235 @@ export default {
 </script>
 
 <style scoped>
+.wrapperCalendar {
+  margin-top: 97px;
+  margin-bottom: 120px;
+}
 .tableRow {
-    min-height: 54px;
-    display: grid;
-    align-items: center;
-    padding: 0 24px;
-    column-gap: 16px;
+  min-height: 54px;
+  display: grid;
+  align-items: center;
+  padding: 0 24px;
+  column-gap: 16px;
 }
 
 .tableRow:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
-
 .tableCell {
-    display: flex;
-    align-items: center;
-    font-size: 13px;
-    text-overflow: ellipsis;
-    line-height: 28px;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  line-height: 28px;
 }
-
 .row {
-    grid-template-columns: 110px 225px 83px 83px 1fr 100px;
+  grid-template-columns: 110px 225px 83px 83px 1fr 100px;
 }
 
 .body {
-    background-color: #fff;
-    padding: 11px 24px;
-    margin-bottom: 10px;
+  background-color: #fff;
+  padding: 11px 24px;
+  margin-bottom: 10px;
 }
 
 .calendarContent {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .calendar_left_block {
-    width: 100%;
-    max-width: 270px;
+  width: 100%;
+  max-width: 270px;
 }
 
 .calendar_right_block {
-    width: 100%;
-    max-width: 870px;
+  width: 100%;
+  max-width: 870px;
 }
 
 .calendar_aside {
-    background-color: #fff;
-    padding: 24px 16px 24px 24px;
+  background-color: #fff;
+  padding: 24px 16px 24px 24px;
 }
 
 .calendar_aside_list li {
-    margin-bottom: 28px;
+  margin-bottom: 28px;
 }
 
 .calendar_aside_list li:last-child {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
-
 .calendar_aside_list li a {
-    font-size: 18px;
-    font-weight: 700;
-    font-family: "Inter", sans-serif;
-    color: var(--color-black);
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Inter", sans-serif;
+  color: var(--color-black);
 }
 
 .tableStatus {
-    display: flex;
+  display: flex;
 }
 
 .tableStatus img {
-    width: 24px;
-    margin-right: 8px;
+  width: 24px;
+  margin-right: 8px;
 }
 
 .tableLive {
-    padding: 12px 14px;
-    border: 1px solid #e50d41;
-    border-radius: 12px;
-    font-size: 16px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    color: #e50d41;
-    font-family: "Roboto", sans-serif;
+  padding: 12px 14px;
+  border: 1px solid #e50d41;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #e50d41;
+  font-family: "Roboto", sans-serif;
 }
 
 .tableLive img {
-    width: 12px;
-    margin-right: 8px;
+  width: 12px;
+  margin-right: 8px;
 }
 
 .tableLink a {
-    color: #007aff;
-    text-decoration: underline;
+  color: #007aff;
+  text-decoration: underline;
 }
 
 .tableHeader .tableCell {
-    font-size: 14px;
-    font-family: "Inter", sans-serif;
-    color: #575f6e;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  color: #575f6e;
 }
 
 .body .tableCell {
-    font-size: 18px;
-    font-family: "Inter", sans-serif;
-    color: var(--color-black);
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  color: var(--color-black);
 }
 
 .tableLock .tableCell {
-    color: #9a9ea5;
+  color: #9a9ea5;
 }
 
 .calendar_aside_input_content {
-    border: 1px solid #caced4;
-    padding: 4px;
-    display: flex;
-    position: relative;
-    margin-bottom: 28px;
+  border: 1px solid #caced4;
+  padding: 4px;
+  display: flex;
+  position: relative;
+  margin-bottom: 28px;
 }
 
 .calendar_aside_input_content img {
-    width: 24px;
-    height: 24px;
-    z-index: 100;
+  width: 24px;
+  height: 24px;
+  z-index: 100;
 }
 
 .calendar_aside_input {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: none;
-    padding-left: 30px;
-    padding-right: 8px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  padding-left: 30px;
+  padding-right: 8px;
+}
+
+.calendar_aside_input::placeholder {
+  font-family: "Inter", sans-serif;
 }
 
 .chips_button_content {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    max-width: 175px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 175px;
 }
 
 .chip_button {
-    font-size: 18px;
-    font-weight: 400;
-    font-family: "Inter", sans-serif;
-    border: 1px solid #caced4;
-    border-radius: 20px;
-    color: var(--color-black);
-    padding: 8px 12px;
-    cursor: pointer;
-    background-color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Inter", sans-serif;
+  border: 1px solid #caced4;
+  border-radius: 20px;
+  color: var(--color-black);
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
 }
 
 .chip_button_active {
-    background-color: #007aff;
-    color: #ffffff;
-    border: none;
+  background-color: #007aff;
+  color: #ffffff;
+  border: none;
 }
 
 .tablePagination {
-    display: flex;
-    align-items: center;
-    font-family: "Inter", sans-serif;
-    margin-top: 47px;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  margin-top: 47px;
 }
 
 .tablePaginationPages {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-left: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-left: 16px;
 }
 
 .tablePaginationPage {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--color-black);
-    padding: 7px 15.5px;
-    cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-black);
+  padding: 7px 15.5px;
+  cursor: pointer;
 }
 
 .tablePaginationCount {
-    font-size: 14px;
-    font-weight: 400;
-    color: #9a9ea5;
-    padding: 7px 24px 7px 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9ea5;
+  padding: 7px 24px 7px 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .tablePaginationCount img {
-    width: 24px;
-    height: 24px;
-    margin-left: 11px;
+  width: 24px;
+  height: 24px;
+  margin-left: 11px;
 }
 
 .tablePaginationCount span {
-    font-weight: 500;
-    color: var(--color-black);
-    margin-left: 16px;
+  font-weight: 500;
+  color: var(--color-black);
+  margin-left: 16px;
 }
 
 .tablePaginationNextPage {
-    font-size: 14px;
-    font-weight: 400;
-    color: #9a9ea5;
-    margin-left: 40px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #9a9ea5;
+  margin-left: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .tablePaginationNextPage img {
-    width: 24px;
-    height: 24px;
-    margin-left: 14px;
+  width: 24px;
+  height: 24px;
+  margin-left: 14px;
 }
 
 .tablePaginationPageSpace {
-    max-width: 47px;
-    max-height: 32px;
+  max-width: 47px;
+  max-height: 32px;
 }
 </style>

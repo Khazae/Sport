@@ -1,5 +1,5 @@
 <template>
-  <div class="vacancies_wrapper">
+  <div class="vacancies_wrapper littleVacanciesWrapper">
     <HeaderTitle title="Вакансии" />
     <div class="container">
       <div class="vacancies_content">

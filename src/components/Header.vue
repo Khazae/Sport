@@ -25,7 +25,9 @@
               >
             </li>
             <li class="listItem">
-              <router-link to="" class="listLink">Результаты</router-link>
+              <router-link to="/calendar" class="listLink"
+                >Результаты</router-link
+              >
             </li>
             <li class="listItem">
               <router-link to="/budget" class="listLink">Бюджет</router-link>
@@ -41,10 +43,10 @@
           </ul>
         </nav>
         <div class="loginContent">
-          <a href="#" class="loginLink">
+          <router-link to="/login" class="loginLink">
             <img src="../assets/user.svg" class="loginImage" alt="User" />
             <span class="loginText">Войти</span>
-          </a>
+          </router-link>
         </div>
 
         <div class="langContent">
@@ -188,18 +190,32 @@
 <script>
 export default {
   name: "HeaderComponent",
+  props: ["isVisible"],
   data() {
     return {
       isDropdownVisible: false,
+      delayTimeout: null,
     };
+  },
+  mounted() {},
+  watch: {
+    isVisible(newVal) {
+      console.log(newVal);
+      this.isDropdownVisible = false;
+    },
   },
   methods: {
     showDropdown() {
+      clearTimeout(this.delayTimeout);
       this.isDropdownVisible = true;
-      console.log("show");
     },
     hideDropdown() {
-      this.isDropdownVisible = false;
+      this.delayTimeout = setTimeout(() => {
+        this.isDropdownVisible = false;
+      }, 300);
+    },
+    cancelHideDropdown() {
+      clearTimeout(this.delayTimeout);
     },
   },
 };

@@ -1,5 +1,5 @@
 <template>
-  <div class="budget_wrapper">
+  <div class="budget_wrapper littleInformationAboutWrapper">
     <HeaderTitle
       title="Статистические показатели 
 и результаты деятельности"

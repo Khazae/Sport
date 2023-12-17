@@ -1,6 +1,6 @@
 <template>
-  <button href="#" type="submit" class="link button">
-    <div class="link__text button_text"><slot></slot></div>
+  <button type="submit" class="link button">
+    <div class="link__text button_text"></div>
   </button>
 </template>
 

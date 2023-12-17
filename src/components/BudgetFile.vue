@@ -10,7 +10,10 @@
         <span class="budget_text_content_data">5.11.2023</span>
       </div>
     </div>
-    <a href="#" class="budget_link"
+    <a
+      href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
+      target="_blank"
+      class="budget_link"
       >Скачать <img src="../assets/downloadIcon.svg" alt="Download"
     /></a>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="about_wrapper">
+  <div class="about_wrapper littleWrapper">
     <HeaderTitle title="О нас" />
     <div class="container">
       <div class="about_content">
@@ -74,6 +74,9 @@ export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>
+.about_wrapper {
+  padding-bottom: 73px !important;
+}
 .about_title {
   font-size: 32px;
   font-weight: 500;

@@ -5,20 +5,32 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "home",
-    component: () => import("../views/HomeView.vue"),
+    path: "/login",
+    name: "login",
+    component: () => import("../views/auth/LoginView.vue"),
   },
   {
-    path: "/personal-area",
-    name: "personalArea",
-    component: () => import("../views/PersonalAreaView.vue"),
+    path: "/",
+    name: "homeNavigationLayout",
+    component: () => import("../layouts/HomveNavigationLayout.vue"),
+    children: [
+      {
+        path: "/",
+        name: "home",
+        component: () => import("../views/HomeView.vue"),
+      },
+    ],
   },
   {
     path: "/",
     name: "navigationLayout",
     component: () => import("../layouts/NavigationLayout.vue"),
     children: [
+      {
+        path: "/personal-area",
+        name: "personalArea",
+        component: () => import("../views/PersonalAreaView.vue"),
+      },
       {
         path: "/calendar",
         name: "calendar",

@@ -1,6 +1,6 @@
 <template>
   <div id="navigation">
-    <Header :is-visible="isDropdownVisible" />
+    <Header />
     <router-view />
     <Footer />
   </div>
@@ -12,25 +12,9 @@ import Footer from "../components/Footer.vue";
 
 export default {
   name: "App",
-  data() {
-    return {
-      isDropdownVisible: true,
-    };
-  },
   components: {
     Header,
     Footer,
-  },
-  mounted() {
-    document.body.style.backgroundColor = "#ebeef3";
-  },
-  beforeDestroy() {
-    document.body.style.backgroundColor = "";
-  },
-  beforeRouteUpdate(to, from, next) {
-    this.isDropdownVisible = this.$route.name;
-
-    next();
   },
 };
 </script>

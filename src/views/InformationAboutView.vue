@@ -1,5 +1,5 @@
 <template>
-  <div class="budget_wrapper">
+  <div class="budget_wrapper littleInformationAboutWrapper">
     <HeaderTitle title="Информация о закупках товаров" />
     <div class="container">
       <div class="budget_content">
