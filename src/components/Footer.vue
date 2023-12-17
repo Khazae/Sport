@@ -22,7 +22,7 @@
             <router-link to="/about" class="sectionFooter__item__block__link"
               >О нас</router-link
             >
-            <router-link to="/about" class="sectionFooter__item__block__link"
+            <router-link to="/calendar" class="sectionFooter__item__block__link"
               >Виды спорта</router-link
             >
             <router-link
@@ -33,7 +33,10 @@
           </div>
 
           <div class="sectionFooter__item__block">
-            <router-link to="/about" class="sectionFooter__item__block__link">
+            <router-link
+              to="/calendar"
+              class="sectionFooter__item__block__link"
+            >
               Результаты соревнований
             </router-link>
             <router-link
