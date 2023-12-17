@@ -25,7 +25,9 @@
               >
             </li>
             <li class="listItem">
-              <router-link to="" class="listLink">Результаты</router-link>
+              <router-link to="/calendar" class="listLink"
+                >Результаты</router-link
+              >
             </li>
             <li class="listItem">
               <router-link to="/budget" class="listLink">Бюджет</router-link>
