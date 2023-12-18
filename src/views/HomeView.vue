@@ -323,7 +323,11 @@
               <div class="videosSection__item__block">
                 <a href="videosSection__item__block_link">
                   <div class="videosSection__item__block__img">
-                    <img src="../assets/video/1.png" alt="" />
+                    <img
+                      src="../assets/video/1.png"
+                      alt=""
+                      class="videosSection__item__block__img_image"
+                    />
                     <img
                       src="../assets/video/play.svg"
                       alt=""
@@ -350,7 +354,11 @@
               <div class="videosSection__item__block">
                 <a href="videosSection__item__block_link">
                   <div class="videosSection__item__block__img">
-                    <img src="../assets/video/2.png" alt="" />
+                    <img
+                      src="../assets/video/2.png"
+                      alt=""
+                      class="videosSection__item__block__img_image"
+                    />
                     <img
                       src="../assets/video/play.svg"
                       alt=""
@@ -377,7 +385,11 @@
               <div class="videosSection__item__block">
                 <a href="videosSection__item__block_link">
                   <div class="videosSection__item__block__img">
-                    <img src="../assets/video/3.png" alt="" />
+                    <img
+                      src="../assets/video/3.png"
+                      alt=""
+                      class="videosSection__item__block__img_image"
+                    />
                     <img
                       src="../assets/video/play.svg"
                       alt=""
