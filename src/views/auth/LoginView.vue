@@ -4,7 +4,7 @@
       <div class="login_left_content">
         <div class="logoContent">
           <router-link to="/" class="logoLink">
-            <img src="@/assets/logo.svg" class="logo" alt="Logo" />
+            <img src="@/assets/logo.svg" class="logo" alt="Logo"/>
             <h3 class="logoText">
               Центр спортивной подготовки для лиц с ограниченными физическими
               возможностями
@@ -15,33 +15,39 @@
       <div class="login_right_content">
         <div class="form_content">
           <div class="form_content_title">Создать аккаунт</div>
-          <form class="login_form">
-            <div class="form_group">
-              <input type="text" class="form_input" placeholder="ФИО" />
+          <div class="login_form">
+            <div class="form_group" :class="{'error_form':errors.name}">
+              <input type="text" class="form_input" placeholder="ФИО" v-model="form.name" :disabled="loading"/>
             </div>
 
-            <div class="form_group">
-              <input type="text" class="form_input" placeholder="Почта" />
+            <div class="form_group" :class="{'error_form':errors.email}">
+              <input type="text" class="form_input" placeholder="Почта" :disabled="loading" v-model="form.email"/>
             </div>
 
-            <div class="form_group password_group">
-              <input type="password" class="form_input" placeholder="Пароль" />
+            <div class="form_group password_group" :class="{'error_form':errors.password}">
+              <input id="password_field" :disabled="loading" type="password" class="form_input" placeholder="Пароль"
+                     v-model="form.password"/>
               <img
-                src="../../assets/password.svg"
-                class="password_img"
-                alt=""
+                  src="../../assets/password.svg"
+                  class="password_img"
+                  alt=""
+                  @mouseover="showPassword()"
+                  @mouseout="hidePassword()"
               />
             </div>
 
-            <div class="form_group">
+            <div class="form_group" :class="{'error_form':errors.region}">
               <input
-                type="text"
-                class="form_input"
-                placeholder="Область, регион, город"
+                  type="text"
+                  class="form_input"
+                  placeholder="Область, регион, город"
+                  v-model="form.region"
+                  :disabled="loading"
+
               />
             </div>
 
-            <div class="form_group">
+            <div class="form_group" v-if="false">
               <!-- <input
                 type="text"
                 class="form_input"
@@ -49,15 +55,15 @@
               /> -->
 
               <v-select
-                :options="options"
-                class="form_input"
-                placeholder="Выберите вашу должность"
+                  :options="options"
+                  class="form_input"
+                  placeholder="Выберите вашу должность"
               ></v-select>
             </div>
-            <button type="submit" class="link local_link button">
+            <button @click="register" :disabled="loading" class="link local_link button">
               <div class="link__text button_text">Создать аккаунт</div>
             </button>
-          </form>
+          </div>
 
           <p class="login_desc">
             Уже есть аккаунт?
@@ -72,21 +78,66 @@
 <script>
 import vSelect from "vue-select";
 import "vue-select/dist/vue-select.css";
+import requests from "@/api/requests";
+
 export default {
-  components: { vSelect },
+  components: {vSelect},
   data() {
     return {
       options: ["Тренер", "Начальник"],
+      form: {
+        name: null,
+        role_id: 2,
+        password: null,
+        region: null,
+        email: null
+      },
+      errors: [],
+      loading: false
     };
   },
+  methods: {
+    register() {
+      this.loading = true;
+      this.errors = [];
+      requests.register(this.form).then(res => {
+        this.loading = false;
+        requests.setAuthorization(this.form.email, this.form.password, res.token);
+        this.$router.push({name: 'home'})
+
+      }).catch(err => {
+        this.loading = false;
+
+        this.errors = err.response.data.errors;
+      });
+    },
+    showPassword() {
+      let obj = document.getElementById('password_field');
+      obj.type = 'text';
+    },
+    hidePassword() {
+      let obj = document.getElementById('password_field');
+      obj.type = 'password';
+    }
+  }
 };
 </script>
 
 <style scoped>
+.error_form {
+  border-bottom: 1px solid red !important;
+}
+
+.error_form input::placeholder {
+  color: red !important;
+  opacity: 0.5;
+}
+
 .login_wrapper {
   background-color: #1f5296;
   height: 100vh;
 }
+
 .login_content {
   display: flex;
 }
@@ -192,6 +243,7 @@ export default {
   width: 100%;
   max-width: 265px;
 }
+
 .logoLink {
   display: flex;
   align-items: center;
