@@ -105,7 +105,6 @@ export default {
     goRouteLk() {
       this.$router.push("/personal-area");
     },
-  },
     register() {
       this.loading = true;
       this.errors = [];
@@ -128,6 +127,7 @@ export default {
       let obj = document.getElementById('password_field');
       obj.type = 'password';
     }
+  }
   }
 </script>
 
