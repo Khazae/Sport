@@ -54,7 +54,11 @@
                 placeholder="Выберите вашу должность"
               ></v-select>
             </div>
-            <button type="submit" class="link local_link button">
+            <button
+              type="click"
+              @click.prevent="goRouteLk"
+              class="link local_link button"
+            >
               <div class="link__text button_text">Создать аккаунт</div>
             </button>
           </form>
@@ -78,6 +82,11 @@ export default {
     return {
       options: ["Тренер", "Начальник"],
     };
+  },
+  methods: {
+    goRouteLk() {
+      this.$router.push("/personal-area");
+    },
   },
 };
 </script>
