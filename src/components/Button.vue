@@ -1,6 +1,6 @@
 <template>
   <button type="submit" class="link button">
-    <div class="link__text button_text"></div>
+    <div class="link__text button_text"><slot></slot></div>
   </button>
 </template>
 

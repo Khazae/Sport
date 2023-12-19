@@ -157,6 +157,9 @@
                 </span>
               </div>
             </template>
+            <template v-if="!toggleSportsman">
+              <Button>Добавить</Button>
+            </template>
           </div>
         </div>
         <div class="tablePagination">
@@ -186,9 +189,10 @@
 
 <script>
 import vSelect from "vue-select";
+import Button from "../components/Button.vue";
 import "vue-select/dist/vue-select.css";
 export default {
-  components: { vSelect },
+  components: { vSelect, Button },
   data() {
     return {
       options: ["Международный", "Республиканский"],
@@ -231,6 +235,11 @@ export default {
   padding: 43px 20px 55px 15px;
   border-radius: 8px;
   margin-right: 28px;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
 }
 
 .tableRow {
