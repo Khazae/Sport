@@ -14,18 +14,8 @@
       </div>
       <div class="login_right_content">
         <div class="form_content">
-          <div class="form_content_title">Создать аккаунт</div>
+          <div class="form_content_title">Войти</div>
           <div class="login_form">
-            <div class="form_group" :class="{ error_form: errors.name }">
-              <input
-                type="text"
-                class="form_input"
-                placeholder="ФИО"
-                v-model="form.name"
-                :disabled="loading"
-              />
-            </div>
-
             <div class="form_group" :class="{ error_form: errors.email }">
               <input
                 type="text"
@@ -57,47 +47,19 @@
               />
             </div>
 
-            <div class="form_group" :class="{ error_form: errors.region }">
-              <input
-                type="text"
-                class="form_input"
-                placeholder="Область, регион, город"
-                v-model="form.region"
-                :disabled="loading"
-              />
-            </div>
-
-            <div class="form_group" v-if="false">
-              <!-- <input
-                type="text"
-                class="form_input"
-                placeholder="Выберите вашу должность"
-              /> -->
-
-              <v-select
-                :options="options"
-                class="form_input"
-                placeholder="Выберите вашу должность"
-              ></v-select>
-            </div>
-            <!-- <button
-              type="click"
-              @click.prevent="goRouteLk"
-              class="link local_link button"
-            > -->
             <button
               @click="register"
               :disabled="loading"
               class="link local_link button"
             >
-              <div class="link__text button_text">Создать аккаунт</div>
+              <div class="link__text button_text">Войти</div>
             </button>
           </div>
 
           <p class="login_desc">
-            Уже есть аккаунт?
-            <router-link to="/register" class="login_desc_link"
-              >Войти</router-link
+            Нет аккаунта?
+            <router-link to="/login" class="login_desc_link"
+              >Зарегистрироваться</router-link
             >
           </p>
         </div>
