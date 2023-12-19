@@ -60,11 +60,6 @@
                   placeholder="Выберите вашу должность"
               ></v-select>
             </div>
-            <!-- <button
-              type="click"
-              @click.prevent="goRouteLk"
-              class="link local_link button"
-            > -->
             <button @click="register" :disabled="loading" class="link local_link button">
               <div class="link__text button_text">Создать аккаунт</div>
             </button>
@@ -102,6 +97,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -129,9 +125,6 @@ export default {
     };
   },
   methods: {
-    goRouteLk() {
-      this.$router.push("/personal-area");
-    },
     register() {
       this.loading = true;
       this.errors = [];
@@ -146,35 +139,31 @@ export default {
         this.errors = err.response.data.errors;
       });
     },
+    showPassword() {
+      let obj = document.getElementById('password_field');
+      obj.type = 'text';
+    },
+    hidePassword() {
+      let obj = document.getElementById('password_field');
+      obj.type = 'password';
+    },
     login() {
       this.loading = true;
       requests.login(this.form).then(() => {
         this.loading = false;
-        this.$router.push({name: 'home'});
+        this.$router.push({name: 'personalArea'});
       }).catch(err => {
         console.log(err)
         this.loading = false;
         this.errors = err.response.data.data.errors;
       })
     },
-    showPassword() {
-      if (!this.loading) {
-        let obj = document.getElementById('password_field');
-        obj.type = 'text';
-      }
-    },
-    hidePassword() {
-      let obj = document.getElementById('password_field');
-      obj.type = 'password';
-    }
   },
   mounted() {
-    console.log('mounted')
-    console.log(this.$store.state.auth)
     if (this.$store.state.auth.authorized)
       this.$router.push({name: 'home'})
   }
-  }
+}
 </script>
 
 <style scoped>

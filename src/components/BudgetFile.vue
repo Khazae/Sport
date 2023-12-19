@@ -1,26 +1,34 @@
 <template>
   <div class="budget_file">
     <div class="budget_text">
-      <img src="../assets/pdfIcon.svg" alt="Pdf" />
+      <img src="../assets/pdfIcon.svg" alt="Pdf"/>
       <div class="budget_text_content">
         <div class="budget_title_content">
-          <div class="budget_text_content_title">Наименование документа</div>
+          <div class="budget_text_content_title">{{ title }}</div>
           <div class="budget_text_content_desc">(Примечания)</div>
         </div>
-        <span class="budget_text_content_data">5.11.2023</span>
+        <span class="budget_text_content_data">{{ $dayjs(date).format('DD.MM.YYYY') }}</span>
       </div>
     </div>
-    <a
-      href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf"
-      target="_blank"
-      class="budget_link"
-      >Скачать <img src="../assets/downloadIcon.svg" alt="Download"
+    <a @click.prevent="downloadFile" style="cursor:pointer;"
+        target="_blank"
+        class="budget_link"
+    >Скачать <img src="../assets/downloadIcon.svg" alt="Download"
     /></a>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: [
+    'title', 'date', 'file'
+  ],
+  methods: {
+    downloadFile() {
+      window.open(process.env.VUE_APP_BACKEND_URL + this.file, '_blank')
+    }
+  }
+};
 </script>
 
 <style scoped>
@@ -32,6 +40,7 @@ export default {};
 .budget_text_content {
   margin-left: 12px;
 }
+
 .budget_title_content {
   display: flex;
 }

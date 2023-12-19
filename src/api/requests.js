@@ -36,6 +36,12 @@ const requests = {
   getCalendarResults(data) {
     return client.get('/api/public/calendar-results', {params: data}).then(res => res.data);
   },
+  getAthleteList(data) {
+    return client.get('/api/public/athlete', {params: data}).then(res => res.data);
+  },
+  getFiles(data) {
+    return client.get('/api/public/files', {params: data}).then(res => res.data);
+  }
 
 };
 export default requests;

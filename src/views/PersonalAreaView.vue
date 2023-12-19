@@ -5,43 +5,43 @@
         <div class="personal_aside">
           <div class="personal_avatar_content">
             <img
-              src="../assets/avatar.png"
-              class="personal_avatar_content_avatar"
-              alt="Avatar"
+                src="../assets/avatar.png"
+                class="personal_avatar_content_avatar"
+                alt="Avatar"
             />
-            <div class="personal_avatar_content_text">
-              <div class="personal_avatar_content_text_title">Фамилия Имя</div>
-              <div class="personal_avatar_content_text_status">Должность</div>
+            <div class="personal_avatar_content_text" v-if="$store.state.user.user">
+              <div class="personal_avatar_content_text_title">{{ $store.state.user.user.name }}</div>
+              <div class="personal_avatar_content_text_status">{{ getRole }}</div>
             </div>
-            <img src="../assets/arrowDown.svg" alt="Arrow" />
+            <img src="../assets/arrowDown.svg" alt="Arrow"/>
           </div>
 
           <div class="personal_aside_navigation">
             <ul class="personal_aside_navigation_list">
               <li class="personal_aside_navigation_li">
                 <a href="#" class="personal_aside_navigation_link"
-                  ><img
+                ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                  />
+                />
                   Данные спортсменов</a
                 >
               </li>
-              <li class="personal_aside_navigation_li">
+              <li class="personal_aside_navigation_li" v-if="false">
                 <a href="#" class="personal_aside_navigation_link"
-                  ><img
+                ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                  />
+                />
                   Данные спортсменов</a
                 >
               </li>
             </ul>
           </div>
           <button class="personal_aside_button">
-            <img src="../assets/plus.svg" alt="Plus" /> Добавить спортсменов
+            <img src="../assets/plus.svg" alt="Plus"/> Добавить спортсменов
           </button>
         </div>
       </div>
@@ -49,20 +49,20 @@
         <div class="table_wrapper">
           <div class="table_filter_content">
             <div class="table_aside_input_content">
-              <img src="../assets/lcIcon.svg" alt="Search" />
-              <input type="text" class="table_aside_input" />
+              <img src="../assets/lcIcon.svg" alt="Search"/>
+              <input type="text" class="table_aside_input" @keyup.enter="keyEnter" v-model="filters.search"/>
             </div>
 
             <div class="table_filter_content_btn">
               <button class="table_filter_content_button">
-                <img src="../assets/filter.svg" alt="" /> Фильтры
+                <img src="../assets/filter.svg" alt=""/> Фильтры
               </button>
             </div>
           </div>
           <div class="table">
             <div class="tableRow tableHeader row">
               <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
+              ><input type="checkbox" class="tableCheckbox"
               /></span>
               <span class="tableCell">ФИО</span>
               <span class="tableCell">Локация</span>
@@ -73,76 +73,31 @@
               <span class="tableCell">Класс</span>
             </div>
 
-            <div class="tableRow row body">
+            <div class="tableRow row body" v-for="item in list" :key="'athlete_'+item.id">
               <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
+              ><input type="checkbox" class="tableCheckbox"
               /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
+              <span class="tableCell">{{ item.fio }}</span>
+              <span class="tableCell">{{ item.location }}</span>
+              <span class="tableCell">{{ item.personal_id }}</span>
+              <span class="tableCell">{{ item.category }}</span>
+              <span class="tableCell tableLink"><a style="cursor:pointer;"
+                                                   @click.prevent="downloadFile(item.file)">PDF</a></span>
+              <span class="tableCell"> {{ item.type }}</span>
+              <span class="tableCell"> {{ item.class }} </span>
             </div>
 
-            <div class="tableRow row body">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
-            </div>
-
-            <div class="tableRow row body">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
-            </div>
-            <div class="tableRow row body">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
-            </div>
           </div>
         </div>
         <div class="tablePagination">
           <div class="tablePaginationCount">
             Показать строк: <span>10</span>
-            <img src="../assets/arrowDown2.svg" alt="" />
+            <img src="../assets/arrowDown2.svg" alt=""/>
           </div>
-          <div class="tablePaginationPages">
-            <div class="tablePaginationPage">1</div>
-            <div class="tablePaginationPage">2</div>
-            <div class="tablePaginationPage">3</div>
-            <div class="tablePaginationPage tablePaginationPageSpace">
-              <img src="../assets/tableSpace.svg" alt="" />
-            </div>
-            <div class="tablePaginationPage">10</div>
-            <div class="tablePaginationPage">11</div>
-            <div class="tablePaginationPage">12</div>
-          </div>
-          <div class="tablePaginationNextPage">
-            Следующая страница <img src="../assets/arrowRight.svg" alt="" />
+          <pagination-component :current="page" :last="last_page" v-if="last_page>1"
+                                @handleLoad="handleLoad"/>
+          <div class="tablePaginationNextPage" @click="nextPage()">
+            Следующая страница <img src="../assets/arrowRight.svg" alt=""/>
           </div>
         </div>
       </div>
@@ -151,7 +106,78 @@
 </template>
 
 <script>
-export default {};
+import PaginationComponent from "@/components/Pagination";
+import requests from "@/api/requests";
+
+export default {
+  components: {PaginationComponent},
+  data() {
+    return {
+      page: 1,
+      last_page: null,
+      loading: false,
+      list: [],
+      filters: {
+        paginate: 10,
+        search: null
+      }
+    }
+  },
+  methods: {
+    keyEnter() {
+      this.dropList();
+      this.getList();
+    },
+    dropList() {
+      this.page = 1;
+      this.last_page = null;
+      this.list = [];
+    },
+    downloadFile(file) {
+      window.open(process.env.VUE_APP_BACKEND_URL + file, '_blank')
+    },
+    handleLoad(page) {
+      this.page = page
+      this.$nextTick(() => {
+        this.getList();
+      });
+    },
+    getList() {
+      this.loading = true
+      requests.getAthleteList({page: this.page, ...this.filters}).then(res => {
+        this.list = res.data
+        this.last_page = res.last_page
+        this.loading = false
+      }).catch(() => {
+
+      })
+    },
+    nextPage() {
+      this.page += 1;
+      this.$nextTick(() => {
+        this.getList();
+      });
+    },
+  },
+  computed: {
+    getRole() {
+      let res = '';
+      switch (this.$store.state.user.user.role_id) {
+        case 2:
+          res = 'Тренер';
+          break;
+        default:
+          break;
+      }
+      return res;
+
+    }
+  },
+  mounted() {
+    this.getList()
+  }
+};
+
 </script>
 
 <style scoped>
@@ -200,6 +226,7 @@ export default {};
 .tableRow:last-child {
   border-bottom: none;
 }
+
 .tableCell {
   display: flex;
   align-items: center;
@@ -208,6 +235,7 @@ export default {};
   line-height: 28px;
   font-weight: 400;
 }
+
 .row {
   grid-template-columns: 30px 150px 210px repeat(4, 1fr) 100px;
 }
@@ -243,6 +271,7 @@ export default {};
 .personal_aside_list li:last-child {
   margin-bottom: 16px;
 }
+
 .personal_aside_list li a {
   font-size: 18px;
   font-weight: 700;
