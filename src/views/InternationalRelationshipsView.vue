@@ -181,6 +181,10 @@ export default { components: { HeaderTitle } };
 </script>
 
 <style scoped>
+.international_wrapper {
+  margin-top: 97px;
+  padding-bottom: 120px;
+}
 .international_content {
   width: 100%;
   max-width: 768px;
