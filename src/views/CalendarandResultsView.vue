@@ -55,8 +55,10 @@
               <div class="tableRow row body" v-for="item in list" :key="'result_id_'+item.id">
                 <span class="tableCell">{{ $dayjs(item.date_time).format('DD.M.YYYY') }}</span>
                 <span class="tableCell">{{ item.title }}</span>
-                <span class="tableCell tableLink"><a href="#">PDF</a></span>
-                <span class="tableCell tableLink"><a href="#">PDF</a></span>
+                <span class="tableCell tableLink"><div style="cursor: pointer;color: blue;text-decoration: underline"
+                                                       @click="downloadFile(item.state)">PDF</div></span>
+                <span class="tableCell tableLink"><div style="cursor: pointer;color: blue;text-decoration: underline"
+                                                       @click="downloadFile(item.protocol)">PDF</div></span>
                 <template v-if="item.status==1">
                                     <span class="tableCell tableStatus">
                                       <img src="../assets/statusPanding.svg"/>
@@ -95,8 +97,8 @@
 
               <pagination-component :current="page" :last="last_page" v-if="last_page>1"
                                     @handleLoad="handleLoad"/>
-              <div class="tablePaginationNextPage">
-                Следующая страница <img src="../assets/arrowRight.svg" alt="" @click="nextPage()"/>
+              <div class="tablePaginationNextPage" @click="nextPage()">
+                Следующая страница <img src="../assets/arrowRight.svg" alt=""/>
               </div>
             </div>
           </div>
@@ -131,6 +133,9 @@ export default {
 
   },
   methods: {
+    downloadFile(file) {
+      window.open(process.env.VUE_APP_BACKEND_URL + file, '_blank')
+    },
     dateOrder() {
       this.date_time = this.date_time == 'ASC' ? 'DESC' : 'ASC';
       this.getList();

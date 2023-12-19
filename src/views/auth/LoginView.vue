@@ -14,8 +14,8 @@
       </div>
       <div class="login_right_content">
         <div class="form_content">
-          <div class="form_content_title">Создать аккаунт</div>
-          <div class="login_form">
+          <div class="form_content_title">{{ page_type == 1 ? 'Создать аккаунт' : 'Войти' }}</div>
+          <div class="login_form" v-if="page_type==1">
             <div class="form_group" :class="{'error_form':errors.name}">
               <input type="text" class="form_input" placeholder="ФИО" v-model="form.name" :disabled="loading"/>
             </div>
@@ -64,11 +64,37 @@
               <div class="link__text button_text">Создать аккаунт</div>
             </button>
           </div>
+          <div class="login_form" v-else-if="page_type==2">
 
-          <p class="login_desc">
+            <div class="form_group" :class="{'error_form':errors.email}">
+              <input type="text" class="form_input" placeholder="Почта" :disabled="loading" v-model="form.email"/>
+            </div>
+
+            <div class="form_group password_group" :class="{'error_form':errors.password}">
+              <input id="password_field" :disabled="loading" type="password" class="form_input" placeholder="Пароль"
+                     v-model="form.password"/>
+              <img
+                  src="../../assets/password.svg"
+                  class="password_img"
+                  alt=""
+                  @mouseover="showPassword()"
+                  @mouseout="hidePassword()"
+              />
+            </div>
+
+
+            <button @click="login" :disabled="loading" class="link local_link button">
+              <div class="link__text button_text">Войти</div>
+            </button>
+          </div>
+
+          <div class="login_desc" v-if="page_type==1">
             Уже есть аккаунт?
-            <router-link to="/login" class="login_desc_link">Войти</router-link>
-          </p>
+            <div class="login_desc_link" @click="page_type=2">Войти</div>
+          </div>
+          <div class="login_desc" v-else-if="page_type==2">
+            <div class="login_desc_link" @click="page_type=1">Зарегистрироваться</div>
+          </div>
         </div>
       </div>
     </div>
@@ -93,7 +119,8 @@ export default {
         email: null
       },
       errors: [],
-      loading: false
+      loading: false,
+      page_type: 1
     };
   },
   methods: {
@@ -111,14 +138,33 @@ export default {
         this.errors = err.response.data.errors;
       });
     },
+    login() {
+      this.loading = true;
+      requests.login(this.form).then(() => {
+        this.loading = false;
+        this.$router.push({name: 'home'});
+      }).catch(err => {
+        console.log(err)
+        this.loading = false;
+        this.errors = err.response.data.data.errors;
+      })
+    },
     showPassword() {
-      let obj = document.getElementById('password_field');
-      obj.type = 'text';
+      if (!this.loading) {
+        let obj = document.getElementById('password_field');
+        obj.type = 'text';
+      }
     },
     hidePassword() {
       let obj = document.getElementById('password_field');
       obj.type = 'password';
     }
+  },
+  mounted() {
+    console.log('mounted')
+    console.log(this.$store.state.auth)
+    if (this.$store.state.auth.authorized)
+      this.$router.push({name: 'home'})
   }
 };
 </script>
@@ -237,6 +283,7 @@ export default {
 .login_desc_link {
   font-weight: 700;
   color: #9d9d9d;
+  cursor: pointer;
 }
 
 .logoContent {

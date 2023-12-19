@@ -6,12 +6,14 @@ const requests = {
   register(data) {
     return client.post('/api/public/register', data).then(res => res.data);
   },
-  login() {
-
+  async login(data) {
+    return await client.post('/api/public/login', data).then(res => {
+      this.setAuthorization(data.email, data.password, res.data.data.token);
+      store.commit('setUser', res.data.data.user);
+    });
   },
   setAuthorization(email, password, token) {
     const authdata = window.btoa(email + ':' + encodeURIComponent(password));
-
     localStorage.setItem(LS_USERS, JSON.stringify(authdata));
     localStorage.setItem(LS_TOKEN, token);
     setTokenToClient(token);
@@ -19,7 +21,6 @@ const requests = {
   },
   getProfile() {
     return client.get('/api/public/user-info').then(res => {
-
       store.commit('setUser', res.data);
       return res.data;
     });
