@@ -434,6 +434,7 @@ a {
 }
 .videosSection__item__block__content {
 }
+
 .videosSection__item__block__content__date {
   color: rgba(38, 38, 38, 0.6);
   font-family: Inter;
@@ -706,6 +707,7 @@ a {
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
+  content: "" !important;
   background: url("../gallery/left.svg") no-repeat;
   background-size: contain;
   width: 40px;

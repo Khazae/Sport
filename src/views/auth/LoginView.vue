@@ -60,6 +60,11 @@
                   placeholder="Выберите вашу должность"
               ></v-select>
             </div>
+            <!-- <button
+              type="click"
+              @click.prevent="goRouteLk"
+              class="link local_link button"
+            > -->
             <button @click="register" :disabled="loading" class="link local_link button">
               <div class="link__text button_text">Создать аккаунт</div>
             </button>
@@ -124,6 +129,9 @@ export default {
     };
   },
   methods: {
+    goRouteLk() {
+      this.$router.push("/personal-area");
+    },
     register() {
       this.loading = true;
       this.errors = [];
@@ -166,7 +174,7 @@ export default {
     if (this.$store.state.auth.authorized)
       this.$router.push({name: 'home'})
   }
-};
+  }
 </script>
 
 <style scoped>
