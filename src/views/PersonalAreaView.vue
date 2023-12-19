@@ -31,11 +31,11 @@
               <li class="personal_aside_navigation_li">
                 <a href="#" class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/dashboard.svg"
+                    src="../assets/cubok.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
-                  Данные спортсменов</a
+                  Предстоящие события</a
                 >
               </li>
             </ul>
