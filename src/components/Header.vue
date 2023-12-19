@@ -47,7 +47,11 @@
           </ul>
         </nav>
         <div class="loginContent">
-          <router-link to="/login" class="loginLink">
+          <div v-if="$store.state.auth.authorized" class="loginLink" style="cursor: pointer">
+            <img src="../assets/user.svg" class="loginImage" alt="User"/>
+            <span class="loginText">{{ $store.state.user.user.name }}</span>
+          </div>
+          <router-link v-else to="/login" class="loginLink">
             <img src="../assets/user.svg" class="loginImage" alt="User" />
             <span class="loginText">Войти</span>
           </router-link>
