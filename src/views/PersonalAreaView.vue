@@ -129,7 +129,7 @@
                 <span class="tableCell"> 123456 </span>
               </div>
             </template>
-            <template v-else-if="!toggleSportsman">
+            <template v-else>
               <div class="tableRow row body">
                 <span class="tableCell">
                   <input disabled type="text" class="form_input" placeholder=""
