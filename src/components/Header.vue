@@ -12,8 +12,12 @@
       </div>
       <div class="rightContent">
         <nav class="nav">
-          <ul class="list" @mouseover="showDropdown" @mouseleave="hideDropdown">
-            <li class="listItem">
+          <ul class="list">
+            <li
+              class="listItem"
+              @mouseover="showDropdown"
+              @mouseleave="hideDropdown"
+            >
               <router-link to="/about" class="listLink">О нас</router-link>
             </li>
             <li class="listItem">
