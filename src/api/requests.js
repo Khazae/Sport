@@ -6,8 +6,11 @@ const requests = {
   register(data) {
     return client.post('/api/public/register', data).then(res => res.data);
   },
-  login() {
-
+  async login(data) {
+    return await client.post('/api/public/login', data).then(res => {
+      this.setAuthorization(data.email, data.password, res.data.data.token);
+      store.commit('setUser', res.data.data.user);
+    });
   },
   setAuthorization(email, password, token) {
     const authdata = window.btoa(email + ':' + encodeURIComponent(password));
