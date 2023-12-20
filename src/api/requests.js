@@ -41,6 +41,9 @@ const requests = {
   },
   getFiles(data) {
     return client.get('/api/public/files', {params: data}).then(res => res.data);
+  },
+  applicationAction(data, id) {
+    return client.post('/api/public/application-action/' + id, data).then(res => res.data);
   }
 
 };

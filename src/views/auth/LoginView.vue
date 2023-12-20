@@ -47,15 +47,12 @@
               />
             </div>
 
-            <div class="form_group" v-if="false">
-              <!-- <input
-                type="text"
-                class="form_input"
-                placeholder="Выберите вашу должность"
-              /> -->
+            <div class="form_group" :class="{'error_form':errors.region}">
 
               <v-select
                   :options="options"
+                  v-model="form.role_id"
+                  :reduce="itm => itm.value"
                   class="form_input"
                   placeholder="Выберите вашу должность"
               ></v-select>
@@ -111,10 +108,23 @@ export default {
   components: {vSelect},
   data() {
     return {
-      options: ["Тренер", "Начальник"],
+      options: [
+        {
+          label: 'Тренер',
+          value: 2
+        },
+        {
+          label: 'Начальник',
+          value: 3
+        },
+        {
+          label: 'Судья',
+          value: 4
+        },
+      ],
       form: {
         name: null,
-        role_id: 2,
+        role_id: null,
         password: null,
         region: null,
         email: null

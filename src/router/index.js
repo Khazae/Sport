@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import requireAuth from "@/router/router-guards";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,7 @@ const routes = [
       {
         path: "/personal-area",
         name: "personalArea",
+        beforeEnter: requireAuth,
         component: () => import("../views/PersonalAreaView.vue"),
       },
       {
