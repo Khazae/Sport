@@ -45,7 +45,7 @@
                   @click.prevent="selected_tab = 2"
                   class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/sob.svg"
+                    src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
@@ -60,7 +60,7 @@
                   @click.prevent="selected_tab = 3"
                   class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/vse.svg"
+                    src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
@@ -75,7 +75,7 @@
                   @click.prevent="selected_tab = 4"
                   class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/accept_icon.svg"
+                    src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
@@ -187,6 +187,7 @@ export default {
       localStorage.removeItem("$-SPORT_CLIENT_PROJECT_LOCAL_STORAGE-TOKEN");
       localStorage.removeItem("$-SPORT_CLIENT_PROJECT_LOCAL_STORAGE-USERS");
       this.$router.push("/");
+      window.location.reload();
     },
   },
 };
