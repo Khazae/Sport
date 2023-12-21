@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const client = axios.create({
-  baseURL: process.env.VUE_APP_BACKEND_URL || 'https://admin.test-parasport.kz',
+  baseURL: process.env.VUE_APP_BACKEND_URL || 'http://localhost',
   headers: {
     'Content-Type': 'application/json',
   },
