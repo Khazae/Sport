@@ -45,7 +45,7 @@
                   @click.prevent="selected_tab = 2"
                   class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/dashboard.svg"
+                    src="../assets/sob.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
@@ -60,7 +60,7 @@
                   @click.prevent="selected_tab = 3"
                   class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/dashboard.svg"
+                    src="../assets/vse.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
@@ -75,7 +75,7 @@
                   @click.prevent="selected_tab = 4"
                   class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/dashboard.svg"
+                    src="../assets/accept_icon.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
