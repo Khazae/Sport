@@ -128,11 +128,7 @@
               ></v-select>
             </div>
             <div class="form_group">
-              <v-select
-                :options="clas"
-                class="form_input"
-                placeholder="Класс"
-              ></v-select>
+              <input type="text" class="form_input" placeholder="Класс" />
             </div>
             <div class="form_group input_file_group">
               <input type="file" class="form_file" />
@@ -171,6 +167,7 @@ export default {
     return {
       selected_tab: 1,
       addSportsmenToggle: true,
+      vid: ["Республиканский", "Международный"],
     };
   },
   watch: {
