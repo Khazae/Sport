@@ -134,30 +134,30 @@
             <div class="form_content personal_form">
               <h2 class="form_content_title">Добавление спортсмена</h2>
               <div class="form_group">
-                <input type="text" class="form_input" placeholder="Почта" />
+                <input type="text" class="form_input" placeholder="ФИО" />
               </div>
               <div class="form_group">
-                <input type="text" class="form_input" placeholder="Почта" />
+                <input type="text" class="form_input" placeholder="Область, регион, город" />
               </div>
               <div class="form_group">
                 <v-select
                   :options="ves"
                   class="form_input"
-                  placeholder="Выберите вашу должность"
+                  placeholder="Весовая категория"
                 ></v-select>
               </div>
               <div class="form_group">
                 <v-select
                   :options="vid"
                   class="form_input"
-                  placeholder="Выберите вашу должность"
+                  placeholder="Вид соревнований"
                 ></v-select>
               </div>
               <div class="form_group">
                 <v-select
                   :options="clas"
                   class="form_input"
-                  placeholder="Выберите вашу должность"
+                  placeholder="Класс"
                 ></v-select>
               </div>
               <div class="form_group input_file_group">
