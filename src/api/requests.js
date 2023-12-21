@@ -44,7 +44,14 @@ const requests = {
   },
   applicationAction(data, id) {
     return client.post('/api/public/application-action/' + id, data).then(res => res.data);
-  }
+  },
+  fileUpload(data) {
+    return client.post('/api/public/file_upload', data, {headers: {'content-type': 'multipart/form-data'}}).then(res => res.data)
+  },
+  createAthlete(data) {
+    return client.post('/api/public/athlete', data).then(res => res.data)
+  },
+
 
 };
 export default requests;

@@ -1,5 +1,5 @@
 <template>
-  <button type="submit" class="link button" :class="className">
+  <button class="link button" :class="className" @click="$emit('click')">
     <div class="link__text button_text"><slot></slot></div>
   </button>
 </template>

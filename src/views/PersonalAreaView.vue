@@ -5,13 +5,13 @@
         <div class="personal_aside">
           <div class="personal_avatar_content">
             <img
-              src="../assets/avatar.png"
-              class="personal_avatar_content_avatar"
-              alt="Avatar"
+                src="../assets/avatar.png"
+                class="personal_avatar_content_avatar"
+                alt="Avatar"
             />
             <div
-              class="personal_avatar_content_text"
-              v-if="$store.state.user.user"
+                class="personal_avatar_content_text"
+                v-if="$store.state.user.user"
             >
               <div class="personal_avatar_content_text_title">
                 {{ $store.state.user.user.name }}
@@ -20,124 +20,140 @@
                 {{ $store.state.user.user.role_name }}
               </div>
             </div>
-            <img src="../assets/arrowDown.svg" alt="Arrow" />
+            <img src="../assets/arrowDown.svg" alt="Arrow"/>
           </div>
 
           <div class="personal_aside_navigation" v-if="$store.state.user.user">
             <ul class="personal_aside_navigation_list">
               <li class="personal_aside_navigation_li">
                 <a
-                  @click.prevent="selected_tab = 1"
-                  class="personal_aside_navigation_link"
-                  ><img
+                    @click.prevent="setTab(1)"
+                    class="personal_aside_navigation_link"
+                ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                  />
+                />
                   Данные спортсменов</a
                 >
               </li>
               <li class="personal_aside_navigation_li">
                 <a
-                  @click.prevent="selected_tab = 2"
-                  class="personal_aside_navigation_link"
-                  ><img
+                    @click.prevent="setTab(2)"
+                    class="personal_aside_navigation_link"
+                ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                  />
+                />
                   Предстоящие события</a
                 >
               </li>
               <li
-                class="personal_aside_navigation_li"
-                v-if="$store.state.user.user.role_id == 4"
+                  class="personal_aside_navigation_li"
+                  v-if="$store.state.user.user.role_id == 4"
               >
                 <a
-                  @click.prevent="selected_tab = 3"
-                  class="personal_aside_navigation_link"
-                  ><img
+                    @click.prevent="setTab(3)"
+                    class="personal_aside_navigation_link"
+                ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                  />
+                />
                   Все заявки</a
                 >
               </li>
               <li
-                class="personal_aside_navigation_li"
-                v-if="$store.state.user.user.role_id == 4"
+                  class="personal_aside_navigation_li"
+                  v-if="$store.state.user.user.role_id == 4"
               >
                 <a
-                  @click.prevent="selected_tab = 4"
-                  class="personal_aside_navigation_link"
-                  ><img
+                    @click.prevent="setTab(4)"
+                    class="personal_aside_navigation_link"
+                ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                  />
+                />
                   Принятые заявки</a
                 >
               </li>
             </ul>
           </div>
           <button
-            class="personal_aside_button"
-            @click="addSportsmenToggle = !addSportsmenToggle"
+              class="personal_aside_button"
+              @click="addSportsmenToggle = !addSportsmenToggle"
           >
-            <img src="../assets/plus.svg" alt="Plus" /> Добавить спортсменов
+            <img src="../assets/plus.svg" alt="Plus"/> Добавить спортсменов
           </button>
         </div>
       </div>
       <template v-if="addSportsmenToggle">
-        <athlete-list v-if="selected_tab == 1" />
-        <calendar-results-list v-if="selected_tab == 2" />
-        <applications-list v-if="selected_tab == 3" key="not_accepted" />
+        <athlete-list v-if="selected_tab == 1"/>
+        <calendar-results-list v-if="selected_tab == 2"/>
+        <applications-list v-if="selected_tab == 3" key="not_accepted"/>
         <applications-list
-          v-if="selected_tab == 4"
-          :_accepted="true"
-          key="accepted"
+            v-if="selected_tab == 4"
+            :_accepted="true"
+            key="accepted"
         />
       </template>
       <template v-else>
         <div class="table_wrapper" style="width: 100%">
-          <div class="form_content personal_form">
+          <div class="form_content personal_form" v-if="form">
             <h2 class="form_content_title">Добавление спортсмена</h2>
             <div class="form_group">
-              <input type="text" class="form_input" placeholder="ФИО" />
+              <input type="text" class="form_input" placeholder="ФИО" v-model="form.fio" :disabled="loading"
+                     :class="{'error_form':errors.fio}"/>
+            </div>
+            <div class="form_group">
+              <input type="number" class="form_input" placeholder="ID" v-model="form.personal_id" :disabled="loading"
+                     :class="{'error_form':errors.personal_id}"/>
             </div>
             <div class="form_group">
               <input
-                type="text"
-                class="form_input"
-                placeholder="Область, регион, город"
+                  type="text"
+                  class="form_input"
+                  placeholder="Область, регион, город"
+                  v-model="form.location"
+                  :disabled="loading"
+                  :class="{'error_form':errors.location}"
               />
             </div>
             <div class="form_group">
               <input
-                type="text"
-                class="form_input"
-                placeholder="Весовая категория"
+                  type="text"
+                  class="form_input"
+                  placeholder="Весовая категория"
+                  v-model="form.category"
+                  :disabled="loading"
+                  :class="{'error_form':errors.category}"
               />
             </div>
             <div class="form_group">
               <v-select
-                :options="vid"
-                class="form_input"
-                placeholder="Вид соревнований"
+                  :options="vid"
+                  class="form_input"
+                  placeholder="Вид соревнований"
+                  v-model="form.type"
+                  :disabled="loading"
+                  :reduce="itm => itm.value"
+                  :class="{'error_form':errors.type}"
               ></v-select>
             </div>
             <div class="form_group">
-              <input type="text" class="form_input" placeholder="Класс" />
+              <input type="text" class="form_input" placeholder="Класс" v-model="form.class" :disabled="loading"
+                     :class="{'error_form':errors.class}"/>
             </div>
             <div class="form_group input_file_group">
-              <input type="file" class="form_file" />
-              <div class="input_file_content">
-                <img src="../assets/formFile.svg" alt="" />
+              <input type="file" class="form_file" @change="handleChange" ref="fileUpload"/>
+              <div class="input_file_content" @click="this.loading?null:$refs.fileUpload.click()">
+                <img src="../assets/formFile.svg" alt=""/>
                 Добавить файл
               </div>
             </div>
-            <Button class="button">Сохранить</Button>
+            <Button class="button" @click="saveItem()">Сохранить</Button>
           </div>
         </div>
       </template>
@@ -153,6 +169,7 @@ import ApplicationsList from "@/views/Lists/ApplicationsList";
 import vSelect from "vue-select";
 import Button from "../components/Button.vue";
 import "vue-select/dist/vue-select.css";
+import requests from "@/api/requests";
 
 export default {
   components: {
@@ -167,20 +184,88 @@ export default {
     return {
       selected_tab: 1,
       addSportsmenToggle: true,
-      vid: ["Республиканский", "Международный"],
+      vid: [
+
+        {
+          label: 'Международный',
+          value: 1
+        },
+        {
+          label: 'Республиканский',
+          value: 2
+        },
+      ],
+      form: {},
+      errors: [],
+      loading: false
     };
   },
   watch: {
     selected_tab: {
-      handler: function () {},
+      handler: function () {
+      },
       deep: true,
     },
   },
-  methods: {},
+  methods: {
+    setTab(tab) {
+      this.addSportsmenToggle = true
+      this.selected_tab = tab
+    },
+    newForm() {
+      this.form = JSON.parse(JSON.stringify({
+        fio: null,
+        personal_id: null,
+        location: null,
+        category: null,
+        file: null,
+        type: null,
+        class: null
+      }))
+    },
+    handleChange(e) {
+      this.loading = true;
+      let formData = new FormData();
+      formData.append('file', e.target.files[0]);
+      formData.append('type', 'athlete');
+
+      requests.fileUpload(formData).then(res => {
+        this.form.file = res;
+        this.loading = false;
+      }).catch(() => {
+
+        this.loading = false;
+      });
+    },
+    saveItem() {
+      this.errors = []
+      this.loading = true
+      requests.createAthlete(this.form).then(() => {
+        this.loading = false
+        this.newForm()
+      }).catch(err => {
+        this.errors = err.response.data.errors
+        this.loading = false
+      })
+    }
+
+  },
+  mounted() {
+    this.newForm()
+  }
 };
 </script>
 
 <style scoped>
+.error_form {
+  border-bottom: 1px solid red !important;
+}
+
+.error_form input::placeholder {
+  color: red !important;
+  opacity: 0.5;
+}
+
 .wrapperPersonal {
   height: 100%;
   padding-top: 109px;
@@ -226,6 +311,7 @@ export default {
 .tableRow:last-child {
   border-bottom: none;
 }
+
 .tableCell {
   display: flex;
   align-items: center;
@@ -234,6 +320,7 @@ export default {
   line-height: 28px;
   font-weight: 400;
 }
+
 .row {
   grid-template-columns: 30px 150px 210px repeat(4, 1fr) 100px;
 }
@@ -269,6 +356,7 @@ export default {
 .personal_aside_list li:last-child {
   margin-bottom: 16px;
 }
+
 .personal_aside_list li a {
   font-size: 18px;
   font-weight: 700;
