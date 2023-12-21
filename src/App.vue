@@ -17,6 +17,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$store.state.auth)
     if (this.$store.state.auth.authorized)
       this.getToken()
   }

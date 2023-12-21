@@ -141,7 +141,8 @@ export default {
       requests.register(this.form).then(res => {
         this.loading = false;
         requests.setAuthorization(this.form.email, this.form.password, res.token);
-        this.$router.push({name: 'home'})
+        this.$store.commit('setUser', res.user)
+        this.$router.push({name: 'personalArea'})
 
       }).catch(err => {
         this.loading = false;
