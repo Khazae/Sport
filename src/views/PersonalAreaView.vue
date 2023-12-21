@@ -25,7 +25,10 @@
 
           <div class="personal_aside_navigation" v-if="$store.state.user.user">
             <ul class="personal_aside_navigation_list">
-              <li class="personal_aside_navigation_li" v-if="$store.state.user.user.role_name != 'Судья'">
+              <li
+                class="personal_aside_navigation_li"
+                v-if="$store.state.user.user.role_name != 'Судья'"
+              >
                 <a
                   @click.prevent="selected_tab = 1"
                   class="personal_aside_navigation_link"
@@ -81,12 +84,15 @@
               </li>
             </ul>
           </div>
-          <button v-if="$store.state.user.user.role_name != 'Судья'"
+          <button
+            v-if="$store.state.user.user.role_name != 'Судья'"
             class="personal_aside_button"
             @click="addSportsmenToggle = !addSportsmenToggle"
           >
             <img src="../assets/plus.svg" alt="Plus" /> Добавить спортсменов
           </button>
+
+          <button class="personal_aside_logout" @click="logout">Выйти</button>
         </div>
       </div>
       <template v-if="addSportsmenToggle">
@@ -176,7 +182,13 @@ export default {
       deep: true,
     },
   },
-  methods: {},
+  methods: {
+    logout() {
+      localStorage.removeItem("$-SPORT_CLIENT_PROJECT_LOCAL_STORAGE-TOKEN");
+      localStorage.removeItem("$-SPORT_CLIENT_PROJECT_LOCAL_STORAGE-USERS");
+      this.$router.push("/");
+    },
+  },
 };
 </script>
 
@@ -615,5 +627,19 @@ input[type="checkbox"] {
 
 .button {
   width: 100%;
+}
+
+.personal_aside_logout {
+  margin-top: 60px;
+  font-family: "inter", sans-serif;
+  font-size: 18px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #2f80ed;
+  border-radius: 4px;
+  cursor: pointer;
 }
 </style>
