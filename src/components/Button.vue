@@ -1,11 +1,12 @@
 <template>
-  <button type="submit" class="link button">
-    <div class="link__text button_text"></div>
+  <button type="submit" class="link button" :class="className">
+    <div class="link__text button_text"><slot></slot></div>
   </button>
 </template>
 
 <script>
 export default {
+  props: ["className"],
   name: "ButtonComponent",
 };
 </script>

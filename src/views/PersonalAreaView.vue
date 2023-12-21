@@ -31,99 +31,145 @@
               <li class="personal_aside_navigation_li">
                 <a href="#" class="personal_aside_navigation_link"
                   ><img
-                    src="../assets/dashboard.svg"
+                    src="../assets/cubok.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                   />
-                  Данные спортсменов</a
+                  Предстоящие события</a
                 >
               </li>
             </ul>
           </div>
-          <button class="personal_aside_button">
-            <img src="../assets/plus.svg" alt="Plus" /> Добавить спортсменов
+          <button
+            class="personal_aside_button"
+            @click="toggleSportsman = !toggleSportsman"
+          >
+            <img src="../assets/plus.svg" alt="Plus" />
+            Добавить спортсменов
           </button>
         </div>
       </div>
       <div class="personal_right_block">
         <div class="table_wrapper">
-          <div class="table_filter_content">
-            <div class="table_aside_input_content">
-              <img src="../assets/lcIcon.svg" alt="Search" />
-              <input type="text" class="table_aside_input" />
-            </div>
+          <template v-if="toggleSportsman">
+            <div class="table_filter_content">
+              <div class="table_aside_input_content">
+                <img src="../assets/lcIcon.svg" alt="Search" />
+                <input type="text" class="table_aside_input" />
+              </div>
 
-            <div class="table_filter_content_btn">
-              <button class="table_filter_content_button">
-                <img src="../assets/filter.svg" alt="" /> Фильтры
-              </button>
+              <div class="table_filter_content_btn">
+                <button class="table_filter_content_button">
+                  <img src="../assets/filter.svg" alt="" /> Фильтры
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="table">
-            <div class="tableRow tableHeader row">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">ФИО</span>
-              <span class="tableCell">Локация</span>
-              <span class="tableCell">ID</span>
-              <span class="tableCell">Весовая категория</span>
-              <span class="tableCell">Файл</span>
-              <span class="tableCell">Вид соревнований</span>
-              <span class="tableCell">Класс</span>
-            </div>
+            <div class="table">
+              <div class="tableRow tableHeader row">
+                <span class="tableCell"
+                  ><input type="checkbox" class="tableCheckbox"
+                /></span>
+                <span class="tableCell">ФИО</span>
+                <span class="tableCell">Локация</span>
+                <span class="tableCell">ID</span>
+                <span class="tableCell">Весовая категория</span>
+                <span class="tableCell">Файл</span>
+                <span class="tableCell">Вид соревнований</span>
+                <span class="tableCell">Класс</span>
+              </div>
 
-            <div class="tableRow row body">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
-            </div>
+              <div class="tableRow row body">
+                <span class="tableCell"
+                  ><input type="checkbox" class="tableCheckbox"
+                /></span>
+                <span class="tableCell">Tomiwa Oyeledu </span>
+                <span class="tableCell">Область/Город/Район</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell tableLink"><a href="#">PDF</a></span>
+                <span class="tableCell"> Международный </span>
+                <span class="tableCell"> 123456 </span>
+              </div>
 
-            <div class="tableRow row body">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
-            </div>
+              <div class="tableRow row body">
+                <span class="tableCell"
+                  ><input type="checkbox" class="tableCheckbox"
+                /></span>
+                <span class="tableCell">Tomiwa Oyeledu </span>
+                <span class="tableCell">Область/Город/Район</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell tableLink"><a href="#">PDF</a></span>
+                <span class="tableCell"> Международный </span>
+                <span class="tableCell"> 123456 </span>
+              </div>
 
-            <div class="tableRow row body">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
+              <div class="tableRow row body">
+                <span class="tableCell"
+                  ><input type="checkbox" class="tableCheckbox"
+                /></span>
+                <span class="tableCell">Tomiwa Oyeledu </span>
+                <span class="tableCell">Область/Город/Район</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell tableLink"><a href="#">PDF</a></span>
+                <span class="tableCell"> Международный </span>
+                <span class="tableCell"> 123456 </span>
+              </div>
+              <div class="tableRow row body">
+                <span class="tableCell"
+                  ><input type="checkbox" class="tableCheckbox"
+                /></span>
+                <span class="tableCell">Tomiwa Oyeledu </span>
+                <span class="tableCell">Область/Город/Район</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell">123456</span>
+                <span class="tableCell tableLink"><a href="#">PDF</a></span>
+                <span class="tableCell"> Международный </span>
+                <span class="tableCell"> 123456 </span>
+              </div>
             </div>
-            <div class="tableRow row body">
-              <span class="tableCell"
-                ><input type="checkbox" class="tableCheckbox"
-              /></span>
-              <span class="tableCell">Tomiwa Oyeledu </span>
-              <span class="tableCell">Область/Город/Район</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell">123456</span>
-              <span class="tableCell tableLink"><a href="#">PDF</a></span>
-              <span class="tableCell"> Международный </span>
-              <span class="tableCell"> 123456 </span>
+          </template>
+          <template v-else>
+            <div class="form_content personal_form">
+              <h2 class="form_content_title">Добавление спортсмена</h2>
+              <div class="form_group">
+                <input type="text" class="form_input" placeholder="Почта" />
+              </div>
+              <div class="form_group">
+                <input type="text" class="form_input" placeholder="Почта" />
+              </div>
+              <div class="form_group">
+                <v-select
+                  :options="ves"
+                  class="form_input"
+                  placeholder="Выберите вашу должность"
+                ></v-select>
+              </div>
+              <div class="form_group">
+                <v-select
+                  :options="vid"
+                  class="form_input"
+                  placeholder="Выберите вашу должность"
+                ></v-select>
+              </div>
+              <div class="form_group">
+                <v-select
+                  :options="clas"
+                  class="form_input"
+                  placeholder="Выберите вашу должность"
+                ></v-select>
+              </div>
+              <div class="form_group input_file_group">
+                <input type="file" class="form_file" />
+                <div class="input_file_content">
+                  <img src="../assets/formFile.svg" alt="" />
+                  Добавить файл
+                </div>
+              </div>
+              <Button class="button">Добавить</Button>
             </div>
-          </div>
+          </template>
         </div>
         <div class="tablePagination">
           <div class="tablePaginationCount">
@@ -151,7 +197,18 @@
 </template>
 
 <script>
-export default {};
+import vSelect from "vue-select";
+import Button from "../components/Button.vue";
+import "vue-select/dist/vue-select.css";
+export default {
+  components: { vSelect, Button },
+  data() {
+    return {
+      options: ["Международный", "Республиканский"],
+      toggleSportsman: false,
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -513,5 +570,80 @@ input[type="checkbox"] {
   border: 2px solid #333333;
   width: 16px;
   height: 16px;
+}
+
+.form_input {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 5px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201, 201, 201, 1);
+  outline: none;
+}
+
+.form_input::placeholder {
+  color: #9d9d9d;
+}
+
+.form_group {
+  margin-bottom: 36px;
+}
+
+.input_file_group {
+  width: 100%;
+  max-width: 220px;
+  height: 52px;
+  background-color: rgb(47 128 237 / 29%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+.input_file_content {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 122, 255, 1);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.input_file_content img {
+  width: 24px;
+  height: 24px;
+  margin-right: 18px;
+}
+
+.form_file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form_content {
+  width: 100%;
+  max-width: 417px;
+  margin: 0 auto;
+}
+
+.form_content_title {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  padding-top: 40px;
+  padding-bottom: 36px;
+}
+
+.button {
+  width: 100%;
 }
 </style>
