@@ -167,7 +167,7 @@
                   Добавить файл
                 </div>
               </div>
-              <Button class="button">Добавить</Button>
+              <Button class="button">Сохранить</Button>
             </div>
           </template>
         </div>
