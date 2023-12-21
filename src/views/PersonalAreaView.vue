@@ -25,7 +25,7 @@
 
           <div class="personal_aside_navigation" v-if="$store.state.user.user">
             <ul class="personal_aside_navigation_list">
-              <li class="personal_aside_navigation_li">
+              <li class="personal_aside_navigation_li" v-if="$store.state.user.user.role_name != 'Судья'">
                 <a
                   @click.prevent="selected_tab = 1"
                   class="personal_aside_navigation_link"
@@ -81,7 +81,7 @@
               </li>
             </ul>
           </div>
-          <button
+          <button v-if="$store.state.user.user.role_name != 'Судья'"
             class="personal_aside_button"
             @click="addSportsmenToggle = !addSportsmenToggle"
           >
