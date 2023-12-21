@@ -5,70 +5,146 @@
         <div class="personal_aside">
           <div class="personal_avatar_content">
             <img
-                src="../assets/avatar.png"
-                class="personal_avatar_content_avatar"
-                alt="Avatar"
+              src="../assets/avatar.png"
+              class="personal_avatar_content_avatar"
+              alt="Avatar"
             />
-            <div class="personal_avatar_content_text" v-if="$store.state.user.user">
-              <div class="personal_avatar_content_text_title">{{ $store.state.user.user.name }}</div>
-              <div class="personal_avatar_content_text_status">{{ $store.state.user.user.role_name }}</div>
+            <div
+              class="personal_avatar_content_text"
+              v-if="$store.state.user.user"
+            >
+              <div class="personal_avatar_content_text_title">
+                {{ $store.state.user.user.name }}
+              </div>
+              <div class="personal_avatar_content_text_status">
+                {{ $store.state.user.user.role_name }}
+              </div>
             </div>
-            <img src="../assets/arrowDown.svg" alt="Arrow"/>
+            <img src="../assets/arrowDown.svg" alt="Arrow" />
           </div>
 
           <div class="personal_aside_navigation" v-if="$store.state.user.user">
-            <ul class="personal_aside_navigation_list" >
+            <ul class="personal_aside_navigation_list">
               <li class="personal_aside_navigation_li">
-                <a @click.prevent="selected_tab=1" class="personal_aside_navigation_link"
-                ><img
+                <a
+                  @click.prevent="selected_tab = 1"
+                  class="personal_aside_navigation_link"
+                  ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Данные спортсменов</a
                 >
               </li>
               <li class="personal_aside_navigation_li">
-                <a @click.prevent="selected_tab=2" class="personal_aside_navigation_link"
-                ><img
+                <a
+                  @click.prevent="selected_tab = 2"
+                  class="personal_aside_navigation_link"
+                  ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Предстоящие события</a
                 >
               </li>
-              <li class="personal_aside_navigation_li" v-if="$store.state.user.user.role_id==4">
-                <a @click.prevent="selected_tab=3" class="personal_aside_navigation_link"
-                ><img
+              <li
+                class="personal_aside_navigation_li"
+                v-if="$store.state.user.user.role_id == 4"
+              >
+                <a
+                  @click.prevent="selected_tab = 3"
+                  class="personal_aside_navigation_link"
+                  ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Все заявки</a
                 >
               </li>
-              <li class="personal_aside_navigation_li" v-if="$store.state.user.user.role_id==4">
-                <a @click.prevent="selected_tab=4" class="personal_aside_navigation_link"
-                ><img
+              <li
+                class="personal_aside_navigation_li"
+                v-if="$store.state.user.user.role_id == 4"
+              >
+                <a
+                  @click.prevent="selected_tab = 4"
+                  class="personal_aside_navigation_link"
+                  ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Принятые заявки</a
                 >
               </li>
             </ul>
           </div>
-          <button class="personal_aside_button">
-            <img src="../assets/plus.svg" alt="Plus"/> Добавить спортсменов
+          <button
+            class="personal_aside_button"
+            @click="addSportsmenToggle = !addSportsmenToggle"
+          >
+            <img src="../assets/plus.svg" alt="Plus" /> Добавить спортсменов
           </button>
         </div>
       </div>
-      <athlete-list v-if="selected_tab==1"/>
-      <calendar-results-list v-if="selected_tab==2"/>
-      <applications-list v-if="selected_tab==3" key="not_accepted"/>
-      <applications-list v-if="selected_tab==4" :_accepted="true" key="accepted"/>
+      <template v-if="addSportsmenToggle">
+        <athlete-list v-if="selected_tab == 1" />
+        <calendar-results-list v-if="selected_tab == 2" />
+        <applications-list v-if="selected_tab == 3" key="not_accepted" />
+        <applications-list
+          v-if="selected_tab == 4"
+          :_accepted="true"
+          key="accepted"
+        />
+      </template>
+      <template v-else>
+        <div class="table_wrapper" style="width: 100%">
+          <div class="form_content personal_form">
+            <h2 class="form_content_title">Добавление спортсмена</h2>
+            <div class="form_group">
+              <input type="text" class="form_input" placeholder="ФИО" />
+            </div>
+            <div class="form_group">
+              <input
+                type="text"
+                class="form_input"
+                placeholder="Область, регион, город"
+              />
+            </div>
+            <div class="form_group">
+              <v-select
+                :options="ves"
+                class="form_input"
+                placeholder="Весовая категория"
+              ></v-select>
+            </div>
+            <div class="form_group">
+              <v-select
+                :options="vid"
+                class="form_input"
+                placeholder="Вид соревнований"
+              ></v-select>
+            </div>
+            <div class="form_group">
+              <v-select
+                :options="clas"
+                class="form_input"
+                placeholder="Класс"
+              ></v-select>
+            </div>
+            <div class="form_group input_file_group">
+              <input type="file" class="form_file" />
+              <div class="input_file_content">
+                <img src="../assets/formFile.svg" alt="" />
+                Добавить файл
+              </div>
+            </div>
+            <Button class="button">Сохранить</Button>
+          </div>
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -78,25 +154,33 @@ import PaginationComponent from "@/components/Pagination";
 import AthleteList from "@/views/Lists/AthleteList";
 import CalendarResultsList from "@/views/Lists/CalendarResultsList";
 import ApplicationsList from "@/views/Lists/ApplicationsList";
+import vSelect from "vue-select";
+import Button from "../components/Button.vue";
+import "vue-select/dist/vue-select.css";
 
 export default {
-  components: {ApplicationsList, CalendarResultsList, AthleteList, PaginationComponent},
+  components: {
+    ApplicationsList,
+    CalendarResultsList,
+    AthleteList,
+    PaginationComponent,
+    vSelect,
+    Button,
+  },
   data() {
     return {
-      selected_tab: 1
-    }
+      selected_tab: 1,
+      addSportsmenToggle: true,
+    };
   },
   watch: {
     selected_tab: {
-      handler: function () {
-
-      },
-      deep: true
-    }
+      handler: function () {},
+      deep: true,
+    },
   },
   methods: {},
 };
-
 </script>
 
 <style scoped>
@@ -145,7 +229,6 @@ export default {
 .tableRow:last-child {
   border-bottom: none;
 }
-
 .tableCell {
   display: flex;
   align-items: center;
@@ -154,7 +237,6 @@ export default {
   line-height: 28px;
   font-weight: 400;
 }
-
 .row {
   grid-template-columns: 30px 150px 210px repeat(4, 1fr) 100px;
 }
@@ -190,7 +272,6 @@ export default {
 .personal_aside_list li:last-child {
   margin-bottom: 16px;
 }
-
 .personal_aside_list li a {
   font-size: 18px;
   font-weight: 700;
@@ -462,5 +543,80 @@ input[type="checkbox"] {
   border: 2px solid #333333;
   width: 16px;
   height: 16px;
+}
+
+.form_input {
+  width: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 5px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(201, 201, 201, 1);
+  outline: none;
+}
+
+.form_input::placeholder {
+  color: #9d9d9d;
+}
+
+.form_group {
+  margin-bottom: 36px;
+}
+
+.input_file_group {
+  width: 100%;
+  max-width: 220px;
+  height: 52px;
+  background-color: rgb(47 128 237 / 29%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 4px;
+}
+
+.input_file_content {
+  display: flex;
+  align-items: center;
+  color: rgba(0, 122, 255, 1);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.input_file_content img {
+  width: 24px;
+  height: 24px;
+  margin-right: 18px;
+}
+
+.form_file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.form_content {
+  width: 100%;
+  max-width: 417px;
+  margin: 0 auto;
+}
+
+.form_content_title {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  padding-top: 40px;
+  padding-bottom: 36px;
+}
+
+.button {
+  width: 100%;
 }
 </style>

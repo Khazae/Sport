@@ -1204,3 +1204,8 @@ a {
 .vs__dropdown-option {
   padding: 16px !important;
 }
+
+.personal_form .vs__dropdown-toggle {
+  border: none !important;
+  background-color: transparent !important;
+}
