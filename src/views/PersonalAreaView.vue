@@ -114,11 +114,11 @@
               />
             </div>
             <div class="form_group">
-              <v-select
-                :options="ves"
+              <input
+                type="text"
                 class="form_input"
                 placeholder="Весовая категория"
-              ></v-select>
+              />
             </div>
             <div class="form_group">
               <v-select

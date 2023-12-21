@@ -3,34 +3,45 @@
     <div class="table_wrapper">
       <div class="table_filter_content">
         <div class="table_aside_input_content">
-          <img src="../../assets/lcIcon.svg" alt="Search"/>
-          <input type="text" class="table_aside_input" @keyup.enter="keyEnter" v-model="filters.search"/>
+          <img src="../../assets/lcIcon.svg" alt="Search" />
+          <input
+            type="text"
+            class="table_aside_input"
+            @keyup.enter="keyEnter"
+            v-model="filters.search"
+          />
         </div>
 
         <div class="table_filter_content_btn">
           <button class="table_filter_content_button">
-            <img src="../../assets/filter.svg" alt=""/> Фильтры
+            <img src="../../assets/filter.svg" alt="" /> Фильтры
           </button>
         </div>
       </div>
       <div class="table">
         <div class="tableRow tableHeader row">
-              <span class="tableCell"
-              ><input type="checkbox" class="tableCheckbox"
-              /></span>
+          <span class="tableCell"
+            ><input type="checkbox" class="tableCheckbox"
+          /></span>
           <span class="tableCell">ФИО</span>
           <span class="tableCell">Локация</span>
           <span class="tableCell">ID</span>
           <span class="tableCell">Весовая категория</span>
           <span class="tableCell">Вид соревнований</span>
           <span class="tableCell">Класс</span>
-          <span class="tableCell" v-if="_accepted==false">Принять/отклонить</span>
+          <span class="tableCell" v-if="_accepted == false"
+            >Принять/отклонить</span
+          >
         </div>
 
-        <div class="tableRow row body" v-for="item in list" :key="'athlete_'+item.id">
-              <span class="tableCell"
-              ><input type="checkbox" class="tableCheckbox"
-              /></span>
+        <div
+          class="tableRow row body"
+          v-for="item in list"
+          :key="'athlete_' + item.id"
+        >
+          <span class="tableCell"
+            ><input type="checkbox" class="tableCheckbox"
+          /></span>
           <span class="tableCell">{{ item.fio }}</span>
           <span class="tableCell">{{ item.location }}</span>
           <span class="tableCell">{{ item.personal_id }}</span>
@@ -38,24 +49,46 @@
 
           <span class="tableCell"> {{ item.type }}</span>
           <span class="tableCell"> {{ item.class }} </span>
-          <span class="tableCell" v-if="_accepted==false"><div>
-            <button @click="applicationAction(1,item.id)">accept</button>
-            <button @click="applicationAction(0,item.id)">decline</button>
-          </div> </span>
-        </div>
+          <span class="tableCell" v-if="_accepted == false"
+            ><div class="accept_decline_content">
+              <button
+                class="accept_button"
+                @click="applicationAction(1, item.id)"
+              >
+                Принять
+                <img src="../../assets/accept.svg" alt="" />
+              </button>
+              <button
+                class="decline_button"
+                @click="applicationAction(0, item.id)"
+              >
+                Отклонить
 
+                <img src="../../assets/decline.svg" alt="" />
+              </button>
+            </div>
+          </span>
+        </div>
       </div>
     </div>
     <div class="tablePagination">
       <div class="tablePaginationCount">
         Показать строк: <span>10</span>
-        <img src="../../assets/arrowDown2.svg" alt=""/>
+        <img src="../../assets/arrowDown2.svg" alt="" />
       </div>
 
-      <pagination-component :current="page" :last="last_page" v-if="last_page>1"
-                            @handleLoad="handleLoad"/>
-      <div class="tablePaginationNextPage" @click="nextPage()" v-if="last_page>1">
-        Следующая страница <img src="../../assets/arrowRight.svg" alt=""/>
+      <pagination-component
+        :current="page"
+        :last="last_page"
+        v-if="last_page > 1"
+        @handleLoad="handleLoad"
+      />
+      <div
+        class="tablePaginationNextPage"
+        @click="nextPage()"
+        v-if="last_page > 1"
+      >
+        Следующая страница <img src="../../assets/arrowRight.svg" alt="" />
       </div>
     </div>
   </div>
@@ -69,10 +102,10 @@ export default {
   name: "ApplicationsList",
   props: {
     _accepted: {
-      default: false
-    }
+      default: false,
+    },
   },
-  components: {PaginationComponent},
+  components: { PaginationComponent },
   data() {
     return {
       page: 1,
@@ -81,37 +114,37 @@ export default {
       filters: {
         search: null,
         paginate: 10,
-        accepted: this._accepted ? 1 : 0
+        accepted: this._accepted ? 1 : 0,
       },
-      list: []
-    }
+      list: [],
+    };
   },
   methods: {
     applicationAction(type, id) {
-      this.loading = true
-      requests.applicationAction({accepted: type}, id).then(() => {
-        this.loading = false
-        this.getList()
-      })
+      this.loading = true;
+      requests.applicationAction({ accepted: type }, id).then(() => {
+        this.loading = false;
+        this.getList();
+      });
     },
     getList() {
       this.loading = true;
       let form = {
         page: this.page,
-        ...this.filters
-      }
-      requests.getAthleteList(form).then(res => {
-        this.list = res.data
-        this.last_page = res.last_page
-        this.loading = false
-      })
+        ...this.filters,
+      };
+      requests.getAthleteList(form).then((res) => {
+        this.list = res.data;
+        this.last_page = res.last_page;
+        this.loading = false;
+      });
     },
     downloadFile(file) {
-      window.open(process.env.VUE_APP_BACKEND_URL + file, '_blank')
+      window.open(process.env.VUE_APP_BACKEND_URL + file, "_blank");
     },
     handleLoad(page) {
       if (!this.loading && this.page !== page) {
-        this.page = page
+        this.page = page;
         this.$nextTick(() => {
           this.getList();
         });
@@ -130,15 +163,15 @@ export default {
       this.getList();
     },
     dropList() {
-      this.page = 1
-      this.list = []
-      this.last_page = null
+      this.page = 1;
+      this.list = [];
+      this.last_page = null;
     },
   },
   mounted() {
-    this.getList()
-  }
-}
+    this.getList();
+  },
+};
 </script>
 
 <style scoped>
@@ -504,5 +537,47 @@ input[type="checkbox"] {
   border: 2px solid #333333;
   width: 16px;
   height: 16px;
+}
+
+.accept_decline_content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.accept_button {
+  display: flex;
+  align-items: center;
+  color: #007aff;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.accept_button img {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+}
+
+.decline_button {
+  display: flex;
+  align-items: center;
+  color: #ff3b30;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.decline_button img {
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
 }
 </style>
