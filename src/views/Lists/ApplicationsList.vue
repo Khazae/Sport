@@ -28,10 +28,12 @@
           /></span>
           <span class="tableCell">ФИО</span>
           <span class="tableCell">Локация</span>
+          <span class="tableCell">Место</span>
           <span class="tableCell">ID</span>
           <span class="tableCell">Весовая категория</span>
           <span class="tableCell">Вид соревнований</span>
           <span class="tableCell">Класс</span>
+          <span class="tableCell" v-if="_accepted">Занял место</span>
           <span class="tableCell" v-if="_accepted == false"
             >Принять/отклонить</span
           >
@@ -48,11 +50,13 @@
           /></span>
           <span class="tableCell">{{ item.fio }}</span>
           <span class="tableCell">{{ item.location }}</span>
+          <span class="tableCell">Место</span>
           <span class="tableCell">{{ item.personal_id }}</span>
           <span class="tableCell">{{ item.category }}</span>
 
           <span class="tableCell"> {{ item.type }}</span>
           <span class="tableCell"> {{ item.class }} </span>
+          <span class="tableCell" v-if="_accepted">1</span>
           <span class="tableCell" v-if="_accepted == false"
             ><div class="accept_decline_content">
               <button
@@ -72,6 +76,7 @@
               </button>
             </div>
           </span>
+
           <span class="tableCell">
             <div>
               <div class="popover">
@@ -257,11 +262,11 @@ export default {
 }
 
 .row {
-  grid-template-columns: 30px repeat(7, 1fr) 20px;
+  grid-template-columns: 30px repeat(7, 1fr) 60px 20px;
 }
 
 .rowTwo {
-  grid-template-columns: 30px repeat(6, 1fr) 20px;
+  grid-template-columns: 30px repeat(7, 1fr) 60px 20px;
 }
 
 .body {
@@ -512,6 +517,7 @@ export default {
   background-color: #2f80ed0d;
   padding: 15px 10px;
   border-radius: 4px;
+  margin-right: 15px;
 }
 
 .table_aside_input_content {

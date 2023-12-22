@@ -3,21 +3,26 @@
     <div class="table_wrapper">
       <div class="table_filter_content">
         <div class="table_aside_input_content">
-          <img src="../../assets/lcIcon.svg" alt="Search"/>
-          <input type="text" class="table_aside_input" @keyup.enter="keyEnter" v-model="filters.search"/>
+          <img src="../../assets/lcIcon.svg" alt="Search" />
+          <input
+            type="text"
+            class="table_aside_input"
+            @keyup.enter="keyEnter"
+            v-model="filters.search"
+          />
         </div>
 
         <div class="table_filter_content_btn">
           <button class="table_filter_content_button">
-            <img src="../../assets/filter.svg" alt=""/> Фильтры
+            <img src="../../assets/filter.svg" alt="" /> Фильтры
           </button>
         </div>
       </div>
       <div class="table">
         <div class="tableRow tableHeader row">
-              <span class="tableCell"
-              ><input type="checkbox" class="tableCheckbox"
-              /></span>
+          <span class="tableCell"
+            ><input type="checkbox" class="tableCheckbox"
+          /></span>
           <span class="tableCell">ФИО</span>
           <span class="tableCell">Локация</span>
           <span class="tableCell">ID</span>
@@ -27,32 +32,46 @@
           <span class="tableCell">Класс</span>
         </div>
 
-        <div class="tableRow row body" v-for="item in list" :key="'athlete_'+item.id">
-              <span class="tableCell"
-              ><input type="checkbox" class="tableCheckbox"
-              /></span>
+        <div
+          class="tableRow row body"
+          v-for="item in list"
+          :key="'athlete_' + item.id"
+        >
+          <span class="tableCell"
+            ><input type="checkbox" class="tableCheckbox"
+          /></span>
           <span class="tableCell">{{ item.fio }}</span>
           <span class="tableCell">{{ item.location }}</span>
           <span class="tableCell">{{ item.personal_id }}</span>
           <span class="tableCell">{{ item.category }}</span>
-          <span class="tableCell tableLink"><a style="cursor:pointer;"
-                                               @click.prevent="downloadFile(item.file)">PDF</a></span>
+          <span class="tableCell tableLink"
+            ><a style="cursor: pointer" @click.prevent="downloadFile(item.file)"
+              >PDF</a
+            ></span
+          >
           <span class="tableCell"> {{ item.type }}</span>
           <span class="tableCell"> {{ item.class }} </span>
         </div>
-
       </div>
     </div>
     <div class="tablePagination">
       <div class="tablePaginationCount">
         Показать строк: <span>10</span>
-        <img src="../../assets/arrowDown2.svg" alt=""/>
+        <img src="../../assets/arrowDown2.svg" alt="" />
       </div>
 
-      <pagination-component :current="page" :last="last_page" v-if="last_page>1"
-                            @handleLoad="handleLoad"/>
-      <div class="tablePaginationNextPage" @click="nextPage()" v-if="last_page>1">
-        Следующая страница <img src="../../assets/arrowRight.svg" alt=""/>
+      <pagination-component
+        :current="page"
+        :last="last_page"
+        v-if="last_page > 1"
+        @handleLoad="handleLoad"
+      />
+      <div
+        class="tablePaginationNextPage"
+        @click="nextPage()"
+        v-if="last_page > 1"
+      >
+        Следующая страница <img src="../../assets/arrowRight.svg" alt="" />
       </div>
     </div>
   </div>
@@ -64,18 +83,18 @@ import requests from "@/api/requests";
 
 export default {
   name: "AthleteList",
-  components: {PaginationComponent},
+  components: { PaginationComponent },
   data() {
     return {
       page: 1,
       last_page: null,
       filters: {
         search: null,
-        paginate: 10
+        paginate: 10,
       },
       list: [],
-      loading: false
-    }
+      loading: false,
+    };
   },
   methods: {
     keyEnter() {
@@ -83,28 +102,28 @@ export default {
       this.getList();
     },
     dropList() {
-      this.page = 1
-      this.list = []
-      this.last_page = null
+      this.page = 1;
+      this.list = [];
+      this.last_page = null;
     },
     getList() {
-      this.loading = true
+      this.loading = true;
       let form = {
         page: this.page,
-        ...this.filters
-      }
-      requests.getAthleteList(form).then(res => {
-        this.list = res.data
-        this.last_page = res.last_page
-        this.loading = false
-      })
+        ...this.filters,
+      };
+      requests.getAthleteList(form).then((res) => {
+        this.list = res.data;
+        this.last_page = res.last_page;
+        this.loading = false;
+      });
     },
     downloadFile(file) {
-      window.open(process.env.VUE_APP_BACKEND_URL + file, '_blank')
+      window.open(process.env.VUE_APP_BACKEND_URL + file, "_blank");
     },
     handleLoad(page) {
       if (!this.loading && this.page !== page) {
-        this.page = page
+        this.page = page;
         this.$nextTick(() => {
           this.getList();
         });
@@ -120,9 +139,9 @@ export default {
     },
   },
   mounted() {
-    this.getList()
-  }
-}
+    this.getList();
+  },
+};
 </script>
 
 <style scoped>
