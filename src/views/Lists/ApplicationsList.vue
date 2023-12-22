@@ -19,7 +19,10 @@
         </div>
       </div>
       <div class="table">
-        <div class="tableRow tableHeader row">
+        <div
+          class="tableRow tableHeader"
+          :class="!_accepted ? 'row' : 'rowTwo'"
+        >
           <span class="tableCell"
             ><input type="checkbox" class="tableCheckbox"
           /></span>
@@ -35,9 +38,10 @@
         </div>
 
         <div
-          class="tableRow row body"
+          class="tableRow body"
           v-for="item in list"
           :key="'athlete_' + item.id"
+          :class="!_accepted ? 'row' : 'rowTwo'"
         >
           <span class="tableCell"
             ><input type="checkbox" class="tableCheckbox"
@@ -66,6 +70,28 @@
 
                 <img src="../../assets/decline.svg" alt="" />
               </button>
+            </div>
+          </span>
+          <span class="tableCell">
+            <div>
+              <div class="popover">
+                <img
+                  src="../../assets/options.svg"
+                  class="table_options"
+                  alt=""
+                />
+                <div class="menu">
+                  <ul class="menu_ul">
+                    <li class="menu_li menu_form">Сформировать протокол</li>
+                    <li class="menu_li menu_pencil">
+                      <img src="../../assets/pencil.svg" alt="" /> Редактировать
+                    </li>
+                    <li class="menu_li menu_delete">
+                      <img src="../../assets/delete.svg" alt="" /> Удалить
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </span>
         </div>
@@ -204,7 +230,7 @@ export default {
 
 .table_wrapper {
   background-color: #f8f8f8;
-  padding: 43px 20px 55px 15px;
+  padding: 43px 0 55px 15px;
   border-radius: 8px;
   margin-right: 28px;
 }
@@ -231,7 +257,11 @@ export default {
 }
 
 .row {
-  grid-template-columns: 30px 150px 210px repeat(4, 1fr) 100px;
+  grid-template-columns: 30px repeat(7, 1fr) 20px;
+}
+
+.rowTwo {
+  grid-template-columns: 30px repeat(6, 1fr) 20px;
 }
 
 .body {
@@ -308,6 +338,7 @@ export default {
   padding: 31px 15px;
   background-color: #2f80ed1a;
   border-radius: 15px;
+  margin-right: 20px;
 }
 
 .tableHeader .tableCell {
@@ -579,5 +610,68 @@ input[type="checkbox"] {
   width: 12px;
   height: 12px;
   margin-left: 4px;
+}
+
+.table_options {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.popover {
+  position: relative;
+  display: inline-block;
+}
+
+.popover .menu {
+  width: 215px;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px 0px #00000026;
+  padding: 16px;
+  min-width: 120px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.popover:hover .menu {
+  display: block;
+}
+
+.menu_ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu_li {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu_li img {
+  width: 18px;
+  height: 18px;
+  margin-right: 3.5px;
+}
+
+.menu_form {
+  color: #007aff;
+}
+
+.menu_pencil {
+  color: var(--color-black);
+}
+
+.menu_delete {
+  color: #ff3b30;
 }
 </style>
