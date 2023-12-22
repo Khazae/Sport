@@ -121,10 +121,10 @@ export default {
       page: 1,
       last_page: null,
       loading: false,
-      pagination: 10,
       filters: {
         type: null,
-        status: null
+        status: null,
+        paginate: 10
       },
       order: {
         date_time: 'DESC'
@@ -152,7 +152,7 @@ export default {
     },
     getList() {
       this.loading = true;
-      requests.getCalendarResults({page: this.page, pagination: this.pagination, ...this.filters}).then(res => {
+      requests.getCalendarResults({page: this.page, ...this.filters}).then(res => {
         this.loading = false;
         this.list = res.data;
         this.last_page = res.last_page;

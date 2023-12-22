@@ -51,6 +51,15 @@ const requests = {
   createAthlete(data) {
     return client.post('/api/public/athlete', data).then(res => res.data)
   },
+  applicationCalendarList() {
+    return client.get('/api/public/application-calendar-list').then(res => res.data)
+  },
+  applicationList(data) {
+    return client.get('/api/public/application-list', {params: data}).then(res => res.data)
+  },
+  applicationCreate(data) {
+    return client.post('/api/public/application-create', data).then(res => res.data)
+  }
 
 
 };

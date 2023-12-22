@@ -48,7 +48,8 @@
           <span class="tableCell"
             ><input type="checkbox" class="tableCheckbox"
           /></span>
-          <span class="tableCell">{{ item.fio }}</span>
+
+          <!-- <span class="tableCell">{{ item.fio }}</span>
           <span class="tableCell">{{ item.location }}</span>
           <span class="tableCell">Место</span>
           <span class="tableCell">{{ item.personal_id }}</span>
@@ -56,7 +57,16 @@
 
           <span class="tableCell"> {{ item.type }}</span>
           <span class="tableCell"> {{ item.class }} </span>
-          <span class="tableCell" v-if="_accepted">1</span>
+          <span class="tableCell" v-if="_accepted">1</span> -->
+
+          <span class="tableCell">{{ item.athlete.fio }}</span>
+          <span class="tableCell">{{ item.athlete.location }}</span>
+          <span class="tableCell">{{ item.athlete.personal_id }}</span>
+          <span class="tableCell">{{ item.athlete.category }}</span>
+
+          <span class="tableCell"> {{ item.athlete.type }}</span>
+          <span class="tableCell"> {{ item.athlete.class }} </span>
+
           <span class="tableCell" v-if="_accepted == false"
             ><div class="accept_decline_content">
               <button
@@ -164,7 +174,7 @@ export default {
         page: this.page,
         ...this.filters,
       };
-      requests.getAthleteList(form).then((res) => {
+      requests.applicationList(form).then((res) => {
         this.list = res.data;
         this.last_page = res.last_page;
         this.loading = false;
