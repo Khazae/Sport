@@ -1,206 +1,209 @@
 <template>
-  <div class="wrapperPersonal littleAreaWrapper">
-    <div class="personalContent">
-      <div class="personal_left_block">
-        <div class="personal_aside">
-          <div class="personal_avatar_content">
-            <img
-                src="../assets/avatar.png"
-                class="personal_avatar_content_avatar"
-                alt="Avatar"
-            />
-            <div
-                class="personal_avatar_content_text"
-                v-if="$store.state.user.user"
-            >
-              <div class="personal_avatar_content_text_title">
-                {{ $store.state.user.user.name }}
-              </div>
-              <div class="personal_avatar_content_text_status">
-                {{ $store.state.user.user.role_name }}
-              </div>
-            </div>
-            <img src="../assets/arrowDown.svg" alt="Arrow"/>
-          </div>
 
-          <div class="personal_aside_navigation" v-if="$store.state.user.user">
-            <ul class="personal_aside_navigation_list">
-              <li
-                  class="personal_aside_navigation_li"
-                  v-if="$store.state.user.user.role_id==3"
-              >
-                <a
-                    @click.prevent="setTab(1)"
-                    class="personal_aside_navigation_link"
-                ><img
-                    src="../assets/dashboard.svg"
-                    class="personal_aside_navigation_link_img"
-                    alt=""
-                />
-                  Данные спортсменов</a
-                >
-              </li>
-              <li class="personal_aside_navigation_li">
-                <a
-                    @click.prevent="setTab(2)"
-                    class="personal_aside_navigation_link"
-                ><img
-                    src="../assets/dashboard.svg"
-                    class="personal_aside_navigation_link_img"
-                    alt=""
-                />
-                  Предстоящие события</a
-                >
-              </li>
-              <li
-                  class="personal_aside_navigation_li"
-                  v-if="$store.state.user.user.role_id == 4"
-              >
-              <!-- Check -->
-                <a
-                    @click.prevent="setTab(3)"
-                    class="personal_aside_navigation_link"
-                ><img
-                  @click.prevent="setTab(3)"
-                    src="../assets/vse.svg"
-
-                    class="personal_aside_navigation_link_img"
-                    alt=""
-                />
-                  Все заявки</a
-                >
-              </li>
-              <li
-                  class="personal_aside_navigation_li"
-                  v-if="$store.state.user.user.role_id == 4"
-              >
-              <!-- Check -->
-                <a
-                  @click.prevent="setTab(4)"
-                    class="personal_aside_navigation_link"
-                ><img
-                    src="../assets/accept_icon.svg"
-                    class="personal_aside_navigation_link_img"
-                    alt=""
-                />
-                  Принятые заявки</a
-                >
-              </li>
-            </ul>
-          </div>
-          <button
-              v-if="$store.state.user.user.role_name != 'Судья'"
-              class="personal_aside_button"
-              @click="addSportsmenToggle = !addSportsmenToggle"
-          >
-            <img src="../assets/plus.svg" alt="Plus"/> Подать заявку
-          </button>
-
-          <button class="personal_aside_logout" @click="logout">Выйти</button>
+  <div class="table_wrapper" style="width: 100%">
+    <div class="table_wrapper" v-if="!selectedItem">
+      <div class="table_filter_content">
+        <div class="table_aside_input_content">
+          <img src="../../assets/lcIcon.svg" alt="Search"/>
+          <input
+              type="text"
+              class="table_aside_input"
+              @keyup.enter="keyEnter"
+              v-model="filters.search"
+              placeholder="ID или ФИО"
+          />
         </div>
       </div>
-      <template v-if="addSportsmenToggle">
-        <athlete-list v-if="selected_tab == 1"/>
-        <calendar-results-list v-if="selected_tab == 2"/>
-        <applications-list v-if="selected_tab == 3" key="not_accepted"/>
-        <applications-list
-            v-if="selected_tab == 4"
-            :_accepted="true"
-            key="accepted"
+      <div class="table">
+        <div class="tableRow tableHeader row">
+
+          <span class="tableCell">ФИО</span>
+          <span class="tableCell">Локация</span>
+          <span class="tableCell">ID</span>
+          <span class="tableCell">Весовая категория</span>
+          <span class="tableCell">Файл</span>
+          <span class="tableCell">Вид соревнований</span>
+          <span class="tableCell">Класс</span>
+        </div>
+
+        <div
+            class="tableRow row body"
+            v-for="item in list"
+            :key="'athlete_' + item.id"
+            @click="selectAthlete(item)" style="cursor:pointer;"
+        >
+
+          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.fio }}</span>
+          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.location }}</span>
+          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.personal_id }}</span>
+          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.category }}</span>
+          <span class="tableCell tableLink"
+          ><a style="cursor: pointer" @click.prevent="downloadFile(item.file)"
+          >PDF</a
+          ></span
+          >
+          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;"> {{ item.type }}</span>
+          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;"> {{ item.class }} </span>
+        </div>
+      </div>
+    </div>
+    <div class="form_content personal_form" v-if="selectedItem">
+      <h2 class="form_content_title">Подача заявки</h2>
+      <div class="form_group">
+        <input type="text" class="form_input" placeholder="ФИО" v-model="selectedItem.fio" disabled
+               :class="{'error_form':errors.fio}"/>
+      </div>
+      <div class="form_group">
+        <input type="number" class="form_input" placeholder="ID портсмена" v-model="selectedItem.personal_id"
+               disabled/>
+      </div>
+
+      <div class="form_group">
+        <input
+            type="text"
+            class="form_input"
+            placeholder="Область, регион, город"
+            v-model="selectedItem.location"
+            disabled
+            :class="{'error_form':errors.location}"
         />
-      </template>
-      <new-application v-else/>
+      </div>
+      <div class="form_group">
+        <input
+            type="text"
+            class="form_input"
+            placeholder="Весовая категория"
+            v-model="selectedItem.category"
+            disabled
+            :class="{'error_form':errors.category}"
+        />
+      </div>
+      <div class="form_group">
+        <v-select
+            :options="vid"
+            class="form_input"
+            placeholder="Вид соревнований"
+            v-model="selectedItem.type"
+            disabled
+            :reduce="itm => itm.value"
+            :class="{'error_form':errors.type}"
+        ></v-select>
+      </div>
+      <div class="form_group">
+        <input type="text" class="form_input" placeholder="Класс" v-model="form.class" disabled
+        />
+      </div>
+      <!--      <div class="form_group input_file_group" >-->
+      <!--        <input type="file" class="form_file" @change="handleChange" ref="fileUpload"/>-->
+      <!--        <div class="input_file_content" @click="this.loading?null:$refs.fileUpload.click()">-->
+      <!--          <img src="../../assets/formFile.svg" alt=""/>-->
+      <!--          Добавить файл-->
+      <!--        </div>-->
+      <!--      </div>-->
+      <div class="form_group" v-if="calendarList.length>0">
+        <v-select v-model="form.calendar_id" :options="calendarList" :reduce="itm => itm.id" label="title"
+                  class="form_input" placeholder="Выберите событие" :class="{'error_form':errors.calendar_id}">
+
+        </v-select>
+
+      </div>
+      <Button class="button" @click="saveItem()">Сохранить</Button>
+
     </div>
   </div>
+
 </template>
 
 <script>
-import PaginationComponent from "@/components/Pagination";
-import AthleteList from "@/views/Lists/AthleteList";
-import CalendarResultsList from "@/views/Lists/CalendarResultsList";
-import ApplicationsList from "@/views/Lists/ApplicationsList";
+import requests from "@/api/requests";
 import vSelect from "vue-select";
-import Button from "../components/Button.vue";
-import "vue-select/dist/vue-select.css";
-import NewApplication from "@/views/Lists/NewApplication";
+import Button from "@/components/Button";
 
 export default {
-  components: {
-    NewApplication,
-    ApplicationsList,
-    CalendarResultsList,
-    AthleteList,
-    PaginationComponent,
-    vSelect,
-    Button,
-  },
+  name: "NewApplication",
+  components: {vSelect, Button},
+
   data() {
     return {
-      selected_tab: 1,
-      addSportsmenToggle: true,
+      calendarList: [],
+      loading: false,
+      errors: [],
+      form: null,
+      list: [],
+      filters: {
+        paginate: 50,
+        search: null
+      },
+      selectedItem: null,
       vid: [
-
         {
           label: 'Международный',
-          value: 1
+          value: '1'
         },
         {
           label: 'Республиканский',
-          value: 2
+          value: '2'
         },
       ],
-      form: {},
-      errors: [],
-      loading: false,
-      calendarList: [],
-    };
-  },
-  watch: {
-    selected_tab: {
-      handler: function () {
-      },
-      deep: true,
-    },
+    }
   },
   methods: {
-    logout() {
-      localStorage.removeItem("$-SPORT_CLIENT_PROJECT_LOCAL_STORAGE-TOKEN");
-      localStorage.removeItem("$-SPORT_CLIENT_PROJECT_LOCAL_STORAGE-USERS");
-      this.$router.push("/");
-      window.location.reload();
+    selectAthlete(item) {
+      this.selectedItem = item
+      this.form.id = item.id
     },
-    setTab(tab) {
-      this.addSportsmenToggle = true
-      this.selected_tab = tab
+    getList() {
+      this.loading = true
+      requests.getAthleteList(this.filters).then(res => {
+        this.list = res.data
+        this.loading = false
+      })
+    },
+    dropForm() {
+      this.list = []
+      this.newForm()
+      this.selectedItem = null
+      this.filters.search = null
+    },
+    saveItem() {
+      this.errors = [];
+      this.loading = false;
+      requests.applicationCreate(this.form).then(() => {
+        this.loading = false
+        this.$toast("Успешно");
+        this.dropForm()
+      }).catch(err => {
+        this.errors = err.response.data.errors
+        this.loading = false
+      })
+    },
+    downloadFile(file) {
+      window.open(process.env.VUE_APP_BACKEND_URL + file, "_blank");
+    },
+    newForm() {
+      this.form = JSON.parse(JSON.stringify({
+        id: null,
+        calendar_id: null
+      }))
+    },
+    getCalendarList() {
+      requests.applicationCalendarList().then(res => {
+        this.calendarList = res
+      })
+    },
+    keyEnter() {
+      this.list = [];
+      this.getList();
     },
 
-    // handleChange(e) {
-    //   this.loading = true;
-    //   let formData = new FormData();
-    //   formData.append('file', e.target.files[0]);
-    //   formData.append('type', 'athlete');
-    //
-    //   requests.fileUpload(formData).then(res => {
-    //     this.form.file = res;
-    //     this.loading = false;
-    //   }).catch(() => {
-    //
-    //     this.loading = false;
-    //   });
-    // },
-    // saveItem() {
-    //   this.errors = []
-    //   this.loading = true
-    //   requests.createAthlete(this.form).then(() => {
-    //     this.loading = false
-    //     this.newForm()
-    //   }).catch(err => {
-    //     this.errors = err.response.data.errors
-    //     this.loading = false
-    //   })
-    // },
   },
-};
+  mounted() {
+    this.getCalendarList()
+    this.newForm()
+
+
+  }
+}
 </script>
 
 <style scoped>
@@ -231,7 +234,7 @@ export default {
   width: 100%;
   max-width: 1372px;
   height: 480px;
-  background-image: url("../assets/oiBg2.png");
+  background-image: url("../../assets/oiBg2.png");
   background-size: cover;
   background-repeat: no-repeat;
   position: absolute;

@@ -59,6 +59,9 @@ const requests = {
   },
   applicationCreate(data) {
     return client.post('/api/public/application-create', data).then(res => res.data)
+  },
+  setPlace(data) {
+    return client.post('/api/public/application-place', data).then(res => res.data);
   }
 
 
