@@ -56,11 +56,14 @@
                   class="personal_aside_navigation_li"
                   v-if="$store.state.user.user.role_id == 4"
               >
+              <!-- Check -->
                 <a
                     @click.prevent="setTab(3)"
                     class="personal_aside_navigation_link"
                 ><img
-                    src="../assets/dashboard.svg"
+                  @click.prevent="setTab(3)"
+                    src="../assets/vse.svg"
+
                     class="personal_aside_navigation_link_img"
                     alt=""
                 />
@@ -71,11 +74,12 @@
                   class="personal_aside_navigation_li"
                   v-if="$store.state.user.user.role_id == 4"
               >
+              <!-- Check -->
                 <a
-                    @click.prevent="setTab(4)"
+                  @click.prevent="setTab(4)"
                     class="personal_aside_navigation_link"
                 ><img
-                    src="../assets/dashboard.svg"
+                    src="../assets/accept_icon.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
                 />

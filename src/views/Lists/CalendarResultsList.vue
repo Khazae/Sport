@@ -3,21 +3,26 @@
     <div class="table_wrapper">
       <div class="table_filter_content">
         <div class="table_aside_input_content">
-          <img src="../../assets/lcIcon.svg" alt="Search"/>
-          <input type="text" class="table_aside_input" @keyup.enter="keyEnter" v-model="filters.search"/>
+          <img src="../../assets/lcIcon.svg" alt="Search" />
+          <input
+            type="text"
+            class="table_aside_input"
+            @keyup.enter="keyEnter"
+            v-model="filters.search"
+          />
         </div>
 
         <div class="table_filter_content_btn">
           <button class="table_filter_content_button">
-            <img src="../../assets/filter.svg" alt=""/> Фильтры
+            <img src="../../assets/filter.svg" alt="" /> Фильтры
           </button>
         </div>
       </div>
       <div class="table">
         <div class="tableRow tableHeader row">
-              <span class="tableCell"
-              ><input type="checkbox" class="tableCheckbox"
-              /></span>
+          <span class="tableCell"
+            ><input type="checkbox" class="tableCheckbox"
+          /></span>
           <span class="tableCell">Дата</span>
           <span class="tableCell">Соревнования</span>
           <span class="tableCell">Положения</span>
@@ -26,39 +31,66 @@
           <span class="tableCell">Трансляция</span>
         </div>
 
-        <div class="tableRow row body" v-for="item in list" :key="'athlete_'+item.id">
-              <span class="tableCell"
-              ><input type="checkbox" class="tableCheckbox"
-              /></span>
-          <span class="tableCell">{{ $dayjs(item.date_time).format('DD.M.YYYY') }}</span>
+        <div
+          class="tableRow row body"
+          v-for="item in list"
+          :key="'athlete_' + item.id"
+        >
+          <span class="tableCell"
+            ><input type="checkbox" class="tableCheckbox"
+          /></span>
+          <span class="tableCell">{{
+            $dayjs(item.date_time).format("DD.M.YYYY")
+          }}</span>
           <span class="tableCell"> {{ item.title }}</span>
 
-          <span class="tableCell tableLink"><a style="cursor:pointer;"
-                                               @click.prevent="downloadFile(item.state)">PDF</a></span>
-          <span class="tableCell tableLink"><a style="cursor:pointer;"
-                                               @click.prevent="downloadFile(item.protocol)">PDF</a></span>
-
+          <span class="tableCell tableLink"
+            ><a
+              style="cursor: pointer"
+              @click.prevent="downloadFile(item.state)"
+              >PDF</a
+            ></span
+          >
+          <span class="tableCell tableLink"
+            ><a
+              style="cursor: pointer"
+              @click.prevent="downloadFile(item.protocol)"
+              >PDF</a
+            ></span
+          >
 
           <span class="tableCell"> {{ getStatus(item.status) }}</span>
           <span class="tableCell">
-          <div class="tableLive" v-if="item.link" style="cursor: pointer;"
-               @click="openLink(item.link)">
-                                    <img src="../../assets/live.svg" alt="Live"/>Live
-                                  </div></span>
+            <div
+              class="tableLive"
+              v-if="item.link"
+              style="cursor: pointer"
+              @click="openLink(item.link)"
+            >
+              <img src="../../assets/live.svg" alt="Live" />Live
+            </div></span
+          >
         </div>
-
       </div>
     </div>
     <div class="tablePagination">
       <div class="tablePaginationCount">
         Показать строк: <span>10</span>
-        <img src="../../assets/arrowDown2.svg" alt=""/>
+        <img src="../../assets/arrowDown2.svg" alt="" />
       </div>
 
-      <pagination-component :current="page" :last="last_page" v-if="last_page>1"
-                            @handleLoad="handleLoad"/>
-      <div class="tablePaginationNextPage" @click="nextPage()" v-if="last_page>1">
-        Следующая страница <img src="../../assets/arrowRight.svg" alt=""/>
+      <pagination-component
+        :current="page"
+        :last="last_page"
+        v-if="last_page > 1"
+        @handleLoad="handleLoad"
+      />
+      <div
+        class="tablePaginationNextPage"
+        @click="nextPage()"
+        v-if="last_page > 1"
+      >
+        Следующая страница <img src="../../assets/arrowRight.svg" alt="" />
       </div>
     </div>
   </div>
@@ -70,18 +102,18 @@ import requests from "@/api/requests";
 
 export default {
   name: "CalendarResultsList",
-  components: {PaginationComponent},
+  components: { PaginationComponent },
   data() {
     return {
       page: 1,
       last_page: null,
       filters: {
         search: null,
-        paginate: 10
+        paginate: 10,
       },
       loading: false,
-      list: []
-    }
+      list: [],
+    };
   },
   methods: {
     keyEnter() {
@@ -89,52 +121,52 @@ export default {
       this.getList();
     },
     dropList() {
-      this.page = 1
-      this.list = []
-      this.last_page = null
+      this.page = 1;
+      this.list = [];
+      this.last_page = null;
     },
     getList() {
-      this.loading = true
+      this.loading = true;
       let form = {
         page: this.page,
-        ...this.filters
-      }
-      requests.getCalendarResults(form).then(res => {
-        this.list = res.data
-        this.last_page = res.last_page
-        this.loading = false
-      })
+        ...this.filters,
+      };
+      requests.getCalendarResults(form).then((res) => {
+        this.list = res.data;
+        this.last_page = res.last_page;
+        this.loading = false;
+      });
     },
     openLink(link) {
-      window.open(link, '_blank');
+      window.open(link, "_blank");
     },
     downloadFile(file) {
-      window.open(process.env.VUE_APP_BACKEND_URL + file, '_blank')
+      window.open(process.env.VUE_APP_BACKEND_URL + file, "_blank");
     },
     getStatus(status) {
-      let res = ''
+      let res = "";
       switch (status) {
         case 1:
-          res = 'Ожидается';
+          res = "Ожидается";
           break;
         case 2:
-          res = 'Проходит';
+          res = "Проходит";
           break;
         case 3:
-          res = 'Отменен';
+          res = "Отменен";
           break;
         case 4:
-          res = 'Завершен';
+          res = "Завершен";
           break;
 
         default:
           break;
       }
-      return res
+      return res;
     },
     handleLoad(page) {
       if (!this.loading && this.page !== page) {
-        this.page = page
+        this.page = page;
         this.$nextTick(() => {
           this.getList();
         });
@@ -150,9 +182,9 @@ export default {
     },
   },
   mounted() {
-    this.getList()
-  }
-}
+    this.getList();
+  },
+};
 </script>
 
 <style scoped>

@@ -19,36 +19,44 @@
         </div>
       </div>
       <div class="table">
-        <div class="tableRow tableHeader row">
+        <div
+          class="tableRow tableHeader"
+          :class="!_accepted ? 'row' : 'rowTwo'"
+        >
           <span class="tableCell"
             ><input type="checkbox" class="tableCheckbox"
           /></span>
           <span class="tableCell">ФИО</span>
           <span class="tableCell">Локация</span>
+          <span class="tableCell">Место</span>
           <span class="tableCell">ID</span>
           <span class="tableCell">Весовая категория</span>
           <span class="tableCell">Вид соревнований</span>
           <span class="tableCell">Класс</span>
+          <span class="tableCell" v-if="_accepted">Занял место</span>
           <span class="tableCell" v-if="_accepted == false"
             >Принять/отклонить</span
           >
         </div>
 
         <div
-          class="tableRow row body"
+          class="tableRow body"
           v-for="item in list"
           :key="'athlete_' + item.id"
+          :class="!_accepted ? 'row' : 'rowTwo'"
         >
           <span class="tableCell"
             ><input type="checkbox" class="tableCheckbox"
           /></span>
           <span class="tableCell">{{ item.fio }}</span>
           <span class="tableCell">{{ item.location }}</span>
+          <span class="tableCell">Место</span>
           <span class="tableCell">{{ item.personal_id }}</span>
           <span class="tableCell">{{ item.category }}</span>
 
           <span class="tableCell"> {{ item.type }}</span>
           <span class="tableCell"> {{ item.class }} </span>
+          <span class="tableCell" v-if="_accepted">1</span>
           <span class="tableCell" v-if="_accepted == false"
             ><div class="accept_decline_content">
               <button
@@ -66,6 +74,29 @@
 
                 <img src="../../assets/decline.svg" alt="" />
               </button>
+            </div>
+          </span>
+
+          <span class="tableCell">
+            <div>
+              <div class="popover">
+                <img
+                  src="../../assets/options.svg"
+                  class="table_options"
+                  alt=""
+                />
+                <div class="menu">
+                  <ul class="menu_ul">
+                    <li class="menu_li menu_form">Сформировать протокол</li>
+                    <li class="menu_li menu_pencil">
+                      <img src="../../assets/pencil.svg" alt="" /> Редактировать
+                    </li>
+                    <li class="menu_li menu_delete">
+                      <img src="../../assets/delete.svg" alt="" /> Удалить
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </span>
         </div>
@@ -204,7 +235,7 @@ export default {
 
 .table_wrapper {
   background-color: #f8f8f8;
-  padding: 43px 20px 55px 15px;
+  padding: 43px 0 55px 15px;
   border-radius: 8px;
   margin-right: 28px;
 }
@@ -231,7 +262,11 @@ export default {
 }
 
 .row {
-  grid-template-columns: 30px 150px 210px repeat(4, 1fr) 100px;
+  grid-template-columns: 30px repeat(7, 1fr) 60px 20px;
+}
+
+.rowTwo {
+  grid-template-columns: 30px repeat(7, 1fr) 60px 20px;
 }
 
 .body {
@@ -308,6 +343,7 @@ export default {
   padding: 31px 15px;
   background-color: #2f80ed1a;
   border-radius: 15px;
+  margin-right: 20px;
 }
 
 .tableHeader .tableCell {
@@ -481,6 +517,7 @@ export default {
   background-color: #2f80ed0d;
   padding: 15px 10px;
   border-radius: 4px;
+  margin-right: 15px;
 }
 
 .table_aside_input_content {
@@ -579,5 +616,68 @@ input[type="checkbox"] {
   width: 12px;
   height: 12px;
   margin-left: 4px;
+}
+
+.table_options {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.popover {
+  position: relative;
+  display: inline-block;
+}
+
+.popover .menu {
+  width: 215px;
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 5px 10px 0px #00000026;
+  padding: 16px;
+  min-width: 120px;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.popover:hover .menu {
+  display: block;
+}
+
+.menu_ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu_li {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 22.5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu_li img {
+  width: 18px;
+  height: 18px;
+  margin-right: 3.5px;
+}
+
+.menu_form {
+  color: #007aff;
+}
+
+.menu_pencil {
+  color: var(--color-black);
+}
+
+.menu_delete {
+  color: #ff3b30;
 }
 </style>
