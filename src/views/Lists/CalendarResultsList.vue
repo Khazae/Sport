@@ -332,7 +332,7 @@ export default {
 }
 
 .body .tableCell {
-  font-size: 18px;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
   color: var(--color-black);
 }
