@@ -325,10 +325,13 @@
             <div class="videosSection__item">
               <div class="videosSection__item__title">Топ видео</div>
               <div class="videosSection__item__block">
-                <a href="videosSection__item__block_link">
+                <a
+                  href="https://youtu.be/XE_SmXgslaE?si=I37I0ec8rmydqnwC"
+                  target="_blank"
+                >
                   <div class="videosSection__item__block__img">
                     <img
-                      src="../assets/video/1.png"
+                      src="../assets/video/newVideo1.jpg"
                       alt=""
                       class="videosSection__item__block__img_image"
                     />
@@ -341,25 +344,29 @@
 
                   <div class="videosSection__item__block__content">
                     <div class="videosSection__item__block__content__date">
-                      9 ноября 2023
+                      21 окт. 2023
                     </div>
                     <div class="videosSection__item__block__content__title">
-                      Название видео
+                      Дневник Азиатских Пара игр Ханчжоу-2022 21.10.2023
                     </div>
                     <div
                       class="videosSection__item__block__content__description"
                     >
-                      Краткое описание к видео
+                      Торжественная церемония поднятия флага Республики
+                      Казахстан и первые соревнования первенства континента
                     </div>
                   </div>
                 </a>
               </div>
 
               <div class="videosSection__item__block">
-                <a href="videosSection__item__block_link">
+                <a
+                  href="https://youtu.be/ybixXsnujh0?si=2FIloWnghmAYJ8Ow"
+                  target="_blank"
+                >
                   <div class="videosSection__item__block__img">
                     <img
-                      src="../assets/video/2.png"
+                      src="../assets/video/newVideo2.jpg"
                       alt=""
                       class="videosSection__item__block__img_image"
                     />
@@ -372,25 +379,26 @@
 
                   <div class="videosSection__item__block__content">
                     <div class="videosSection__item__block__content__date">
-                      9 ноября 2023
+                      20 окт. 2023
                     </div>
                     <div class="videosSection__item__block__content__title">
-                      Название видео
+                      Дневник Азиатских Пара игр 20.10.2023
                     </div>
                     <div
                       class="videosSection__item__block__content__description"
-                    >
-                      Краткое описание к видео
-                    </div>
+                    ></div>
                   </div>
                 </a>
               </div>
 
               <div class="videosSection__item__block">
-                <a href="videosSection__item__block_link">
+                <a
+                  href="https://youtu.be/FRv3MXoOkNU?si=hR9BvLUJS5rLVMz8"
+                  target="_blank"
+                >
                   <div class="videosSection__item__block__img">
                     <img
-                      src="../assets/video/3.png"
+                      src="../assets/video/newVideo3.jpg"
                       alt=""
                       class="videosSection__item__block__img_image"
                     />
@@ -403,31 +411,33 @@
 
                   <div class="videosSection__item__block__content">
                     <div class="videosSection__item__block__content__date">
-                      9 ноября 2023
+                      18 окт. 2023
                     </div>
                     <div class="videosSection__item__block__content__title">
-                      Название видео
+                      Дневник Азиатских Пара игр
                     </div>
                     <div
                       class="videosSection__item__block__content__description"
-                    >
-                      Краткое описание к видео
-                    </div>
+                    ></div>
                   </div>
                 </a>
               </div>
             </div>
-            <div class="videosSection__item">
+            <a
+              class="videosSection__item"
+              href="https://youtu.be/D2G4d4XMdBg?si=ZznOvfshSbLKcdrV"
+              target="_blank"
+            >
               <div class="videosSection__item__action">Чемпионат</div>
               <div class="videosSection__item__content">
                 <div class="videosSection__item__content__date">
-                  9 ноября 2023
+                  19 окт. 2023
                 </div>
                 <div class="videosSection__item__content__title">
-                  Название видео
+                  Дневник Азиатских Пара игр Ханчжоу-2022 19.10.2023
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </section>

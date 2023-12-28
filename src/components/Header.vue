@@ -21,7 +21,7 @@
               <router-link to="/about" class="listLink">О нас</router-link>
             </li>
             <li class="listItem">
-              <router-link to="" class="listLink">Виды спорта</router-link>
+              <router-link to="/kinds-of-sports" class="listLink">Виды спорта</router-link>
             </li>
             <li class="listItem">
               <router-link to="/calendar" class="listLink"
@@ -35,6 +35,9 @@
             </li> -->
             <li class="listItem">
               <router-link to="/budget" class="listLink">Бюджет</router-link>
+            </li>
+            <li class="listItem">
+              <router-link to="/upcoming-events" class="listLink">Предстоящие события</router-link>
             </li>
             <li class="listItem">
               <router-link to="/faq" class="listLink">FAQ</router-link>

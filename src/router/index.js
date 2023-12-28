@@ -39,6 +39,11 @@ const routes = [
         component: () => import("../views/CalendarandResultsView.vue"),
       },
       {
+        path: "/upcoming-events",
+        name: "upcoming-events",
+        component: () => import("../views/UpcomingEvents.vue"),
+      },
+      {
         path: "/about",
         name: "about",
         component: () => import("../views/AboutView.vue"),
@@ -87,6 +92,11 @@ const routes = [
         path: "/information-about",
         name: "InformationAbout",
         component: () => import("../views/InformationAboutView.vue"),
+      },
+      {
+        path: "/kinds-of-sports",
+        name: "/KindsOfSports",
+        component: () => import("../views/KindsOfSports.vue"),
       },
       {
         path: "/statistical-indicators",
