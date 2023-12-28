@@ -25,14 +25,14 @@
             </li>
             <li class="listItem">
               <router-link to="/calendar" class="listLink"
-                >Календарь</router-link
+                >Календарь и результаты</router-link
               >
             </li>
-            <li class="listItem">
+            <!-- <li class="listItem">
               <router-link to="/calendar" class="listLink"
                 >Результаты</router-link
               >
-            </li>
+            </li> -->
             <li class="listItem">
               <router-link to="/budget" class="listLink">Бюджет</router-link>
             </li>
@@ -223,7 +223,7 @@ export default {
       delayTimeout: null,
       selectedLanguage: { value: "kz" },
       selectVisible: false,
-      languages: [{ value: "kz" }, { value: "ru" }],
+      languages: [{ value: "kz" }, { value: "ru" }, { value: "en" }, ],
     };
   },
   mounted() {},

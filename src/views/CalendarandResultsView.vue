@@ -11,7 +11,9 @@
                 <input
                     type="text"
                     class="calendar_aside_input"
-                    placeholder="Введите ID или ФИО"
+                    placeholder="Введите ID"
+                    v-model="filters.id"
+                    v-on:keyup.enter="dateOrder()"
                 />
               </div>
               <ul class="calendar_aside_list">
@@ -44,7 +46,7 @@
                 <span class="tableCell">Соревнования</span>
                 <span class="tableCell">Положения</span>
                 <span class="tableCell">Протоколы</span>
-                <span class="tableCell"
+                <span class="tableCell" @click="dateOrder()"
                 >Статус
                   <img src="../assets/arrowDown2.svg" alt=""
                   />
@@ -90,15 +92,15 @@
               </div>
             </div>
             <div class="tablePagination">
-              <div class="tablePaginationCount">
+              <!-- <div class="tablePaginationCount">
                 Показать строк: <span>10</span>
                 <img src="../assets/arrowDown2.svg" alt=""/>
-              </div>
+              </div> -->
 
               <pagination-component :current="page" :last="last_page" v-if="last_page>1"
                                     @handleLoad="handleLoad"/>
               <div class="tablePaginationNextPage" @click="nextPage()">
-                Следующая страница <img src="../assets/arrowRight.svg" alt=""/>
+                <!-- Следующая страница <img src="../assets/arrowRight.svg" alt=""/> -->
               </div>
             </div>
           </div>
@@ -124,7 +126,8 @@ export default {
       filters: {
         type: null,
         status: null,
-        paginate: 10
+        paginate: 10,
+        id: null
       },
       order: {
         date_time: 'DESC'
@@ -137,6 +140,7 @@ export default {
       window.open(process.env.VUE_APP_BACKEND_URL + file, '_blank')
     },
     dateOrder() {
+      this.list = [];
       this.date_time = this.date_time == 'ASC' ? 'DESC' : 'ASC';
       this.getList();
 
