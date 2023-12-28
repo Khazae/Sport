@@ -89,7 +89,7 @@ export default { components: { HeaderTitle } };
   width: 100%;
   max-width: 270px;
   padding: 24px 42px;
-  background-color: #fff;
+  background-color: var(--color-bg-white);
   display: flex;
   flex-direction: column;
   gap: 15px;

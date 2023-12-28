@@ -1,33 +1,35 @@
 <template>
   <div class="budget_file">
     <div class="budget_text">
-      <img src="../assets/pdfIcon.svg" alt="Pdf"/>
+      <img src="../assets/pdfIcon.svg" alt="Pdf" />
       <div class="budget_text_content">
         <div class="budget_title_content">
           <div class="budget_text_content_title">{{ title }}</div>
           <div class="budget_text_content_desc">(Примечания)</div>
         </div>
-        <span class="budget_text_content_data">{{ $dayjs(date).format('DD.MM.YYYY') }}</span>
+        <span class="budget_text_content_data">{{
+          $dayjs(date).format("DD.MM.YYYY")
+        }}</span>
       </div>
     </div>
-    <a @click.prevent="downloadFile" style="cursor:pointer;"
-        target="_blank"
-        class="budget_link"
-    >Скачать <img src="../assets/downloadIcon.svg" alt="Download"
+    <a
+      @click.prevent="downloadFile"
+      style="cursor: pointer"
+      target="_blank"
+      class="budget_link"
+      >Скачать <img src="../assets/downloadIcon.svg" alt="Download"
     /></a>
   </div>
 </template>
 
 <script>
 export default {
-  props: [
-    'title', 'date', 'file'
-  ],
+  props: ["title", "date", "file"],
   methods: {
     downloadFile() {
-      window.open(process.env.VUE_APP_BACKEND_URL + this.file, '_blank')
-    }
-  }
+      window.open(process.env.VUE_APP_BACKEND_URL + this.file, "_blank");
+    },
+  },
 };
 </script>
 
@@ -49,14 +51,14 @@ export default {
   font-size: 18px;
   font-weight: 400;
   font-family: "Inter", sans-serif;
-  color: #262626;
+  color: var(--color-black);
 }
 
 .budget_text_content_desc {
   font-size: 18px;
   font-weight: 400;
   font-family: "Inter", sans-serif;
-  color: #262626;
+  color: var(--color-black);
   margin-left: 12px;
 }
 
@@ -80,6 +82,6 @@ export default {
   font-size: 18px;
   font-weight: 400;
   font-family: "Inter", sans-serif;
-  color: #262626;
+  color: var(--color-black);
 }
 </style>

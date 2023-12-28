@@ -52,7 +52,7 @@ export default {
   font-size: 32px;
   font-weight: 500;
   text-transform: uppercase;
-  color: #262626;
+  color: var(--color-black);
   font-family: "Inter", sans-serif;
   margin-bottom: 40px;
 }

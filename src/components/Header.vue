@@ -21,7 +21,9 @@
               <router-link to="/about" class="listLink">О нас</router-link>
             </li>
             <li class="listItem">
-              <router-link to="/kinds-of-sports" class="listLink">Виды спорта</router-link>
+              <router-link to="/kinds-of-sports" class="listLink"
+                >Виды спорта</router-link
+              >
             </li>
             <li class="listItem">
               <router-link to="/calendar" class="listLink"
@@ -37,7 +39,9 @@
               <router-link to="/budget" class="listLink">Бюджет</router-link>
             </li>
             <li class="listItem">
-              <router-link to="/upcoming-events" class="listLink">Предстоящие события</router-link>
+              <router-link to="/upcoming-events" class="listLink"
+                >Предстоящие события</router-link
+              >
             </li>
             <li class="listItem">
               <router-link to="/faq" class="listLink">FAQ</router-link>
@@ -246,11 +250,14 @@ export default {
       selectVisible: false,
       languages: [{ value: "kz" }, { value: "ru" }, { value: "en" }],
       impaired: false,
+      theme: localStorage.getItem("theme") || "",
       eyesLinkDark: require("@/assets/eyes.png"),
       eyesLinkLight: require("@/assets/lightEyes.png"),
     };
   },
-  mounted() {},
+  created() {
+    this.impaired = this.theme === "dark" ? true : false;
+  },
   watch: {
     isVisible(newVal) {
       console.log(newVal);
@@ -260,6 +267,15 @@ export default {
   methods: {
     toggleImpaired() {
       this.impaired = !this.impaired;
+      if (this.impaired) {
+        this.theme = "dark";
+        localStorage.setItem("theme", "dark");
+        document.body.setAttribute("dark", "");
+      } else {
+        this.theme = "light";
+        localStorage.setItem("theme", "light");
+        document.body.removeAttribute("dark");
+      }
     },
     toggleSelect() {
       this.selectVisible = !this.selectVisible;
@@ -286,7 +302,7 @@ export default {
   },
   computed: {
     currentImage() {
-      return this.impaired ? this.eyesLinkDark : this.eyesLinkLight;
+      return this.theme === "dark" ? this.eyesLinkDark : this.eyesLinkLight;
     },
   },
 };
@@ -507,7 +523,7 @@ export default {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
+  background-color: var(--color-bg-white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 4px;

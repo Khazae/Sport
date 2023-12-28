@@ -30,6 +30,6 @@ export default { props: ["title"] };
   font-family: "Montserrat", sans-serif;
   text-transform: uppercase;
   line-height: 48.76px;
-  color: #ffffff;
+  color: var(--color-white);
 }
 </style>

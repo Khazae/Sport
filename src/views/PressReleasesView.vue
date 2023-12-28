@@ -278,7 +278,7 @@ export default {
   padding: 11px 27px;
   font-family: "Montserrat", sans-serif;
   background-color: #007aff;
-  color: #fff;
+  color: var(--color-white);
   border-radius: 6px;
   border: none;
   cursor: pointer;

@@ -127,7 +127,7 @@ export default {
 .vacancies_item {
   width: 100%;
   max-width: 571px;
-  background-color: #ffffff;
+  background-color: var(--color-bg-white);
   padding: 24px;
   border-radius: 4px;
 }

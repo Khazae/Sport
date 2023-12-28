@@ -1,6 +1,17 @@
 :root {
   --color-white: #fff;
+  --color-bg-white: #fff;
   --color-black: #262626;
   --link-color: #e3e3e3;
   --color-secondary: #ee743d;
+  --color-grey: #ebeef3;
+}
+
+[dark] {
+  --color-white: #000;
+  --color-bg-white: #373737;
+  --color-black: grey;
+  --link-color: #000;
+  --color-secondary: #ee743d;
+  --color-grey: #001f3f;
 }

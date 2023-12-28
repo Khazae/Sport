@@ -222,7 +222,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--color-bg-white);
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
   z-index: 100;

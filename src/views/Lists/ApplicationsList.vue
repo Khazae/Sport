@@ -317,7 +317,7 @@ export default {
   height: 100%;
   padding-top: 109px;
   padding-bottom: 120px;
-  background-color: #ebeef3;
+  background-color: var(--color-grey);
 }
 
 .littleAreaWrapper {
@@ -742,7 +742,7 @@ input[type="checkbox"] {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #fff;
+  background-color: var(--color-bg-white);
   box-shadow: 0px 5px 10px 0px #00000026;
   padding: 16px;
   min-width: 120px;

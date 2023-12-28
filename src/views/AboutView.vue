@@ -80,7 +80,7 @@ export default { components: { HeaderTitle } };
 .about_title {
   font-size: 32px;
   font-weight: 500;
-  color: #262626;
+  color: var(--color-black);
   text-transform: uppercase;
   font-family: "Inter", sans-serif;
   margin-bottom: 32px;
@@ -89,7 +89,7 @@ export default { components: { HeaderTitle } };
 .about_desc {
   font-size: 18px;
   font-weight: 400;
-  color: #262626;
+  color: var(--color-black);
   font-family: "Inter", sans-serif;
   line-height: 24px;
 }

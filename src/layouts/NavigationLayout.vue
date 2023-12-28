@@ -22,7 +22,7 @@ export default {
     Footer,
   },
   mounted() {
-    document.body.style.backgroundColor = "#ebeef3";
+    document.body.style.backgroundColor = "var(--color-grey)";
   },
   beforeDestroy() {
     document.body.style.backgroundColor = "";

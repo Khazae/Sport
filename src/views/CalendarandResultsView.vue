@@ -235,7 +235,7 @@ export default {
 }
 
 .body {
-  background-color: #fff;
+  background-color: var(--color-bg-white);
   padding: 11px 24px;
   margin-bottom: 10px;
 }
@@ -256,7 +256,7 @@ export default {
 }
 
 .calendar_aside {
-  background-color: #fff;
+  background-color: var(--color-bg-white);
   padding: 24px 16px 24px 24px;
 }
 
@@ -367,12 +367,12 @@ export default {
   color: var(--color-black);
   padding: 8px 12px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--color-bg-white);
 }
 
 .chip_button_active {
   background-color: #007aff;
-  color: #ffffff;
+  color: var(--color-white);
   border: none;
 }
 
