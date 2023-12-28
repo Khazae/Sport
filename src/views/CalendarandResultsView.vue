@@ -12,7 +12,7 @@
                     type="text"
                     class="calendar_aside_input"
                     placeholder="Введите ID"
-                    v-model="filters.id"
+                    v-model="filters.search"
                     v-on:keyup.enter="dateOrder()"
                 />
               </div>
@@ -127,7 +127,7 @@ export default {
         type: null,
         status: null,
         paginate: 10,
-        id: null
+        search: null
       },
       order: {
         date_time: 'DESC'

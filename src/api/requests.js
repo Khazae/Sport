@@ -74,6 +74,9 @@ const requests = {
   },
   getVideoGallery() {
     return client.get('/api/public/video-gallery').then(res => res.data)
+  },
+  getColorScheme() {
+    return client.get('/api/public/color-scheme').then(res => res.data);
   }
 
 
