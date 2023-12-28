@@ -68,6 +68,12 @@ const requests = {
   },
   setPlace(data) {
     return client.post('/api/public/application-place', data).then(res => res.data);
+  },
+  getGallery() {
+    return client.get('/api/public/gallery').then(res => res.data);
+  },
+  getVideoGallery() {
+    return client.get('/api/public/video-gallery').then(res => res.data)
   }
 
 
