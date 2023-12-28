@@ -46,6 +46,9 @@
             </li>
           </ul>
         </nav>
+        <div class="impairedContent">
+          <img class="eyes" src="../assets/eyes.png" alt="" />
+        </div>
         <div class="loginContent">
           <div
             v-if="$store.state.auth.authorized"
@@ -146,9 +149,7 @@
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link
-                  to="/contacts-view"
-                  class="headerDropdownMenuLink"
+                <router-link to="/contacts-view" class="headerDropdownMenuLink"
                   >Контактные данные "Адалдық алаңы"</router-link
                 >
               </li>
@@ -235,7 +236,7 @@ export default {
       delayTimeout: null,
       selectedLanguage: { value: "kz" },
       selectVisible: false,
-      languages: [{ value: "kz" }, { value: "ru" }, { value: "en" }, ],
+      languages: [{ value: "kz" }, { value: "ru" }, { value: "en" }],
     };
   },
   mounted() {},
@@ -506,5 +507,11 @@ export default {
 
 .langContent:hover ul {
   display: block;
+}
+
+.eyes {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
 }
 </style>
