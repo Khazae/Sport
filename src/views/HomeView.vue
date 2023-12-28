@@ -50,13 +50,18 @@
               </div> -->
 
               <div v-for="n in news" :key="n.id" class="newsItem">
-                <router-link :to="{'name':'pressReleases',params:{id:n.id}}" class="newsLink">
+                <router-link
+                  :to="{ name: 'pressReleases', params: { id: n.id } }"
+                  class="newsLink"
+                >
                   <img :src="n.img_url" class="newsImage" alt="News" />
                   <div class="newsTextContent">
                     <h3 class="newsText">
-                        {{ n.title }}
+                      {{ n.title }}
                     </h3>
-                    <span class="newsDate">{{ dayjs(n.publish_date).format('DD.MM.YYYY') }}</span>
+                    <span class="newsDate">{{
+                      dayjs(n.publish_date).format("DD.MM.YYYY")
+                    }}</span>
                   </div>
                 </router-link>
               </div>
@@ -475,32 +480,32 @@
 <script>
 import HeaderSlider from "@/components/HeaderSlider.vue";
 import SliderComponent from "@/components/SliderComponent.vue";
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
-import requests from '../api/requests';
+import requests from "../api/requests";
 
 export default {
-    data() {
-        return {
-            news: [],
-            // img_url: ""
-        }
+  data() {
+    return {
+      news: [],
+      // img_url: ""
+    };
+  },
+  components: {
+    SliderComponent,
+    HeaderSlider,
+  },
+  mounted() {
+    this.getList();
+    // this.img_url = process.env.VUE_APP_BACKEND_URL;
+  },
+  methods: {
+    dayjs,
+    getList() {
+      requests.getList().then((res) => {
+        this.news = res;
+      });
     },
-    components: {
-        SliderComponent,
-        HeaderSlider,
-    },
-    mounted() {
-        this.getList();
-        // this.img_url = process.env.VUE_APP_BACKEND_URL;
-    },
-    methods: {
-        dayjs,
-        getList() {
-            requests.getList().then(res => {
-                this.news = res
-            })
-        },
-    },
+  },
 };
 </script>

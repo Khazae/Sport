@@ -49,6 +49,14 @@
             </li>
           </ul>
         </nav>
+        <div class="impairedContent">
+          <img
+            class="eyes"
+            :src="currentImage"
+            @click="toggleImpaired"
+            alt=""
+          />
+        </div>
         <div class="loginContent">
           <div
             v-if="$store.state.auth.authorized"
@@ -149,9 +157,7 @@
                 >
               </li>
               <li class="headerDropdownMenuLi">
-                <router-link
-                  to="/contacts-view"
-                  class="headerDropdownMenuLink"
+                <router-link to="/contacts-view" class="headerDropdownMenuLink"
                   >Контактные данные "Адалдық алаңы"</router-link
                 >
               </li>
@@ -238,7 +244,10 @@ export default {
       delayTimeout: null,
       selectedLanguage: { value: "kz" },
       selectVisible: false,
-      languages: [{ value: "kz" }, { value: "ru" }, { value: "en" }, ],
+      languages: [{ value: "kz" }, { value: "ru" }, { value: "en" }],
+      impaired: false,
+      eyesLinkDark: require("@/assets/eyes.png"),
+      eyesLinkLight: require("@/assets/lightEyes.png"),
     };
   },
   mounted() {},
@@ -249,6 +258,9 @@ export default {
     },
   },
   methods: {
+    toggleImpaired() {
+      this.impaired = !this.impaired;
+    },
     toggleSelect() {
       this.selectVisible = !this.selectVisible;
     },
@@ -270,6 +282,11 @@ export default {
     },
     cancelHideDropdown() {
       clearTimeout(this.delayTimeout);
+    },
+  },
+  computed: {
+    currentImage() {
+      return this.impaired ? this.eyesLinkDark : this.eyesLinkLight;
     },
   },
 };
@@ -381,7 +398,7 @@ export default {
 }
 
 .loginContent {
-  margin-left: 40px;
+  margin-left: 15px;
 }
 
 .loginLink {
@@ -509,5 +526,12 @@ export default {
 
 .langContent:hover ul {
   display: block;
+}
+
+.eyes {
+  width: 30px;
+  height: 30px;
+  margin-left: 15px;
+  cursor: pointer;
 }
 </style>
