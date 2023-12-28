@@ -69,7 +69,7 @@ const routes = [
         component: () => import("../views/VacanciesView.vue"),
       },
       {
-        path: "/press-releases",
+        path: "/press-releases/:id",
         name: "pressReleases",
         component: () => import("../views/PressReleasesView.vue"),
       },
@@ -133,6 +133,17 @@ const routes = [
         name: "faq",
         component: () => import("../views/FaqView.vue"),
       },
+      {
+        path: "/general-info",
+        name: "generalInfo",
+        component: () => import("../views/GeneralInfo"),
+      },
+      {
+        path: "/contacts-view",
+        name: "contactsView",
+        component: () => import("../views/ContactsView2"),
+      },
+
     ],
   },
 ];

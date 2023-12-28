@@ -50,13 +50,13 @@
               </div> -->
 
               <div v-for="n in news" :key="n.id" class="newsItem">
-                <router-link to="/press-releases" class="newsLink">
-                  <img :src="img_url + n.img" class="newsImage" alt="News" />
+                <router-link :to="{'name':'pressReleases',params:{id:n.id}}" class="newsLink">
+                  <img :src="n.img_url" class="newsImage" alt="News" />
                   <div class="newsTextContent">
                     <h3 class="newsText">
                         {{ n.title }}
                     </h3>
-                    <span class="newsDate">{{ dayjs(n.created_at).format('DD.MM.YYYY') }}</span>
+                    <span class="newsDate">{{ dayjs(n.publish_date).format('DD.MM.YYYY') }}</span>
                   </div>
                 </router-link>
               </div>
@@ -483,7 +483,7 @@ export default {
     data() {
         return {
             news: [],
-            img_url: ""
+            // img_url: ""
         }
     },
     components: {
@@ -492,13 +492,13 @@ export default {
     },
     mounted() {
         this.getList();
-        this.img_url = process.env.VUE_APP_BACKEND_URL;
+        // this.img_url = process.env.VUE_APP_BACKEND_URL;
     },
     methods: {
         dayjs,
         getList() {
             requests.getList().then(res => {
-                this.news = res.data
+                this.news = res
             })
         },
     },

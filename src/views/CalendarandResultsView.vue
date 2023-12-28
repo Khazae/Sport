@@ -131,7 +131,26 @@ export default {
       },
       order: {
         date_time: 'DESC'
-      }
+      },
+      statusFilter: [
+        {
+          value: 1,
+          label: 'Ожидается'
+        },
+        {
+          value: 2,
+          label: 'Проходит'
+        },
+        {
+          value: 3,
+          label: 'Отменен'
+        },
+        {
+          value: 4,
+          label: 'Завершен'
+        },
+
+      ]
     };
 
   },
