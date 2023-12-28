@@ -5,13 +5,13 @@
         <div class="personal_aside">
           <div class="personal_avatar_content">
             <img
-                src="../assets/avatar.png"
-                class="personal_avatar_content_avatar"
-                alt="Avatar"
+              src="../assets/avatar.png"
+              class="personal_avatar_content_avatar"
+              alt="Avatar"
             />
             <div
-                class="personal_avatar_content_text"
-                v-if="$store.state.user.user"
+              class="personal_avatar_content_text"
+              v-if="$store.state.user.user"
             >
               <div class="personal_avatar_content_text_title">
                 {{ $store.state.user.user.name }}
@@ -20,96 +20,95 @@
                 {{ $store.state.user.user.role_name }}
               </div>
             </div>
-            <img src="../assets/arrowDown.svg" alt="Arrow"/>
+            <img src="../assets/arrowDown.svg" alt="Arrow" />
           </div>
 
           <div class="personal_aside_navigation" v-if="$store.state.user.user">
             <ul class="personal_aside_navigation_list">
               <li
-                  class="personal_aside_navigation_li"
-                  v-if="$store.state.user.user.role_id==3"
+                class="personal_aside_navigation_li"
+                v-if="$store.state.user.user.role_id == 3"
               >
                 <a
-                    @click.prevent="setTab(1)"
-                    class="personal_aside_navigation_link"
-                ><img
+                  @click.prevent="setTab(1)"
+                  class="personal_aside_navigation_link"
+                  ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Данные спортсменов</a
                 >
               </li>
               <li class="personal_aside_navigation_li">
                 <a
-                    @click.prevent="setTab(2)"
-                    class="personal_aside_navigation_link"
-                ><img
+                  @click.prevent="setTab(2)"
+                  class="personal_aside_navigation_link"
+                  ><img
                     src="../assets/dashboard.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Предстоящие события</a
                 >
               </li>
               <li
-                  class="personal_aside_navigation_li"
-                  v-if="$store.state.user.user.role_id == 4"
+                class="personal_aside_navigation_li"
+                v-if="$store.state.user.user.role_id == 4"
               >
-              <!-- Check -->
+                <!-- Check -->
                 <a
-                    @click.prevent="setTab(3)"
-                    class="personal_aside_navigation_link"
-                ><img
                   @click.prevent="setTab(3)"
+                  class="personal_aside_navigation_link"
+                  ><img
+                    @click.prevent="setTab(3)"
                     src="../assets/vse.svg"
-
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Все заявки</a
                 >
               </li>
               <li
-                  class="personal_aside_navigation_li"
-                  v-if="$store.state.user.user.role_id == 4"
+                class="personal_aside_navigation_li"
+                v-if="$store.state.user.user.role_id == 4"
               >
-              <!-- Check -->
+                <!-- Check -->
                 <a
                   @click.prevent="setTab(4)"
-                    class="personal_aside_navigation_link"
-                ><img
+                  class="personal_aside_navigation_link"
+                  ><img
                     src="../assets/accept_icon.svg"
                     class="personal_aside_navigation_link_img"
                     alt=""
-                />
+                  />
                   Принятые заявки</a
                 >
               </li>
             </ul>
           </div>
           <button
-              v-if="$store.state.user.user.role_name != 'Судья'"
-              class="personal_aside_button"
-              @click="addSportsmenToggle = !addSportsmenToggle"
+            v-if="$store.state.user.user.role_name != 'Судья'"
+            class="personal_aside_button"
+            @click="addSportsmenToggle = !addSportsmenToggle"
           >
-            <img src="../assets/plus.svg" alt="Plus"/> Подать заявку
+            <img src="../assets/plus.svg" alt="Plus" /> Подать заявку
           </button>
 
           <button class="personal_aside_logout" @click="logout">Выйти</button>
         </div>
       </div>
       <template v-if="addSportsmenToggle">
-        <athlete-list v-if="selected_tab == 1"/>
-        <calendar-results-list v-if="selected_tab == 2"/>
-        <applications-list v-if="selected_tab == 3" key="not_accepted"/>
+        <athlete-list v-if="selected_tab == 1" />
+        <calendar-results-list v-if="selected_tab == 2" />
+        <applications-list v-if="selected_tab == 3" key="not_accepted" />
         <applications-list
-            v-if="selected_tab == 4"
-            :_accepted="true"
-            key="accepted"
+          v-if="selected_tab == 4"
+          :_accepted="true"
+          key="accepted"
         />
       </template>
-      <new-application v-else/>
+      <new-application v-else />
     </div>
   </div>
 </template>
@@ -139,14 +138,13 @@ export default {
       selected_tab: 1,
       addSportsmenToggle: true,
       vid: [
-
         {
-          label: 'Международный',
-          value: 1
+          label: "Международный",
+          value: 1,
         },
         {
-          label: 'Республиканский',
-          value: 2
+          label: "Республиканский",
+          value: 2,
         },
       ],
       form: {},
@@ -157,8 +155,7 @@ export default {
   },
   watch: {
     selected_tab: {
-      handler: function () {
-      },
+      handler: function () {},
       deep: true,
     },
   },
@@ -170,8 +167,8 @@ export default {
       window.location.reload();
     },
     setTab(tab) {
-      this.addSportsmenToggle = true
-      this.selected_tab = tab
+      this.addSportsmenToggle = true;
+      this.selected_tab = tab;
     },
 
     // handleChange(e) {
@@ -217,7 +214,7 @@ export default {
   height: 100%;
   padding-top: 109px;
   padding-bottom: 120px;
-  background-color: #ebeef3;
+  background-color: var(--news-text-color);
 }
 
 .littleAreaWrapper {

@@ -1,6 +1,6 @@
 <template>
   <div class="press_releases_wrapper littlePressRealeasesWrapper">
-    <HeaderTitle title="Пресс-релизы"/>
+    <HeaderTitle title="Пресс-релизы" />
     <div class="container">
       <div class="press_releases_content">
         <div class="press_releases_news_content" v-if="item">
@@ -8,31 +8,38 @@
           <div class="press_releases_catalog">
             <!--            <div class="press_releases_catalog_author">Автор</div>-->
             <!--            <div class="press_releases_catalog_category">Категория</div>-->
-            <div class="press_releases_catalog_date">{{ $dayjs(item.publish_date).fromNow() }}</div>
+            <div class="press_releases_catalog_date">
+              {{ $dayjs(item.publish_date).fromNow() }}
+            </div>
           </div>
-          <img class="press_releases_img" alt="" :src="item.img_url"/>
+          <img class="press_releases_img" alt="" :src="item.img_url" />
 
-          <p class="press_releases_p" v-html="item.description">
-
-          </p>
-
+          <p class="press_releases_p" v-html="item.description"></p>
         </div>
-        <div class="press_releases_other_news_content" v-if="otherNews.length>0">
+        <div
+          class="press_releases_other_news_content"
+          v-if="otherNews.length > 0"
+        >
           <div class="press_releases_other_news_title">Другие новости</div>
           <div class="press_releases_other_news_items">
-            <div class="press_releases_other_news_item" v-for="news in otherNews" :key="'news_'+news.id">
-              <router-link :to="{'name':'pressReleases',params:{id:news.id}}">
+            <div
+              class="press_releases_other_news_item"
+              v-for="news in otherNews"
+              :key="'news_' + news.id"
+            >
+              <router-link
+                :to="{ name: 'pressReleases', params: { id: news.id } }"
+              >
                 <img
-                    :src="news.img_url"
-                    class="press_releases_other_news_item_img"
-                    alt=""
+                  :src="news.img_url"
+                  class="press_releases_other_news_item_img"
+                  alt=""
                 />
                 <div class="press_releases_other_news_item_title">
                   {{ news.title }}
                 </div>
               </router-link>
             </div>
-
           </div>
         </div>
 
@@ -41,14 +48,14 @@
 
           <div class="press_releases_comment_form">
             <input
-                type="text"
-                class="press_releases_comment_form_name"
-                placeholder="Ваше имя"
+              type="text"
+              class="press_releases_comment_form_name"
+              placeholder="Ваше имя"
             />
             <input
-                type="text"
-                class="press_releases_comment_form_comment"
-                placeholder="Ваш комментарий ..."
+              type="text"
+              class="press_releases_comment_form_comment"
+              placeholder="Ваш комментарий ..."
             />
             <button class="press_releases_comment_form_button" type="submit">
               Comment
@@ -59,12 +66,12 @@
             <div class="press_releases_comment_content_item">
               <div class="press_releases_comment_content_item_user">
                 <img
-                    src="../assets/commentAva.svg"
-                    class="press_releases_comment_content_item_user_img"
-                    alt="User"
+                  src="../assets/commentAva.svg"
+                  class="press_releases_comment_content_item_user_img"
+                  alt="User"
                 />
                 <span class="press_releases_comment_content_item_user_title"
-                >user</span
+                  >user</span
                 >
               </div>
               <div class="press_releases_comment_content_item_content">
@@ -90,40 +97,40 @@ import HeaderTitle from "../components/HeaderTitle.vue";
 import requests from "@/api/requests";
 
 export default {
-  components: {HeaderTitle},
+  components: { HeaderTitle },
   data() {
     return {
       item: null,
-      otherNews: []
-    }
+      otherNews: [],
+    };
   },
   watch: {
-    '$route.params.id': {
+    "$route.params.id": {
       handler: function (to, from) {
         if (to != from) {
-          this.getItem()
-          this.getOtherItems()
+          this.getItem();
+          this.getOtherItems();
         }
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   methods: {
     getItem() {
-      requests.getNewsItem(this.$route.params.id).then(res => {
-        this.item = res
-      })
+      requests.getNewsItem(this.$route.params.id).then((res) => {
+        this.item = res;
+      });
     },
     getOtherItems() {
-      requests.getOtherNews({news_id: this.$route.params.id}).then(res => {
-        this.otherNews = res
-      })
-    }
+      requests.getOtherNews({ news_id: this.$route.params.id }).then((res) => {
+        this.otherNews = res;
+      });
+    },
   },
   mounted() {
-    this.getItem()
-    this.getOtherItems()
-  }
+    this.getItem();
+    this.getOtherItems();
+  },
 };
 </script>
 
@@ -278,7 +285,7 @@ export default {
   padding: 11px 27px;
   font-family: "Montserrat", sans-serif;
   background-color: #007aff;
-  color: #fff;
+  color: var(--color-white);
   border-radius: 6px;
   border: none;
   cursor: pointer;

@@ -21,7 +21,9 @@
               <router-link to="/about" class="listLink">О нас</router-link>
             </li>
             <li class="listItem">
-              <router-link to="/kinds-of-sports" class="listLink">Виды спорта</router-link>
+              <router-link to="/kinds-of-sports" class="listLink"
+                >Виды спорта</router-link
+              >
             </li>
             <li class="listItem">
               <router-link to="/calendar" class="listLink"
@@ -37,7 +39,9 @@
               <router-link to="/budget" class="listLink">Бюджет</router-link>
             </li>
             <li class="listItem">
-              <router-link to="/upcoming-events" class="listLink">Предстоящие события</router-link>
+              <router-link to="/upcoming-events" class="listLink"
+                >Предстоящие события</router-link
+              >
             </li>
             <li class="listItem">
               <router-link to="/faq" class="listLink">FAQ</router-link>
@@ -507,7 +511,7 @@ export default {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #fff;
+  background-color: var(--color-white);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   border-radius: 4px;

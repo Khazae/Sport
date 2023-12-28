@@ -3,28 +3,28 @@
     <div class="table_wrapper">
       <div class="table_filter_content">
         <div class="table_aside_input_content">
-          <img src="../../assets/lcIcon.svg" alt="Search"/>
+          <img src="../../assets/lcIcon.svg" alt="Search" />
           <input
-              type="text"
-              class="table_aside_input"
-              @keyup.enter="keyEnter"
-              v-model="filters.search"
+            type="text"
+            class="table_aside_input"
+            @keyup.enter="keyEnter"
+            v-model="filters.search"
           />
         </div>
 
         <div class="table_filter_content_btn">
           <button class="table_filter_content_button">
-            <img src="../../assets/filter.svg" alt=""/> Фильтры
+            <img src="../../assets/filter.svg" alt="" /> Фильтры
           </button>
         </div>
       </div>
       <div class="table">
         <div
-            class="tableRow tableHeader"
-            :class="!_accepted ? 'row' : 'rowTwo'"
+          class="tableRow tableHeader"
+          :class="!_accepted ? 'row' : 'rowTwo'"
         >
           <span class="tableCell"
-          ><input type="checkbox" class="tableCheckbox"
+            ><input type="checkbox" class="tableCheckbox"
           /></span>
           <span class="tableCell">ФИО</span>
           <span class="tableCell">Локация</span>
@@ -34,18 +34,18 @@
           <span class="tableCell">Класс</span>
           <span class="tableCell" v-if="_accepted">Занял место</span>
           <span class="tableCell" v-if="_accepted == false"
-          >Принять/отклонить</span
+            >Принять/отклонить</span
           >
         </div>
 
         <div
-            class="tableRow body"
-            v-for="item in list"
-            :key="'athlete_' + item.id"
-            :class="!_accepted ? 'row' : 'rowTwo'"
+          class="tableRow body"
+          v-for="item in list"
+          :key="'athlete_' + item.id"
+          :class="!_accepted ? 'row' : 'rowTwo'"
         >
           <span class="tableCell"
-          ><input type="checkbox" class="tableCheckbox"
+            ><input type="checkbox" class="tableCheckbox"
           /></span>
 
           <span class="tableCell">{{ item.athlete.fio }}</span>
@@ -57,41 +57,41 @@
           <span class="tableCell"> {{ item.athlete.class }} </span>
 
           <span class="tableCell" v-if="_accepted == false"
-          ><div class="accept_decline_content">
+            ><div class="accept_decline_content">
               <button
-                  class="accept_button"
-                  @click="applicationAction(1, item.id)"
+                class="accept_button"
+                @click="applicationAction(1, item.id)"
               >
                 Принять
-                <img src="../../assets/accept.svg" alt=""/>
+                <img src="../../assets/accept.svg" alt="" />
               </button>
               <button
-                  class="decline_button"
-                  @click="applicationAction(0, item.id)"
+                class="decline_button"
+                @click="applicationAction(0, item.id)"
               >
                 Отклонить
 
-                <img src="../../assets/decline.svg" alt=""/>
+                <img src="../../assets/decline.svg" alt="" />
               </button>
             </div>
           </span>
-          <span class="tableCell" v-if="_accepted">{{item.place}}</span>
+          <span class="tableCell" v-if="_accepted">{{ item.place }}</span>
           <span class="tableCell" v-if="_accepted">
             <div>
               <div class="popover">
                 <img
-                    src="../../assets/options.svg"
-                    class="table_options"
-                    alt=""
+                  src="../../assets/options.svg"
+                  class="table_options"
+                  alt=""
                 />
                 <div class="menu">
                   <ul class="menu_ul">
                     <li class="menu_li menu_form">Сформировать протокол</li>
                     <li class="menu_li menu_pencil" @click="showModal(item)">
-                      <img src="../../assets/pencil.svg" alt=""/> Редактировать
+                      <img src="../../assets/pencil.svg" alt="" /> Редактировать
                     </li>
                     <li class="menu_li menu_delete">
-                      <img src="../../assets/delete.svg" alt=""/> Удалить
+                      <img src="../../assets/delete.svg" alt="" /> Удалить
                     </li>
                   </ul>
                 </div>
@@ -104,78 +104,102 @@
     <div class="tablePagination">
       <div class="tablePaginationCount">
         Показать строк: <span>10</span>
-        <img src="../../assets/arrowDown2.svg" alt=""/>
+        <img src="../../assets/arrowDown2.svg" alt="" />
       </div>
 
       <pagination-component
-          :current="page"
-          :last="last_page"
-          v-if="last_page > 1"
-          @handleLoad="handleLoad"
+        :current="page"
+        :last="last_page"
+        v-if="last_page > 1"
+        @handleLoad="handleLoad"
       />
       <div
-          class="tablePaginationNextPage"
-          @click="nextPage()"
-          v-if="last_page > 1"
+        class="tablePaginationNextPage"
+        @click="nextPage()"
+        v-if="last_page > 1"
       >
-        Следующая страница <img src="../../assets/arrowRight.svg" alt=""/>
+        Следующая страница <img src="../../assets/arrowRight.svg" alt="" />
       </div>
     </div>
     <modal-component ref="modal" @close="closeModal">
       <div class="form_content personal_form" v-if="selectedItem">
-
-        <div class="form_group">
-          <input type="text" class="form_input" placeholder="ФИО" v-model="selectedItem.athlete.fio" disabled/>
-        </div>
-        <div class="form_group">
-          <input type="number" class="form_input" placeholder="ID портсмена" v-model="selectedItem.athlete.personal_id"
-                 disabled/>
-        </div>
-
         <div class="form_group">
           <input
-              type="text"
-              class="form_input"
-              placeholder="Область, регион, город"
-              v-model="selectedItem.athlete.location"
-              disabled
+            type="text"
+            class="form_input"
+            placeholder="ФИО"
+            v-model="selectedItem.athlete.fio"
+            disabled
           />
         </div>
         <div class="form_group">
           <input
-              type="text"
-              class="form_input"
-              placeholder="Весовая категория"
-              v-model="selectedItem.athlete.category"
-              disabled
+            type="number"
+            class="form_input"
+            placeholder="ID портсмена"
+            v-model="selectedItem.athlete.personal_id"
+            disabled
+          />
+        </div>
+
+        <div class="form_group">
+          <input
+            type="text"
+            class="form_input"
+            placeholder="Область, регион, город"
+            v-model="selectedItem.athlete.location"
+            disabled
+          />
+        </div>
+        <div class="form_group">
+          <input
+            type="text"
+            class="form_input"
+            placeholder="Весовая категория"
+            v-model="selectedItem.athlete.category"
+            disabled
           />
         </div>
         <div class="form_group">
           <v-select
-              :options="vid"
-              class="form_input"
-              placeholder="Вид соревнований"
-              v-model="selectedItem.athlete.type"
-              disabled
-              :reduce="itm => itm.value"
+            :options="vid"
+            class="form_input"
+            placeholder="Вид соревнований"
+            v-model="selectedItem.athlete.type"
+            disabled
+            :reduce="(itm) => itm.value"
           ></v-select>
-
         </div>
         <div class="form_group">
-          <input type="text" class="form_input" placeholder="Класс" v-model="selectedItem.athlete.class" disabled
+          <input
+            type="text"
+            class="form_input"
+            placeholder="Класс"
+            v-model="selectedItem.athlete.class"
+            disabled
           />
         </div>
         <div class="form_group">
-          <input type="text" class="form_input" placeholder="Класс" v-model="selectedItem.calendar_results.title"
-                 disabled
+          <input
+            type="text"
+            class="form_input"
+            placeholder="Класс"
+            v-model="selectedItem.calendar_results.title"
+            disabled
           />
         </div>
         <div class="form_group">
-          <input type="number" class="form_input" placeholder="Место" v-model="form.place"
-                 :class="{'error_form':errors.place}"
+          <input
+            type="number"
+            class="form_input"
+            placeholder="Место"
+            v-model="form.place"
+            :class="{ error_form: errors.place }"
           />
         </div>
-        <div style="display: flex;justify-items: center;justify-content: center">
+        <div
+          style="display: flex; justify-items: center; justify-content: center"
+        >
           <Button class="button" @click="savePlace()">Сохранить</Button>
         </div>
       </div>
@@ -197,7 +221,7 @@ export default {
       default: false,
     },
   },
-  components: {ModalComponent, PaginationComponent, vSelect, Button},
+  components: { ModalComponent, PaginationComponent, vSelect, Button },
   data() {
     return {
       page: 1,
@@ -213,49 +237,52 @@ export default {
       selectedItem: null,
       vid: [
         {
-          label: 'Международный',
-          value: '1'
+          label: "Международный",
+          value: "1",
         },
         {
-          label: 'Республиканский',
-          value: '2'
+          label: "Республиканский",
+          value: "2",
         },
       ],
-      errors: []
+      errors: [],
     };
   },
   methods: {
     showModal(item) {
       this.selectedItem = item;
-      this.form.id = item.id
-      this.$refs.modal.showModal()
+      this.form.id = item.id;
+      this.$refs.modal.showModal();
     },
     closeModal() {
-      this.newForm()
-      this.selectedItem = null
-      this.$refs.modal.hideModal()
+      this.newForm();
+      this.selectedItem = null;
+      this.$refs.modal.hideModal();
     },
     newForm() {
       this.form = {
         place: null,
-        id: null
-      }
+        id: null,
+      };
     },
     savePlace() {
-      this.loading = true
-      this.errors = []
-      requests.setPlace(this.form).then(() => {
-        this.getList()
-        this.closeModal()
-        this.$toast('Успешно')
-      }).catch(err => {
-        this.errors = err.response.data.errors
-        this.loading = false
-      })
+      this.loading = true;
+      this.errors = [];
+      requests
+        .setPlace(this.form)
+        .then(() => {
+          this.getList();
+          this.closeModal();
+          this.$toast("Успешно");
+        })
+        .catch((err) => {
+          this.errors = err.response.data.errors;
+          this.loading = false;
+        });
     },
     applicationAction(type, id) {
       this.loading = true;
-      requests.applicationAction({accepted: type}, id).then(() => {
+      requests.applicationAction({ accepted: type }, id).then(() => {
         this.loading = false;
         this.getList();
       });
@@ -302,7 +329,7 @@ export default {
     },
   },
   mounted() {
-    this.newForm()
+    this.newForm();
     this.getList();
   },
 };
@@ -317,7 +344,7 @@ export default {
   height: 100%;
   padding-top: 109px;
   padding-bottom: 120px;
-  background-color: #ebeef3;
+  background-color: var(--news-text-color);
 }
 
 .littleAreaWrapper {
@@ -742,7 +769,7 @@ input[type="checkbox"] {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #fff;
+  background-color: var(--color-white);
   box-shadow: 0px 5px 10px 0px #00000026;
   padding: 16px;
   min-width: 120px;

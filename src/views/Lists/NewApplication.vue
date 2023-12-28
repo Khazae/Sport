@@ -1,22 +1,20 @@
 <template>
-
   <div class="table_wrapper" style="width: 100%">
     <div class="table_wrapper" v-if="!selectedItem">
       <div class="table_filter_content">
         <div class="table_aside_input_content">
-          <img src="../../assets/lcIcon.svg" alt="Search"/>
+          <img src="../../assets/lcIcon.svg" alt="Search" />
           <input
-              type="text"
-              class="table_aside_input"
-              @keyup.enter="keyEnter"
-              v-model="filters.search"
-              placeholder="ID или ФИО"
+            type="text"
+            class="table_aside_input"
+            @keyup.enter="keyEnter"
+            v-model="filters.search"
+            placeholder="ID или ФИО"
           />
         </div>
       </div>
       <div class="table">
         <div class="tableRow tableHeader row">
-
           <span class="tableCell">ФИО</span>
           <span class="tableCell">Локация</span>
           <span class="tableCell">ID</span>
@@ -27,70 +25,118 @@
         </div>
 
         <div
-            class="tableRow row body"
-            v-for="item in list"
-            :key="'athlete_' + item.id"
-            @click="selectAthlete(item)" style="cursor:pointer;"
+          class="tableRow row body"
+          v-for="item in list"
+          :key="'athlete_' + item.id"
+          @click="selectAthlete(item)"
+          style="cursor: pointer"
         >
-
-          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.fio }}</span>
-          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.location }}</span>
-          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.personal_id }}</span>
-          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;">{{ item.category }}</span>
-          <span class="tableCell tableLink"
-          ><a style="cursor: pointer" @click.prevent="downloadFile(item.file)"
-          >PDF</a
-          ></span
+          <span
+            class="tableCell"
+            @click="selectAthlete(item)"
+            style="cursor: pointer"
+            >{{ item.fio }}</span
           >
-          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;"> {{ item.type }}</span>
-          <span class="tableCell" @click="selectAthlete(item)" style="cursor:pointer;"> {{ item.class }} </span>
+          <span
+            class="tableCell"
+            @click="selectAthlete(item)"
+            style="cursor: pointer"
+            >{{ item.location }}</span
+          >
+          <span
+            class="tableCell"
+            @click="selectAthlete(item)"
+            style="cursor: pointer"
+            >{{ item.personal_id }}</span
+          >
+          <span
+            class="tableCell"
+            @click="selectAthlete(item)"
+            style="cursor: pointer"
+            >{{ item.category }}</span
+          >
+          <span class="tableCell tableLink"
+            ><a style="cursor: pointer" @click.prevent="downloadFile(item.file)"
+              >PDF</a
+            ></span
+          >
+          <span
+            class="tableCell"
+            @click="selectAthlete(item)"
+            style="cursor: pointer"
+          >
+            {{ item.type }}</span
+          >
+          <span
+            class="tableCell"
+            @click="selectAthlete(item)"
+            style="cursor: pointer"
+          >
+            {{ item.class }}
+          </span>
         </div>
       </div>
     </div>
     <div class="form_content personal_form" v-if="selectedItem">
       <h2 class="form_content_title">Подача заявки</h2>
       <div class="form_group">
-        <input type="text" class="form_input" placeholder="ФИО" v-model="selectedItem.fio" disabled
-               :class="{'error_form':errors.fio}"/>
+        <input
+          type="text"
+          class="form_input"
+          placeholder="ФИО"
+          v-model="selectedItem.fio"
+          disabled
+          :class="{ error_form: errors.fio }"
+        />
       </div>
       <div class="form_group">
-        <input type="number" class="form_input" placeholder="ID портсмена" v-model="selectedItem.personal_id"
-               disabled/>
+        <input
+          type="number"
+          class="form_input"
+          placeholder="ID портсмена"
+          v-model="selectedItem.personal_id"
+          disabled
+        />
       </div>
 
       <div class="form_group">
         <input
-            type="text"
-            class="form_input"
-            placeholder="Область, регион, город"
-            v-model="selectedItem.location"
-            disabled
-            :class="{'error_form':errors.location}"
+          type="text"
+          class="form_input"
+          placeholder="Область, регион, город"
+          v-model="selectedItem.location"
+          disabled
+          :class="{ error_form: errors.location }"
         />
       </div>
       <div class="form_group">
         <input
-            type="text"
-            class="form_input"
-            placeholder="Весовая категория"
-            v-model="selectedItem.category"
-            disabled
-            :class="{'error_form':errors.category}"
+          type="text"
+          class="form_input"
+          placeholder="Весовая категория"
+          v-model="selectedItem.category"
+          disabled
+          :class="{ error_form: errors.category }"
         />
       </div>
       <div class="form_group">
         <v-select
-            :options="vid"
-            class="form_input"
-            placeholder="Вид соревнований"
-            v-model="selectedItem.type"
-            disabled
-            :reduce="itm => itm.value"
-            :class="{'error_form':errors.type}"
+          :options="vid"
+          class="form_input"
+          placeholder="Вид соревнований"
+          v-model="selectedItem.type"
+          disabled
+          :reduce="(itm) => itm.value"
+          :class="{ error_form: errors.type }"
         ></v-select>
       </div>
       <div class="form_group">
-        <input type="text" class="form_input" placeholder="Класс" v-model="form.class" disabled
+        <input
+          type="text"
+          class="form_input"
+          placeholder="Класс"
+          v-model="form.class"
+          disabled
         />
       </div>
       <!--      <div class="form_group input_file_group" >-->
@@ -100,18 +146,21 @@
       <!--          Добавить файл-->
       <!--        </div>-->
       <!--      </div>-->
-      <div class="form_group" v-if="calendarList.length>0">
-        <v-select v-model="form.calendar_id" :options="calendarList" :reduce="itm => itm.id" label="title"
-                  class="form_input" placeholder="Выберите событие" :class="{'error_form':errors.calendar_id}">
-
+      <div class="form_group" v-if="calendarList.length > 0">
+        <v-select
+          v-model="form.calendar_id"
+          :options="calendarList"
+          :reduce="(itm) => itm.id"
+          label="title"
+          class="form_input"
+          placeholder="Выберите событие"
+          :class="{ error_form: errors.calendar_id }"
+        >
         </v-select>
-
       </div>
       <Button class="button" @click="saveItem()">Сохранить</Button>
-
     </div>
   </div>
-
 </template>
 
 <script>
@@ -121,7 +170,7 @@ import Button from "@/components/Button";
 
 export default {
   name: "NewApplication",
-  components: {vSelect, Button},
+  components: { vSelect, Button },
 
   data() {
     return {
@@ -132,78 +181,80 @@ export default {
       list: [],
       filters: {
         paginate: 50,
-        search: null
+        search: null,
       },
       selectedItem: null,
       vid: [
         {
-          label: 'Международный',
-          value: '1'
+          label: "Международный",
+          value: "1",
         },
         {
-          label: 'Республиканский',
-          value: '2'
+          label: "Республиканский",
+          value: "2",
         },
       ],
-    }
+    };
   },
   methods: {
     selectAthlete(item) {
-      this.selectedItem = item
-      this.form.id = item.id
+      this.selectedItem = item;
+      this.form.id = item.id;
     },
     getList() {
-      this.loading = true
-      requests.getAthleteList(this.filters).then(res => {
-        this.list = res.data
-        this.loading = false
-      })
+      this.loading = true;
+      requests.getAthleteList(this.filters).then((res) => {
+        this.list = res.data;
+        this.loading = false;
+      });
     },
     dropForm() {
-      this.list = []
-      this.newForm()
-      this.selectedItem = null
-      this.filters.search = null
+      this.list = [];
+      this.newForm();
+      this.selectedItem = null;
+      this.filters.search = null;
     },
     saveItem() {
       this.errors = [];
       this.loading = false;
-      requests.applicationCreate(this.form).then(() => {
-        this.loading = false
-        this.$toast("Успешно");
-        this.dropForm()
-      }).catch(err => {
-        this.errors = err.response.data.errors
-        this.loading = false
-      })
+      requests
+        .applicationCreate(this.form)
+        .then(() => {
+          this.loading = false;
+          this.$toast("Успешно");
+          this.dropForm();
+        })
+        .catch((err) => {
+          this.errors = err.response.data.errors;
+          this.loading = false;
+        });
     },
     downloadFile(file) {
       window.open(process.env.VUE_APP_BACKEND_URL + file, "_blank");
     },
     newForm() {
-      this.form = JSON.parse(JSON.stringify({
-        id: null,
-        calendar_id: null
-      }))
+      this.form = JSON.parse(
+        JSON.stringify({
+          id: null,
+          calendar_id: null,
+        })
+      );
     },
     getCalendarList() {
-      requests.applicationCalendarList().then(res => {
-        this.calendarList = res
-      })
+      requests.applicationCalendarList().then((res) => {
+        this.calendarList = res;
+      });
     },
     keyEnter() {
       this.list = [];
       this.getList();
     },
-
   },
   mounted() {
-    this.getCalendarList()
-    this.newForm()
-
-
-  }
-}
+    this.getCalendarList();
+    this.newForm();
+  },
+};
 </script>
 
 <style scoped>
@@ -220,7 +271,7 @@ export default {
   height: 100%;
   padding-top: 109px;
   padding-bottom: 120px;
-  background-color: #ebeef3;
+  background-color: var(--news-text-color);
 }
 
 .littleAreaWrapper {

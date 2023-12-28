@@ -1,19 +1,19 @@
 <template>
   <div class="wrapperCalendar">
-    <HeaderTitle title="Календарь и результаты"/>
+    <HeaderTitle title="Календарь и результаты" />
     <div class="container">
       <div class="container">
         <div class="calendarContent">
           <div class="calendar_left_block">
             <div class="calendar_aside">
               <div class="calendar_aside_input_content">
-                <img src="../assets/search.svg" alt="Search"/>
+                <img src="../assets/search.svg" alt="Search" />
                 <input
-                    type="text"
-                    class="calendar_aside_input"
-                    placeholder="Введите ID"
-                    v-model="filters.id"
-                    v-on:keyup.enter="dateOrder()"
+                  type="text"
+                  class="calendar_aside_input"
+                  placeholder="Введите ID"
+                  v-model="filters.id"
+                  v-on:keyup.enter="dateOrder()"
                 />
               </div>
               <ul class="calendar_aside_list">
@@ -24,14 +24,22 @@
                 <li><a href="#">Уровень</a></li>
               </ul>
               <div class="chips_button_content">
-                <button class="chip_button " :class="{'chip_button_active':filters.type==1}"
-                        :disabled="loading"
-                        type="click" @click="setType(1)">
+                <button
+                  class="chip_button"
+                  :class="{ chip_button_active: filters.type == 1 }"
+                  :disabled="loading"
+                  type="click"
+                  @click="setType(1)"
+                >
                   Международный
                 </button>
-                <button class="chip_button" :class="{'chip_button_active':filters.type==2}" type="click"
-                        :disabled="loading"
-                        @click="setType(2)">
+                <button
+                  class="chip_button"
+                  :class="{ chip_button_active: filters.type == 2 }"
+                  type="click"
+                  :disabled="loading"
+                  @click="setType(2)"
+                >
                   Республиканский
                 </button>
               </div>
@@ -39,56 +47,94 @@
           </div>
           <div class="calendar_right_block">
             <div class="table">
-              <div class="tableRow tableHeader row" style="column-gap: 24px; padding-left: 0">
-                                <span class="tableCell tableDate"
-                                ><img src="../assets/dateIcon.svg" alt="" @click="dateOrder()" style="cursor: pointer"/> По дате</span
-                                >
+              <div
+                class="tableRow tableHeader row"
+                style="column-gap: 24px; padding-left: 0"
+              >
+                <span class="tableCell tableDate"
+                  ><img
+                    src="../assets/dateIcon.svg"
+                    alt=""
+                    @click="dateOrder()"
+                    style="cursor: pointer"
+                  />
+                  По дате</span
+                >
                 <span class="tableCell">Соревнования</span>
                 <span class="tableCell">Положения</span>
                 <span class="tableCell">Протоколы</span>
                 <span class="tableCell" @click="dateOrder()"
-                >Статус
-                  <img src="../assets/arrowDown2.svg" alt=""
-                  />
+                  >Статус
+                  <img src="../assets/arrowDown2.svg" alt="" />
                 </span>
                 <span class="tableCell">Трансляция</span>
               </div>
 
-              <div class="tableRow row body" v-for="item in list" :key="'result_id_'+item.id">
-                <span class="tableCell">{{ $dayjs(item.date_time).format('DD.M.YYYY') }}</span>
+              <div
+                class="tableRow row body"
+                v-for="item in list"
+                :key="'result_id_' + item.id"
+              >
+                <span class="tableCell">{{
+                  $dayjs(item.date_time).format("DD.M.YYYY")
+                }}</span>
                 <span class="tableCell">{{ item.title }}</span>
-                <span class="tableCell tableLink"><div style="cursor: pointer;color: blue;text-decoration: underline"
-                                                       @click="downloadFile(item.state)">PDF</div></span>
-                <span class="tableCell tableLink"><div style="cursor: pointer;color: blue;text-decoration: underline"
-                                                       @click="downloadFile(item.protocol)">PDF</div></span>
-                <template v-if="item.status==1">
-                                    <span class="tableCell tableStatus">
-                                      <img src="../assets/statusPanding.svg"/>
-                                      Ожидается
-                                    </span>
+                <span class="tableCell tableLink"
+                  ><div
+                    style="
+                      cursor: pointer;
+                      color: blue;
+                      text-decoration: underline;
+                    "
+                    @click="downloadFile(item.state)"
+                  >
+                    PDF
+                  </div></span
+                >
+                <span class="tableCell tableLink"
+                  ><div
+                    style="
+                      cursor: pointer;
+                      color: blue;
+                      text-decoration: underline;
+                    "
+                    @click="downloadFile(item.protocol)"
+                  >
+                    PDF
+                  </div></span
+                >
+                <template v-if="item.status == 1">
+                  <span class="tableCell tableStatus">
+                    <img src="../assets/statusPanding.svg" />
+                    Ожидается
+                  </span>
                 </template>
-                <template v-else-if="item.status==2">
-                                    <span class="tableCell tableStatus">
-                                      <img src="../assets/statusSuccess.svg"/>Проходит
-                                    </span>
+                <template v-else-if="item.status == 2">
+                  <span class="tableCell tableStatus">
+                    <img src="../assets/statusSuccess.svg" />Проходит
+                  </span>
                 </template>
-                <template v-else-if="item.status==3">
-                                    <span class="tableCell tableStatus">
-                                      <img src="../assets/statusError.svg"/>Отменен
-                                    </span>
+                <template v-else-if="item.status == 3">
+                  <span class="tableCell tableStatus">
+                    <img src="../assets/statusError.svg" />Отменен
+                  </span>
                 </template>
-                <template v-else-if="item.status==4">
-                                    <span class="tableCell tableStatus">
-                                      <img src="../assets/statusLock.svg"/>Завершен
-                                    </span>
+                <template v-else-if="item.status == 4">
+                  <span class="tableCell tableStatus">
+                    <img src="../assets/statusLock.svg" />Завершен
+                  </span>
                 </template>
 
                 <span class="tableCell">
-                                  <div class="tableLive" v-if="item.link" style="cursor: pointer;"
-                                       @click="openLink(item.link)">
-                                    <img src="../assets/live.svg" alt="Live"/>Live
-                                  </div>
-                            </span>
+                  <div
+                    class="tableLive"
+                    v-if="item.link"
+                    style="cursor: pointer"
+                    @click="openLink(item.link)"
+                  >
+                    <img src="../assets/live.svg" alt="Live" />Live
+                  </div>
+                </span>
               </div>
             </div>
             <div class="tablePagination">
@@ -97,8 +143,12 @@
                 <img src="../assets/arrowDown2.svg" alt=""/>
               </div> -->
 
-              <pagination-component :current="page" :last="last_page" v-if="last_page>1"
-                                    @handleLoad="handleLoad"/>
+              <pagination-component
+                :current="page"
+                :last="last_page"
+                v-if="last_page > 1"
+                @handleLoad="handleLoad"
+              />
               <div class="tablePaginationNextPage" @click="nextPage()">
                 <!-- Следующая страница <img src="../assets/arrowRight.svg" alt=""/> -->
               </div>
@@ -116,7 +166,7 @@ import PaginationComponent from "@/components/Pagination";
 import requests from "@/api/requests";
 
 export default {
-  components: {PaginationComponent, HeaderTitle},
+  components: { PaginationComponent, HeaderTitle },
   data() {
     return {
       list: [],
@@ -127,59 +177,56 @@ export default {
         type: null,
         status: null,
         paginate: 10,
-        id: null
+        id: null,
       },
       order: {
-        date_time: 'DESC'
+        date_time: "DESC",
       },
       statusFilter: [
         {
           value: 1,
-          label: 'Ожидается'
+          label: "Ожидается",
         },
         {
           value: 2,
-          label: 'Проходит'
+          label: "Проходит",
         },
         {
           value: 3,
-          label: 'Отменен'
+          label: "Отменен",
         },
         {
           value: 4,
-          label: 'Завершен'
+          label: "Завершен",
         },
-
-      ]
+      ],
     };
-
   },
   methods: {
     downloadFile(file) {
-      window.open(process.env.VUE_APP_BACKEND_URL + file, '_blank')
+      window.open(process.env.VUE_APP_BACKEND_URL + file, "_blank");
     },
     dateOrder() {
       this.list = [];
-      this.date_time = this.date_time == 'ASC' ? 'DESC' : 'ASC';
+      this.date_time = this.date_time == "ASC" ? "DESC" : "ASC";
       this.getList();
-
     },
     setType(type) {
-      if (this.filters.type == type)
-        this.filters.type = null;
-      else
-        this.filters.type = type;
+      if (this.filters.type == type) this.filters.type = null;
+      else this.filters.type = type;
       this.$nextTick(() => {
         this.getList();
       });
     },
     getList() {
       this.loading = true;
-      requests.getCalendarResults({page: this.page, ...this.filters}).then(res => {
-        this.loading = false;
-        this.list = res.data;
-        this.last_page = res.last_page;
-      });
+      requests
+        .getCalendarResults({ page: this.page, ...this.filters })
+        .then((res) => {
+          this.loading = false;
+          this.list = res.data;
+          this.last_page = res.last_page;
+        });
     },
     handleLoad(page) {
       this.page = page;
@@ -194,13 +241,12 @@ export default {
       });
     },
     openLink(link) {
-      window.open(link, '_blank');
-    }
+      window.open(link, "_blank");
+    },
   },
   mounted() {
     this.getList();
-  }
-
+  },
 };
 </script>
 
@@ -235,7 +281,7 @@ export default {
 }
 
 .body {
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 11px 24px;
   margin-bottom: 10px;
 }
@@ -256,7 +302,7 @@ export default {
 }
 
 .calendar_aside {
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 24px 16px 24px 24px;
 }
 
@@ -367,12 +413,12 @@ export default {
   color: var(--color-black);
   padding: 8px 12px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 
 .chip_button_active {
   background-color: #007aff;
-  color: #ffffff;
+  color: var(--color-white);
   border: none;
 }
 

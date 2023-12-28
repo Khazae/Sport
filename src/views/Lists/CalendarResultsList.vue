@@ -192,7 +192,7 @@ export default {
   height: 100%;
   padding-top: 109px;
   padding-bottom: 120px;
-  background-color: #ebeef3;
+  background-color: var(--news-text-color);
 }
 
 .littleAreaWrapper {
