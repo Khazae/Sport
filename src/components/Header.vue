@@ -111,6 +111,11 @@
                   >Сведения о руководстве</router-link
                 >
               </li>
+              <li class="headerDropdownMenuLi">
+                <router-link to="/general-info" class="headerDropdownMenuLink"
+                  >Общая информация о деятельности</router-link
+                >
+              </li>
             </ul>
           </div>
 
@@ -138,6 +143,13 @@
                   to="/financial-statements"
                   class="headerDropdownMenuLink"
                   >Финансовая</router-link
+                >
+              </li>
+              <li class="headerDropdownMenuLi">
+                <router-link
+                  to="/contacts-view"
+                  class="headerDropdownMenuLink"
+                  >Контактные данные "Адалдық алаңы"</router-link
                 >
               </li>
             </ul>

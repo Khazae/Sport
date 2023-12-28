@@ -9,6 +9,11 @@ import "vue-toastification/dist/index.css";
 
 Vue.config.productionTip = false;
 
+
+const relativeTime = require('dayjs/plugin/relativeTime')
+require('dayjs/locale/ru')
+dayjs.extend(relativeTime)
+dayjs.locale('ru')
 Vue.prototype.$dayjs = dayjs;
 
 const options = {

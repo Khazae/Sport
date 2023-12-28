@@ -1,114 +1,54 @@
 <template>
   <div class="press_releases_wrapper littlePressRealeasesWrapper">
-    <HeaderTitle title="Пресс-релизы" />
+    <HeaderTitle title="Пресс-релизы"/>
     <div class="container">
       <div class="press_releases_content">
-        <div class="press_releases_news_content">
-          <div class="press_releases_title">Заголовок новости</div>
+        <div class="press_releases_news_content" v-if="item">
+          <div class="press_releases_title">{{ item.title }}</div>
           <div class="press_releases_catalog">
-            <div class="press_releases_catalog_author">Автор</div>
-            <div class="press_releases_catalog_category">Категория</div>
-            <div class="press_releases_catalog_date">2 часа назад</div>
+            <!--            <div class="press_releases_catalog_author">Автор</div>-->
+            <!--            <div class="press_releases_catalog_category">Категория</div>-->
+            <div class="press_releases_catalog_date">{{ $dayjs(item.publish_date).fromNow() }}</div>
           </div>
-          <img src="../assets/pressRea.png" class="press_releases_img" alt="" />
+          <img class="press_releases_img" alt="" :src="item.img_url"/>
 
-          <p class="press_releases_p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            ligula nibh, interdum non enim sit amet, iaculis aliquet nunc. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Aliquam sit amet ipsum ac velit egestas
-            ultrices. Vestibulum et neque id ex semper varius a sit amet metus.
-            Vivamus congue dolor eget aliquam hendrerit. Etiam iaculis finibus
-            egestas. Nam viverra urna quis odio efficitur malesuada. Maecenas
-            rhoncus enim eu scelerisque rutrum. Pellentesque et mollis enim.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            sed commodo leo. Suspendisse potenti. Maecenas gravida ipsum
-            placerat ligula posuere, ut rhoncus velit eleifend.
+          <p class="press_releases_p" v-html="item.description">
+
           </p>
 
-          <p class="press_releases_p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            ligula nibh, interdum non enim sit amet, iaculis aliquet nunc. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Aliquam sit amet ipsum ac velit egestas
-            ultrices. Vestibulum et neque id ex semper varius a sit amet metus.
-            Vivamus congue dolor eget aliquam hendrerit. Etiam iaculis finibus
-            egestas. Nam viverra urna quis odio efficitur malesuada. Maecenas
-            rhoncus enim eu scelerisque rutrum. Pellentesque et mollis enim.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            sed commodo leo. Suspendisse potenti. Maecenas gravida ipsum
-            placerat ligula posuere, ut rhoncus velit eleifend.
-          </p>
-
-          <p class="press_releases_p">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-            ligula nibh, interdum non enim sit amet, iaculis aliquet nunc. Class
-            aptent taciti sociosqu ad litora torquent per conubia nostra, per
-            inceptos himenaeos. Aliquam sit amet ipsum ac velit egestas
-            ultrices. Vestibulum et neque id ex semper varius a sit amet metus.
-            Vivamus congue dolor eget aliquam hendrerit. Etiam iaculis finibus
-            egestas. Nam viverra urna quis odio efficitur malesuada. Maecenas
-            rhoncus enim eu scelerisque rutrum. Pellentesque et mollis enim.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-            sed commodo leo. Suspendisse potenti. Maecenas gravida ipsum
-            placerat ligula posuere, ut rhoncus velit eleifend.
-          </p>
         </div>
-        <div class="press_releases_other_news_content">
+        <div class="press_releases_other_news_content" v-if="otherNews.length>0">
           <div class="press_releases_other_news_title">Другие новости</div>
           <div class="press_releases_other_news_items">
-            <div class="press_releases_other_news_item">
-              <a href="#">
+            <div class="press_releases_other_news_item" v-for="news in otherNews" :key="'news_'+news.id">
+              <router-link :to="{'name':'pressReleases',params:{id:news.id}}">
                 <img
-                  src="../assets/pressReaItem.png"
-                  class="press_releases_other_news_item_img"
-                  alt=""
+                    :src="news.img_url"
+                    class="press_releases_other_news_item_img"
+                    alt=""
                 />
                 <div class="press_releases_other_news_item_title">
-                  Заголовок новости
+                  {{ news.title }}
                 </div>
-              </a>
+              </router-link>
             </div>
-            <div class="press_releases_other_news_item">
-              <a href="#">
-                <img
-                  src="../assets/pressReaItem.png"
-                  class="press_releases_other_news_item_img"
-                  alt=""
-                />
-                <div class="press_releases_other_news_item_title">
-                  Заголовок новости
-                </div>
-              </a>
-            </div>
-            <div class="press_releases_other_news_item">
-              <a href="#">
-                <img
-                  src="../assets/pressReaItem.png"
-                  class="press_releases_other_news_item_img"
-                  alt=""
-                />
-                <div class="press_releases_other_news_item_title">
-                  Заголовок новости
-                </div></a
-              >
-            </div>
+
           </div>
         </div>
 
-        <div class="press_releases_comment_content">
+        <div class="press_releases_comment_content" v-if="false">
           <div class="press_releases_comment_title">Комментарии</div>
 
           <div class="press_releases_comment_form">
             <input
-              type="text"
-              class="press_releases_comment_form_name"
-              placeholder="Ваше имя"
+                type="text"
+                class="press_releases_comment_form_name"
+                placeholder="Ваше имя"
             />
             <input
-              type="text"
-              class="press_releases_comment_form_comment"
-              placeholder="Ваш комментарий ..."
+                type="text"
+                class="press_releases_comment_form_comment"
+                placeholder="Ваш комментарий ..."
             />
             <button class="press_releases_comment_form_button" type="submit">
               Comment
@@ -119,12 +59,12 @@
             <div class="press_releases_comment_content_item">
               <div class="press_releases_comment_content_item_user">
                 <img
-                  src="../assets/commentAva.svg"
-                  class="press_releases_comment_content_item_user_img"
-                  alt="User"
+                    src="../assets/commentAva.svg"
+                    class="press_releases_comment_content_item_user_img"
+                    alt="User"
                 />
                 <span class="press_releases_comment_content_item_user_title"
-                  >user</span
+                >user</span
                 >
               </div>
               <div class="press_releases_comment_content_item_content">
@@ -147,7 +87,44 @@
 
 <script>
 import HeaderTitle from "../components/HeaderTitle.vue";
-export default { components: { HeaderTitle } };
+import requests from "@/api/requests";
+
+export default {
+  components: {HeaderTitle},
+  data() {
+    return {
+      item: null,
+      otherNews: []
+    }
+  },
+  watch: {
+    '$route.params.id': {
+      handler: function (to, from) {
+        if (to != from) {
+          this.getItem()
+          this.getOtherItems()
+        }
+      },
+      deep: true
+    }
+  },
+  methods: {
+    getItem() {
+      requests.getNewsItem(this.$route.params.id).then(res => {
+        this.item = res
+      })
+    },
+    getOtherItems() {
+      requests.getOtherNews({news_id: this.$route.params.id}).then(res => {
+        this.otherNews = res
+      })
+    }
+  },
+  mounted() {
+    this.getItem()
+    this.getOtherItems()
+  }
+};
 </script>
 
 <style scoped>
@@ -155,6 +132,7 @@ export default { components: { HeaderTitle } };
   width: 100%;
   max-width: 1109px;
 }
+
 .press_releases_title {
   font-size: 40px;
   font-weight: 500;
@@ -275,6 +253,7 @@ export default { components: { HeaderTitle } };
   padding: 8px 8px;
   border-radius: 5px;
 }
+
 .press_releases_comment_form_name::placeholder {
   text-align: center;
 }
