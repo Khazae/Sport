@@ -513,5 +513,6 @@ export default {
   width: 30px;
   height: 30px;
   margin-left: 15px;
+  cursor: pointer;
 }
 </style>
