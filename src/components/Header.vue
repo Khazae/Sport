@@ -379,7 +379,7 @@ export default {
 }
 
 .loginContent {
-  margin-left: 40px;
+  margin-left: 15px;
 }
 
 .loginLink {
