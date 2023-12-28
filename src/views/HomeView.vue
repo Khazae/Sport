@@ -319,118 +319,7 @@
         </div>
       </section>
 
-      <section class="videosSection">
-        <div class="container">
-          <div class="videosSection__row">
-            <div class="videosSection__item">
-              <div class="videosSection__item__title">Топ видео</div>
-              <div class="videosSection__item__block">
-                <a href="videosSection__item__block_link">
-                  <div class="videosSection__item__block__img">
-                    <img
-                      src="../assets/video/1.png"
-                      alt=""
-                      class="videosSection__item__block__img_image"
-                    />
-                    <img
-                      src="../assets/video/play.svg"
-                      alt=""
-                      class="videosSection__item__block__img__icon"
-                    />
-                  </div>
-
-                  <div class="videosSection__item__block__content">
-                    <div class="videosSection__item__block__content__date">
-                      9 ноября 2023
-                    </div>
-                    <div class="videosSection__item__block__content__title">
-                      Название видео
-                    </div>
-                    <div
-                      class="videosSection__item__block__content__description"
-                    >
-                      Краткое описание к видео
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="videosSection__item__block">
-                <a href="videosSection__item__block_link">
-                  <div class="videosSection__item__block__img">
-                    <img
-                      src="../assets/video/2.png"
-                      alt=""
-                      class="videosSection__item__block__img_image"
-                    />
-                    <img
-                      src="../assets/video/play.svg"
-                      alt=""
-                      class="videosSection__item__block__img__icon"
-                    />
-                  </div>
-
-                  <div class="videosSection__item__block__content">
-                    <div class="videosSection__item__block__content__date">
-                      9 ноября 2023
-                    </div>
-                    <div class="videosSection__item__block__content__title">
-                      Название видео
-                    </div>
-                    <div
-                      class="videosSection__item__block__content__description"
-                    >
-                      Краткое описание к видео
-                    </div>
-                  </div>
-                </a>
-              </div>
-
-              <div class="videosSection__item__block">
-                <a href="videosSection__item__block_link">
-                  <div class="videosSection__item__block__img">
-                    <img
-                      src="../assets/video/3.png"
-                      alt=""
-                      class="videosSection__item__block__img_image"
-                    />
-                    <img
-                      src="../assets/video/play.svg"
-                      alt=""
-                      class="videosSection__item__block__img__icon"
-                    />
-                  </div>
-
-                  <div class="videosSection__item__block__content">
-                    <div class="videosSection__item__block__content__date">
-                      9 ноября 2023
-                    </div>
-                    <div class="videosSection__item__block__content__title">
-                      Название видео
-                    </div>
-                    <div
-                      class="videosSection__item__block__content__description"
-                    >
-                      Краткое описание к видео
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="videosSection__item">
-              <div class="videosSection__item__action">Чемпионат</div>
-              <div class="videosSection__item__content">
-                <div class="videosSection__item__content__date">
-                  9 ноября 2023
-                </div>
-                <div class="videosSection__item__content__title">
-                  Название видео
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <video-block/>
     </div>
     <section class="promoSection">
       <div class="container">
@@ -481,30 +370,31 @@
 import HeaderSlider from "@/components/HeaderSlider.vue";
 import SliderComponent from "@/components/SliderComponent.vue";
 import dayjs from "dayjs";
+import VideoBlock from "@/views/VideoBlock";
 
-import requests from "../api/requests";
+import requests from '../api/requests';
 
 export default {
-  data() {
-    return {
-      news: [],
-      // img_url: ""
-    };
-  },
-  components: {
-    SliderComponent,
-    HeaderSlider,
-  },
-  mounted() {
-    this.getList();
-    // this.img_url = process.env.VUE_APP_BACKEND_URL;
-  },
-  methods: {
-    dayjs,
-    getList() {
-      requests.getList().then((res) => {
-        this.news = res;
-      });
+    data() {
+        return {
+            news: [],
+        }
+    },
+    components: {
+        VideoBlock,
+        SliderComponent,
+        HeaderSlider,
+    },
+    mounted() {
+        this.getList();
+        // this.img_url = process.env.VUE_APP_BACKEND_URL;
+    },
+    methods: {
+        dayjs,
+        getList() {
+            requests.getList().then(res => {
+                this.news = res
+            })
     },
   },
 };
