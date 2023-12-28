@@ -35,19 +35,7 @@
           <div class="newsContent">
             <h3 class="newsTitle">Новости комитета</h3>
 
-            <div v-for="n in news" :key="n.id" class="newsItems">
-              <div class="newsItem">
-                <router-link to="/press-releases" class="newsLink">
-                  <img :src="img_url + n.img" class="newsImage" alt="News" />
-                  <div class="newsTextContent">
-                    <h3 class="newsText">
-                      {{ n.title }}
-                    </h3>
-                    <span class="newsDate">{{ dayjs(n.created_at).format('DD.MM.YYYY') }}</span>
-                  </div>
-                </router-link>
-              </div>
-
+            <div class="newsItems">
               <!-- <div class="newsItem">
                 <router-link to="/press-releases" class="newsLink">
                   <img src="../assets/news1.svg" class="newsImage" alt="News" />
@@ -59,9 +47,21 @@
                     <span class="newsDate">1 час назад</span>
                   </div>
                 </router-link>
+              </div> -->
+
+              <div v-for="n in news" :key="n.id" class="newsItem">
+                <router-link to="/press-releases" class="newsLink">
+                  <img :src="img_url + n.img" class="newsImage" alt="News" />
+                  <div class="newsTextContent">
+                    <h3 class="newsText">
+                        {{ n.title }}
+                    </h3>
+                    <span class="newsDate">{{ dayjs(n.created_at).format('DD.MM.YYYY') }}</span>
+                  </div>
+                </router-link>
               </div>
 
-              <div class="newsItem">
+              <!-- <div class="newsItem">
                 <router-link to="/press-releases" class="newsLink">
                   <img src="../assets/news1.svg" class="newsImage" alt="News" />
                   <div class="newsTextContent">
