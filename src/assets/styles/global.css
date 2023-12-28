@@ -670,7 +670,8 @@ a {
 }
 .sectionGallery__item img {
   width: 100%;
-  object-fit: contain;
+  height: 424px;
+  object-fit: cover;
 }
 
 .sectionGallery__item2 {
@@ -683,6 +684,7 @@ a {
 
 .sectionGallery__item2 img {
   width: 47%;
+  max-height: 200px;
 }
 
 .sectionGallery .swiper-pagination-bullet {

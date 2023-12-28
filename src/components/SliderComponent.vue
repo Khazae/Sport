@@ -14,21 +14,44 @@
         <div class="container">
           <div class="sectionGallery__row">
             <div class="sectionGallery__item">
-              <img src="../assets/gallery/main.png" alt="" />
+              <img src="../assets/footerSlider/1.jpeg" alt="" />
             </div>
             <div class="sectionGallery__item2">
               <img
-                src="../assets/gallery/1.png"
+                src="../assets/footerSlider/2.jpeg"
                 style="margin-bottom: 20px"
                 alt=""
               />
               <img
-                src="../assets/gallery/2.png"
+                src="../assets/footerSlider/3.jpeg"
                 style="margin-bottom: 20px"
                 alt=""
               />
-              <img src="../assets/gallery/3.png" alt="" />
-              <img src="../assets/gallery/4.png" alt="" />
+              <img src="../assets/footerSlider/4.jpg" alt="" />
+              <img src="../assets/footerSlider/5.jpeg" alt="" />
+            </div>
+          </div>
+        </div>
+      </swiper-slide>
+      <swiper-slide class="test" :class="{ test_2: true }">
+        <div class="container">
+          <div class="sectionGallery__row">
+            <div class="sectionGallery__item">
+              <img src="../assets/footerSlider/6.jpeg" alt="" />
+            </div>
+            <div class="sectionGallery__item2">
+              <img
+                src="../assets/footerSlider/17.jpg"
+                style="margin-bottom: 20px"
+                alt=""
+              />
+              <img
+                src="../assets/footerSlider/8.jpg"
+                style="margin-bottom: 20px"
+                alt=""
+              />
+              <img src="../assets/footerSlider/9.jpeg" alt="" />
+              <img src="../assets/footerSlider/10.jpeg" alt="" />
             </div>
           </div>
         </div>
@@ -38,45 +61,21 @@
         <div class="container">
           <div class="sectionGallery__row">
             <div class="sectionGallery__item">
-              <img src="../assets/gallery/main.png" alt="" />
+              <img src="../assets/footerSlider/18.jpg" alt="" />
             </div>
             <div class="sectionGallery__item2">
               <img
-                src="../assets/gallery/1.png"
+                src="../assets/footerSlider/12.jpeg"
                 style="margin-bottom: 20px"
                 alt=""
               />
               <img
-                src="../assets/gallery/2.png"
+                src="../assets/footerSlider/13.jpeg"
                 style="margin-bottom: 20px"
                 alt=""
               />
-              <img src="../assets/gallery/3.png" alt="" />
-              <img src="../assets/gallery/4.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </swiper-slide>
-
-      <swiper-slide class="test" :class="{ test_2: true }">
-        <div class="container">
-          <div class="sectionGallery__row">
-            <div class="sectionGallery__item">
-              <img src="../assets/gallery/main.png" alt="" />
-            </div>
-            <div class="sectionGallery__item2">
-              <img
-                src="../assets/gallery/1.png"
-                style="margin-bottom: 20px"
-                alt=""
-              />
-              <img
-                src="../assets/gallery/2.png"
-                style="margin-bottom: 20px"
-                alt=""
-              />
-              <img src="../assets/gallery/3.png" alt="" />
-              <img src="../assets/gallery/4.png" alt="" />
+              <img src="../assets/footerSlider/14.jpeg" alt="" />
+              <img src="../assets/footerSlider/11.jpeg" alt="" />
             </div>
           </div>
         </div>

@@ -47,7 +47,12 @@
           </ul>
         </nav>
         <div class="impairedContent">
-          <img class="eyes" src="../assets/eyes.png" alt="" />
+          <img
+            class="eyes"
+            :src="currentImage"
+            @click="toggleImpaired"
+            alt=""
+          />
         </div>
         <div class="loginContent">
           <div
@@ -237,6 +242,9 @@ export default {
       selectedLanguage: { value: "kz" },
       selectVisible: false,
       languages: [{ value: "kz" }, { value: "ru" }, { value: "en" }],
+      impaired: false,
+      eyesLinkDark: require("@/assets/eyes.png"),
+      eyesLinkLight: require("@/assets/lightEyes.png"),
     };
   },
   mounted() {},
@@ -247,6 +255,9 @@ export default {
     },
   },
   methods: {
+    toggleImpaired() {
+      this.impaired = !this.impaired;
+    },
     toggleSelect() {
       this.selectVisible = !this.selectVisible;
     },
@@ -268,6 +279,11 @@ export default {
     },
     cancelHideDropdown() {
       clearTimeout(this.delayTimeout);
+    },
+  },
+  computed: {
+    currentImage() {
+      return this.impaired ? this.eyesLinkDark : this.eyesLinkLight;
     },
   },
 };
