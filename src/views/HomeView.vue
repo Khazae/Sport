@@ -35,8 +35,20 @@
           <div class="newsContent">
             <h3 class="newsTitle">Новости комитета</h3>
 
-            <div class="newsItems">
+            <div v-for="n in news" :key="n.id" class="newsItems">
               <div class="newsItem">
+                <router-link to="/press-releases" class="newsLink">
+                  <img :src="img_url + n.img" class="newsImage" alt="News" />
+                  <div class="newsTextContent">
+                    <h3 class="newsText">
+                      {{ n.title }}
+                    </h3>
+                    <span class="newsDate">{{ dayjs(n.created_at).format('DD.MM.YYYY') }}</span>
+                  </div>
+                </router-link>
+              </div>
+
+              <!-- <div class="newsItem">
                 <router-link to="/press-releases" class="newsLink">
                   <img src="../assets/news1.svg" class="newsImage" alt="News" />
                   <div class="newsTextContent">
@@ -60,20 +72,7 @@
                     <span class="newsDate">1 час назад</span>
                   </div>
                 </router-link>
-              </div>
-
-              <div class="newsItem">
-                <router-link to="/press-releases" class="newsLink">
-                  <img src="../assets/news1.svg" class="newsImage" alt="News" />
-                  <div class="newsTextContent">
-                    <h3 class="newsText">
-                      Чемпионский титул и миллионы долларов: сборная Казахстана
-                      поборется за звание сильнейшей в мире
-                    </h3>
-                    <span class="newsDate">1 час назад</span>
-                  </div>
-                </router-link>
-              </div>
+              </div> -->
             </div>
             <a href="#" class="link"
               ><div class="link__text">
@@ -476,10 +475,32 @@
 <script>
 import HeaderSlider from "@/components/HeaderSlider.vue";
 import SliderComponent from "@/components/SliderComponent.vue";
+import dayjs from 'dayjs';
+
+import requests from '../api/requests';
+
 export default {
-  components: {
-    SliderComponent,
-    HeaderSlider,
-  },
+    data() {
+        return {
+            news: [],
+            img_url: ""
+        }
+    },
+    components: {
+        SliderComponent,
+        HeaderSlider,
+    },
+    mounted() {
+        this.getList();
+        this.img_url = process.env.VUE_APP_BACKEND_URL;
+    },
+    methods: {
+        dayjs,
+        getList() {
+            requests.getList().then(res => {
+                this.news = res.data
+            })
+        },
+    },
 };
 </script>
