@@ -47,9 +47,16 @@
           </ul>
         </nav>
         <div class="loginContent">
-          <div v-if="$store.state.auth.authorized" class="loginLink" style="cursor: pointer" @click="$router.push({name:'personalArea'})">
-            <img src="../assets/user.svg" class="loginImage" alt="User"/>
-            <span class="loginText" v-if="$store.state.user.user">{{ $store.state.user.user.name }}</span>
+          <div
+            v-if="$store.state.auth.authorized"
+            class="loginLink"
+            style="cursor: pointer"
+            @click="$router.push({ name: 'personalArea' })"
+          >
+            <img src="../assets/user.svg" class="loginImage" alt="User" />
+            <span class="loginText" v-if="$store.state.user.user">{{
+              $store.state.user.user.name
+            }}</span>
           </div>
           <router-link v-else to="/login" class="loginLink">
             <img src="../assets/user.svg" class="loginImage" alt="User" />
@@ -58,7 +65,18 @@
         </div>
 
         <div class="langContent">
-          <span class="currentLang">Каз</span>
+          <span class="currentLang" @click="toggleSelect">{{
+            selectedLanguage.value
+          }}</span>
+          <ul v-show="selectVisible" @blur="hideSelect">
+            <li
+              v-for="(language, key) in languages"
+              :key="key"
+              @click="selectLanguage(language)"
+            >
+              {{ language.value }}
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -203,6 +221,9 @@ export default {
     return {
       isDropdownVisible: false,
       delayTimeout: null,
+      selectedLanguage: { value: "kz" },
+      selectVisible: false,
+      languages: [{ value: "kz" }, { value: "ru" }],
     };
   },
   mounted() {},
@@ -213,6 +234,16 @@ export default {
     },
   },
   methods: {
+    toggleSelect() {
+      this.selectVisible = !this.selectVisible;
+    },
+    hideSelect() {
+      this.selectVisible = false;
+    },
+    selectLanguage(language) {
+      this.selectedLanguage = language;
+      this.selectVisible = false;
+    },
     showDropdown() {
       clearTimeout(this.delayTimeout);
       this.isDropdownVisible = true;
@@ -430,5 +461,38 @@ export default {
 .headerDropdownMenuItem {
   width: 100%;
   max-width: 270px;
+}
+
+.langContent {
+  position: relative;
+  display: inline-block;
+}
+
+.langContent ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: none;
+  z-index: 99;
+}
+
+.langContent ul li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.langContent ul li:hover {
+  background-color: #f2f2f2;
+}
+
+.langContent:hover ul {
+  display: block;
 }
 </style>

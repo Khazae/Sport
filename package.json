@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^1.6.2",
     "core-js": "^3.8.3",
+    "datejs": "^1.0.0-rc3",
     "dayjs": "^1.11.10",
     "swiper": "^6.8.4",
     "swiper-vue2": "^1.0.10",
