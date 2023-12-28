@@ -39,6 +39,11 @@ const routes = [
         component: () => import("../views/CalendarandResultsView.vue"),
       },
       {
+        path: "/upcoming-events",
+        name: "upcoming-events",
+        component: () => import("../views/UpcomingEvents.vue"),
+      },
+      {
         path: "/about",
         name: "about",
         component: () => import("../views/AboutView.vue"),

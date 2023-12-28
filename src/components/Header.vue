@@ -37,6 +37,9 @@
               <router-link to="/budget" class="listLink">Бюджет</router-link>
             </li>
             <li class="listItem">
+              <router-link to="/upcoming-events" class="listLink">Предстоящие события</router-link>
+            </li>
+            <li class="listItem">
               <router-link to="/faq" class="listLink">FAQ</router-link>
             </li>
             <li class="listItem">
