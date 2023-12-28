@@ -94,6 +94,11 @@ const routes = [
         component: () => import("../views/InformationAboutView.vue"),
       },
       {
+        path: "/kinds-of-sports",
+        name: "/KindsOfSports",
+        component: () => import("../views/KindsOfSports.vue"),
+      },
+      {
         path: "/statistical-indicators",
         name: "statisticalIndicators",
         component: () => import("../views/StatisticalIndicatorsView.vue"),
