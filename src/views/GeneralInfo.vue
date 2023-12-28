@@ -1,6 +1,6 @@
 <template>
 <div class="budget_wrapper littleCorruptionWrapper">
-    <HeaderTitle title="Противодействие коррупции" />
+    <HeaderTitle title="ОБЩАЯ ИНФОРМАЦИЯ О ДЕЯТЕЛЬНОСТИ" />
     <div class="container">
       <div class="budget_content">
         <p class="budget_content_text">

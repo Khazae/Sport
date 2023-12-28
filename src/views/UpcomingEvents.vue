@@ -1,6 +1,6 @@
 <template>
   <div class="wrapperCalendar">
-    <HeaderTitle title="Календарь и результаты"/>
+    <HeaderTitle title="Предстоящие события"/>
     <div class="container">
       <div class="container">
         <div class="calendarContent">
